@@ -46,7 +46,7 @@ download: data/downloads/contacts.csv ## Download contacts
 data/downloads/contacts.csv: # Download contacts
 	curl -o $@ https://illinoiscomptroller.gov/financial-data/local-government-division/view-local-government-contact-information/download-csv/
 
-data/processed/contacts.csv: data/downloads/contacts.csv: # Process (sort) contacts
+data/processed/contacts.csv: data/downloads/contacts.csv # Process (sort) contacts
 	xsv sort -s County,City,UnitName > $@
 
 ##@ Utilities
