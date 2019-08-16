@@ -4,8 +4,16 @@ import { FixedSizeList as List } from "react-window"
 
 const Row = ({ index, style, data }) => {
   const item = data[index]
-  return <div style={style}>
-    {item.UnitName} ({item.Description}), {item.City}, {item.County} county
+  return <div className="row" style={style}>
+    <div className="unit-name">
+      {item.UnitName}
+    </div>
+    <div className="description">
+      {item.Description}
+    </div>
+    <div className="location">
+      {item.City}, {item.County} county
+    </div>
   </div>
 }
 
