@@ -32,7 +32,7 @@ DOWNLOAD_DIRECTORIES = downloads
 all: download ## Build all
 
 .PHONY: clean
-clean: clean/downloads ## Clean downloads
+clean: clean/downloads clean/caches ## Clean downloads and caches
 
 .PHONY: help
 help:  ## Display this help
@@ -61,6 +61,10 @@ install/npm: # Install from NPM
 
 .PHONY: clean/downloads
 clean/downloads: $(patsubst %, rm/%, $(DOWNLOAD_DIRECTORIES)) ## Remove all downloads
+
+.PHONY: clean/caches
+clean/caches:
+	rm -rf .cache/
 
 .PHONY: rm/%
 rm/%: ## Remove data/% where % is a directory name
