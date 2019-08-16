@@ -29,7 +29,7 @@ DOWNLOAD_DIRECTORIES = downloads
 
 .DEFAULT_GOAL := all
 .PHONY: all
-all: download ## Build all
+all: data/processed/contacts.csv ## Build all
 
 .PHONY: clean
 clean: clean/downloads clean/caches ## Clean downloads and caches
