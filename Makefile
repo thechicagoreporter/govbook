@@ -23,7 +23,7 @@
 include .env
 export
 
-DOWNLOAD_DIRECTORIES = downloads
+CLEAN_DIRECTORIES = downloads processed
 
 ##@ Basic usage
 
@@ -32,7 +32,7 @@ DOWNLOAD_DIRECTORIES = downloads
 all: data/processed/contacts.csv ## Build all
 
 .PHONY: clean
-clean: clean/downloads clean/caches ## Clean downloads and caches
+clean: clean/data clean/caches ## Clean downloads, exports, and caches
 
 .PHONY: help
 help:  ## Display this help
@@ -51,10 +51,6 @@ data/processed/contacts.csv: data/downloads/contacts.csv # Process (sort) contac
 
 ##@ Utilities
 
-.PHONY: develop
-develop: all  ## Run development server
-	npm develop
-
 .PHONY: install
 install: install/npm install ## Install project dependencies
 
@@ -62,8 +58,8 @@ install: install/npm install ## Install project dependencies
 install/npm: # Install from NPM
 	npm install
 
-.PHONY: clean/downloads
-clean/downloads: $(patsubst %, rm/%, $(DOWNLOAD_DIRECTORIES)) ## Remove all downloads
+.PHONY: clean/data
+clean/data: $(patsubst %, rm/%, $(CLEAN_DIRECTORIES)) ## Remove all downloads
 
 .PHONY: clean/caches
 clean/caches:
