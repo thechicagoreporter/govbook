@@ -53,7 +53,7 @@ data/processed/contacts.csv: data/downloads/contacts.csv: # Process (sort) conta
 
 .PHONY: develop
 develop: all  ## Run development server
-	grunt --base site develop
+	npm develop
 
 .PHONY: install
 install: install/npm install ## Install project dependencies
