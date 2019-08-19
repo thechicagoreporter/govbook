@@ -8,44 +8,28 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { injectIntl } from "gatsby-plugin-intl"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-
+function SEO({ intl, meta }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: intl.locale,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={intl.formatMessage({ id: "title" })}
+      titleTemplate={`%s | ${intl.formatMessage({ id: "title" })}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: intl.formatMessage({ id: "description" }),
         },
         {
           property: `og:title`,
-          content: title,
+          content: intl.formatMessage({ id: "title" }),
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: intl.formatMessage({ id: "opengraphDescription" }),
         },
         {
           property: `og:type`,
@@ -57,15 +41,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: intl.formatMessage({ id: "author" }),
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: intl.formatMessage({ id: "title" }),
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: intl.formatMessage({ id: "twitterDescription" }),
         },
       ].concat(meta)}
     />
@@ -73,16 +57,13 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `es`,
   meta: [],
-  description: ``,
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
-export default SEO
+export default injectIntl(SEO)

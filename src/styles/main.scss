@@ -1,0 +1,122 @@
+$font-family-sans: "Open Sans", sans-serif;
+$font-family-sans-condensed: "Open Sans Condensed", sans-serif;
+$font-root-size: 16px;
+
+$color-black: #000000;
+$color-white: #ffffff;
+$color-light-gray: #ccc;
+
+$padding-default: 0.5rem;
+
+
+/* Adapted from CSS Mini Reset */
+
+html,
+body,
+div,
+form,
+fieldset,
+legend,
+caption,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre {
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+}
+
+img {
+  border: 0;
+}
+
+/* Body/base styles */
+body {
+  font-family: $font-family-sans;
+  font-size: $font-root-size;
+}
+
+/* Header */
+header {
+  display: flex;
+  background-color: $color-black;
+}
+header > * {
+  padding: $padding-default;
+}
+header h1 {
+  font-family: $font-family-sans-condensed;
+  margin: 0;
+  text-transform: uppercase;
+  flex-grow: 1;
+}
+header a {
+  color: $color-white;
+  text-decoration: none;
+}
+
+/* Language switcher */
+header .language > a {
+  display: inline-block;
+  font-family: $font-family-sans;
+  font-size: .8rem;
+  margin-left: 0.1rem;
+  padding: .1rem .3rem;
+  &.active {
+    color: $color-black;
+    background-color: $color-white;
+  }
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: $padding-default;
+  background-color: $color-light-gray;
+}
+
+/* (Virtualized) Table */
+.table {
+  .table-body {
+    height: 90vh;
+  }
+  .table-head {
+    font-weight: 700;
+  }
+  .row {
+    display: flex;
+  }
+  .row > div {
+    padding: $padding-default;
+    font-size: 0.8rem;
+    flex-grow: 1;
+    width: 33%;
+    border-bottom: 1px dotted $color-light-gray;
+  }
+}

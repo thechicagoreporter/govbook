@@ -1,0 +1,13 @@
+{
+  "title": "Directorio de local govt en IL (TK)",
+  "description": "Busque contactos del gobierno local en Illinois.",
+  "opengraphDescription": "Busque contactos del gobierno local en Illinois.",
+  "twitterDescription": "Busque contactos del gobierno local en Illinois.",
+  "author": "The Chicago Reporter",
+  "footer": "Texto de footer TK",
+  "tableHeaders": {
+    "unit": "Nombre",
+    "description": "Descripción",
+    "location": "Ubicación"
+  }
+}

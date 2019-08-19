@@ -1,0 +1,13 @@
+{
+  "title": "IL Local Govt Phonebook (NAME TK)",
+  "description": "Look up local government contacts in Illinois.",
+  "opengraphDescription": "Look up local government contacts in Illinois.",
+  "twitterDescription": "Look up local government contacts in Illinois.",
+  "author": "The Chicago Reporter",
+  "footer": "Text of footer TK",
+  "tableHeaders": {
+    "unit": "Unit name",
+    "description": "Description",
+    "location": "Location"
+  }
+}

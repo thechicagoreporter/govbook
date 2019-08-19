@@ -1,27 +1,17 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { FormattedMessage, Link } from "gatsby-plugin-intl"
 
-const Header = ({ siteTitle }) => (
+import Language from "./language"
+
+const Header = () => (
   <header>
-    <div>
-      <h1>
-        <Link
-          to="/"
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+    <h1>
+      <Link to="/">
+        <FormattedMessage id="title" />
+      </Link>
+    </h1>
+    <Language />
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
