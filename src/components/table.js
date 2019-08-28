@@ -2,11 +2,11 @@ import React from "react"
 import ContainerDimensions from "react-container-dimensions"
 import { useStaticQuery, graphql } from "gatsby"
 import { FixedSizeList as List } from "react-window"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage, Link } from "gatsby-plugin-intl"
 
 const Row = ({ index, style, data }) => {
   const item = data[index]
-  return <div className="row" style={style}>
+  return <Link to={`/${item.fields.path}`} className="row" style={style}>
     <div className="unit-name">
       {item.UnitName}
     </div>
@@ -16,7 +16,7 @@ const Row = ({ index, style, data }) => {
     <div className="location">
       {item.City}, {item.County} county
     </div>
-  </div>
+  </Link>
 }
 
 const Table = () => {
@@ -47,6 +47,9 @@ const Table = () => {
           Title
           UnitName
           ZIP
+          fields {
+            path
+          }
         }
       }
     }

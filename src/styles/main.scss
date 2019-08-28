@@ -93,6 +93,7 @@ header .language > a {
 
 /* Footer */
 footer {
+  display: none;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -119,4 +120,27 @@ footer {
     width: 33%;
     border-bottom: 1px dotted $color-light-gray;
   }
+}
+
+/* (Real) Unit table */
+.unit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: $padding-default;
+}
+.unit > div {
+  width: 48%;
+  margin-bottom: 1rem;
+}
+.unit span {
+  display: block;
+}
+.unit span.key {
+  font-family: $font-family-sans;
+  font-size: 0.65rem;
+}
+.unit span.value {
+  font-family: $font-family-sans-condensed;
+  font-weight: 700;
 }
