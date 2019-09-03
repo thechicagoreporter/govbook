@@ -1,21 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-
+import UnitName from "../components/unitname"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 
 export default ({ data }) => {
   const { contactsCsv: contact } = data
-  const pairs = Object.entries(contact).filter(([key, value]) => value !== "")
   return (
     <Layout>
       <div className="unit">
-        {pairs.map(([key, value]) => (
-          <div key={`${key}`}>
-            <span className="key">{key}</span>
-            <span className="value">{value}</span>
-          </div>
-        ))}
+        <FormattedMessage id="unitLabels.townAndCounty" values={{...contact}} />
+        <UnitName {...contact} />
       </div>
     </Layout>
   )
@@ -78,6 +74,10 @@ export const query = graphql`
       TIFExt
       TIFFax
       TIFTitle
+
+      fields {
+        categorySlug
+      }
 
     }
   }

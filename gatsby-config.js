@@ -89,8 +89,12 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
-
-    `gatsby-transformer-csv`,
+    {
+      resolve: `gatsby-transformer-csv`,
+      options: {
+        checkType: false,
+      },
+    },
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

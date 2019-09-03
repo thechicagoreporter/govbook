@@ -5,9 +5,11 @@ $font-root-size: 16px;
 $color-black: #000000;
 $color-white: #ffffff;
 $color-light-gray: #ccc;
+$color-very-light-gray: #eee;
+$color-teal: #3d9999;
 
 $padding-default: 0.5rem;
-
+$padding-default-vh: 1.1vh;
 
 /* Adapted from CSS Mini Reset */
 
@@ -57,21 +59,26 @@ img {
 body {
   font-family: $font-family-sans;
   font-size: $font-root-size;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Header */
 header {
   display: flex;
   background-color: $color-black;
+  height: 6.2vh;
 }
 header > * {
-  padding: $padding-default;
+  padding: $padding-default-vh;
 }
 header h1 {
   font-family: $font-family-sans-condensed;
   margin: 0;
   text-transform: uppercase;
   flex-grow: 1;
+  font-size: 2.8vh;
 }
 header a {
   color: $color-white;
@@ -82,8 +89,8 @@ header a {
 header .language > a {
   display: inline-block;
   font-family: $font-family-sans;
-  font-size: .8rem;
-  margin-left: 0.1rem;
+  font-size: 2.1vh;
+  margin-left: 0.3rem;
   padding: .1rem .3rem;
   &.active {
     color: $color-black;
@@ -91,35 +98,73 @@ header .language > a {
   }
 }
 
-/* Footer */
-footer {
-  display: none;
+/* (Virtualized) Table */
+.table {
+  position: relative;
+}
+.table-search {
+  font-weight: 700;
+  height: 7vh;
+  background-color: $color-teal;
+}
+.table-search > div {
+  padding: $padding-default-vh;
+}
+.table-search input {
+  font-size: 2.1vh;
+  height: 3.7vh;
+  padding: 0.5vh 0.8vh;
+  border: 1px solid $color-black;
+  width: calc(100% - 2.7vh);
+}
+.table-head {
+  font-weight: 700;
+  height: 4.7vh;
+}
+.table-body {
+  height: 84.6vh;
+}
+.table-foot {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: $padding-default;
-  background-color: $color-light-gray;
+  overflow: hidden;
+  background-color: $color-teal;
+  color: $color-white;
+  border-top: 1px solid $color-black;
+  box-shadow: 0 0 0 $color-black;
+}
+.table-foot > div {
+  padding: $padding-default-vh;
+  font-size: 2.1vh;
+}
+.table-foot p {
+  margin-bottom: 1.2vh;
+  line-height: 1.6;
 }
 
-/* (Virtualized) Table */
-.table {
-  .table-body {
-    height: 90vh;
+.table .row {
+  display: flex;
+}
+.table .row > div {
+  padding: $padding-default-vh;
+  font-size: 0.7rem;
+  flex-grow: 1;
+  width: 33%;
+  border-bottom: 1px dotted $color-light-gray;
+}
+.table .table-body .row {
+  text-decoration: none;
+  color: $color-black;
+  transition: background-color 300ms ease;
+
+  &:hover {
+    background-color: $color-very-light-gray;
   }
-  .table-head {
-    font-weight: 700;
-  }
-  .row {
-    display: flex;
-  }
-  .row > div {
-    padding: $padding-default;
-    font-size: 0.8rem;
-    flex-grow: 1;
-    width: 33%;
-    border-bottom: 1px dotted $color-light-gray;
-  }
+}
+.table .row .unit-name {
+  width: 50%;
 }
 
 /* (Real) Unit table */
@@ -143,4 +188,10 @@ footer {
 .unit span.value {
   font-family: $font-family-sans-condensed;
   font-weight: 700;
+}
+
+.unit h1 {
+  font-family: $font-family-sans-condensed;
+  font-weight: 700;
+  font-size: 1.3rem;
 }

@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import Footer from "./footer"
 import SEO from "./seo"
 
 import "../styles/main.scss"
@@ -20,7 +19,6 @@ const Layout = ({ children }) => {
       <SEO />
       <Header />
       <main>{children}</main>
-      <Footer />
     </>
   )
 }

@@ -5,9 +5,20 @@
   "twitterDescription": "Look up local government contacts in Illinois.",
   "author": "The Chicago Reporter",
   "footer": "Text of footer TK",
+  "welcomeMessage": {
+    "description": "Get contact information main offices, executives, financial officers, FOIA officers, purchasing agents, and TIF officers for every local government body in Illinois.",
+    "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
+    "moreLink": "Learn more about this project"
+  },
   "tableHeaders": {
-    "unit": "Unit name",
-    "description": "Description",
-    "location": "Location"
+    "unit": "Government unit",
+    "city": "City",
+    "county": "County"
+  },
+  "unitLabels": {
+    "village": "Village of {UnitName}",
+    "city": "City of {UnitName}",
+    "township": "Township of {UnitName}",
+    "townAndCounty": "{City}, {County} county"
   }
 }

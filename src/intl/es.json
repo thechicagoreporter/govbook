@@ -7,7 +7,13 @@
   "footer": "Texto de footer TK",
   "tableHeaders": {
     "unit": "Nombre",
-    "description": "Descripción",
-    "location": "Ubicación"
+    "city": "Ciudad",
+    "county": "Condado"
+  },
+  "unitLabels": {
+    "village": "Pueblo de {UnitName}",
+    "city": "Ciudad de {UnitName}",
+    "township": "Asentamiento de {UnitName}",
+    "townAndCounty": "{City}, {County} condado"
   }
 }
