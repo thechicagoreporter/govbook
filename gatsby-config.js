@@ -10,6 +10,7 @@ module.exports = {
           {
             family: `Open Sans`,
             subsets: [`latin`],
+            variants: [`400`, `400i`, `600`, `700`],
           },
           {
             family: `Open Sans Condensed`,
@@ -31,42 +32,42 @@ module.exports = {
         redirect: true,
       },
     },
-    //{
-      //resolve: `gatsby-plugin-lunr`,
-      //options: {
-        //languages: [
-          //{
-            //name: 'en',
-          //},
-        //],
-        //// Fields to index. If store === true value will be stored in index file.
-        //// Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
-        //fields: [
-          //{ name: 'City', store: true },
-          //{ name: 'County', store: true },
-          //{ name: 'Description', store: true },
-          //{ name: 'UnitName', store: true },
-          //{ name: 'ZIP', store: true },
-        //],
-        //// How to resolve each field's value for a supported node type
-        //resolvers: {
-          //// For any node of type MarkdownRemark, list how to resolve the fields' values
-          //ContactsCsv: {
-            //City: node => node.City,
-            //County: node => node.County,
-            //Description: node => node.Description,
-            //UnitName: node => node.UnitName,
-            //ZIP: node => node.ZIP,
-          //},
-        //},
-        ////custom index file name, default is search_index.json
-        //filename: 'search_index.json',
-        ////custom options on fetch api call for search_ındex.json
-        //fetchOptions: {
-          //credentials: 'same-origin'
-        //},
-      //},
-    //},
+    {
+      resolve: `gatsby-plugin-lunr`,
+      options: {
+        languages: [
+          {
+            name: 'en',
+          },
+        ],
+        // Fields to index. If store === true value will be stored in index file.
+        // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
+        fields: [
+          { name: 'County', store: false },
+          { name: 'Description', store: false },
+          { name: 'UnitName', store: false },
+          { name: 'Code', store: true },
+        ],
+        // How to resolve each field's value for a supported node type
+        resolvers: {
+          ContactsCsv: {
+            County: node => node.County,
+            Description: node => node.Description,
+            UnitName: node => node.UnitName,
+            Code: node => node.Code,
+          },
+        },
+
+        filterNodes: (node) => (node.fields.path),
+
+        //custom index file name, default is search_index.json
+        filename: 'search_index.json',
+        //custom options on fetch api call for search_ındex.json
+        fetchOptions: {
+          credentials: 'same-origin'
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

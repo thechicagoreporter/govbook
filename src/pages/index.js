@@ -18,29 +18,17 @@ export const query = graphql`
   query {
     allContactsCsv {
       nodes {
-        CEOFName
-        CEOLName
-        CEOTitle
-        CFOFName
-        CFOLName
-        CFOTitle
-        Code
+        UnitName
+        Description
         City
         County
-        Description
-        FOIAFName
-        FOIALName
-        FOIATitle
+        Phone
+        Email_GOV
+        Ext
+        Code
         FirstName
         LastName
-        PALName
-        PAFName
-        TIFFName
-        TIFLName
-        TIFTitle
         Title
-        UnitName
-        ZIP
         fields {
           path
           categorySlug

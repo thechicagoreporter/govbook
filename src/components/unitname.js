@@ -13,14 +13,14 @@ function UnitName({ intl, UnitName, Description, fields }) {
     case "city":
     case "village":
     case "township":
-      return <h1>
+      return <span>
           <FormattedMessage
             id={`unitLabels.${fields.categorySlug}`}
             values={{ UnitName }}
           />
-        </h1>
+        </span>
     default:
-      return <h1>{UnitName} {Description}</h1>
+      return <span>{UnitName} {Description}</span>
   }
 }
 

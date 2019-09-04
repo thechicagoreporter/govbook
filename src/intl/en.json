@@ -1,24 +1,45 @@
 {
   "title": "IL Local Govt Phonebook (NAME TK)",
+  "author": "The Chicago Reporter",
+
   "description": "Look up local government contacts in Illinois.",
   "opengraphDescription": "Look up local government contacts in Illinois.",
   "twitterDescription": "Look up local government contacts in Illinois.",
-  "author": "The Chicago Reporter",
-  "footer": "Text of footer TK",
+
+  "search": {
+    "placeholder": "Search by name, city, county, and type",
+    "download": "Download",
+    "share": "Share"
+  },
+
   "welcomeMessage": {
     "description": "Get contact information main offices, executives, financial officers, FOIA officers, purchasing agents, and TIF officers for every local government body in Illinois.",
     "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
     "moreLink": "Learn more about this project"
   },
+
   "tableHeaders": {
     "unit": "Government unit",
     "city": "City",
-    "county": "County"
+    "county": "County",
+    "contacts": "Primary contact"
   },
+
   "unitLabels": {
     "village": "Village of {UnitName}",
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
-    "townAndCounty": "{City}, {County} county"
+    "townAndCounty": "{City}, {County} county",
+    "mainContact": "General contact",
+    "CFOContact": "Chief Financial Officer",
+    "vcf": "Add contact"
+  },
+
+  "contactLabels": {
+    "ceo": "Executive",
+    "cfo": "CFO",
+    "foia": "FOIA",
+    "pa": "Purchasing agent",
+    "tif": "TIF officer"
   }
 }

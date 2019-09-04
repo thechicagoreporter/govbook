@@ -39,7 +39,7 @@ pre {
   outline: 0;
   background: transparent;
 }
-
+textarea, select, input, button { outline: none; }
 table {
   border-spacing: 0;
   border-collapse: collapse;
@@ -104,25 +104,34 @@ header .language > a {
 }
 .table-search {
   font-weight: 700;
-  height: 7vh;
+  height: 6.3vh;
   background-color: $color-teal;
 }
 .table-search > div {
+  display: flex;
   padding: $padding-default-vh;
 }
 .table-search input {
-  font-size: 2.1vh;
-  height: 3.7vh;
+  font-size: 2.2vh;
   padding: 0.5vh 0.8vh;
-  border: 1px solid $color-black;
-  width: calc(100% - 2.7vh);
+  border: 1px solid lighten($color-black, 10%);
+  flex-grow: 1;
+  margin-right: 1.5vh;
+}
+.table-search button {
+  padding: 0;
+  font-size: 3vh;
+  width: 4.6vh;
+  text-align: center;
+  background: transparent;
+  border: none;
 }
 .table-head {
   font-weight: 700;
   height: 4.7vh;
 }
 .table-body {
-  height: 84.6vh;
+  height: 85.3vh;
 }
 .table-foot {
   position: absolute;
@@ -148,10 +157,10 @@ header .language > a {
   display: flex;
 }
 .table .row > div {
-  padding: $padding-default-vh;
   font-size: 0.7rem;
   flex-grow: 1;
-  width: 33%;
+  width: calc(33% - 2.2vh);
+  padding: $padding-default-vh;
   border-bottom: 1px dotted $color-light-gray;
 }
 .table .table-body .row {
@@ -163,35 +172,68 @@ header .language > a {
     background-color: $color-very-light-gray;
   }
 }
+.table .table-body .row .contacts p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .table .row .unit-name {
-  width: 50%;
+  width: calc(40% - 2.2vh);
+}
+.table .row .county {
+  width: calc(20% - 2.2vh);
+}
+.table .row .contacts {
+  width: calc(40% - 2.2vh);
 }
 
 /* (Real) Unit table */
 .unit {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: $padding-default;
+  padding: $padding-default-vh;
+  font-size: 0.8rem;
 }
-.unit > div {
-  width: 48%;
+.unit h2 {
+  font-size: .8rem;
   margin-bottom: 1rem;
-}
-.unit span {
-  display: block;
-}
-.unit span.key {
-  font-family: $font-family-sans;
-  font-size: 0.65rem;
-}
-.unit span.value {
-  font-family: $font-family-sans-condensed;
-  font-weight: 700;
 }
 
 .unit h1 {
   font-family: $font-family-sans-condensed;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+}
+.unit-contact {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.unit-contact .meta {
+  width: 18%;
+  margin-right: 1rem;
+  font-size: .7rem;
+  text-align: center;
+}
+.unit-contact .meta button {
+  font-size: .7rem;
+  padding: .25rem 0;
+  border: 1px solid $color-light-gray;
+  background-color: transparent;
+}
+.unit-contact .meta h3 {
+  margin-bottom: .5rem;
+  font-weight: 700;
+  padding: .25rem 0;
+  color: $color-white;
+  background-color: darken($color-light-gray, 30%);
+}
+.unit-contact .details {
+  flex-grow: 1;
+}
+.unit-contact p {
+  margin-bottom: 0.15rem;
+}
+.unit-contact h4 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
 }
