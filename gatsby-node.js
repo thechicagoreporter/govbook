@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const SLUGOPTS = {
   lower: true,
-  remove: /[*.]/g,
+  remove: /[*#.]/g,
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
