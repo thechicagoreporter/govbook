@@ -44,8 +44,8 @@ module.exports = {
         // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
         fields: [
           { name: 'County', store: false },
-          { name: 'Description', store: false },
-          { name: 'UnitName', store: false },
+          { name: 'Description', store: false, boost: 10, },
+          { name: 'UnitName', store: false, boost: 20, },
           { name: 'Code', store: true },
         ],
         // How to resolve each field's value for a supported node type

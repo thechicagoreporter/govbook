@@ -84,20 +84,18 @@ class Table extends React.Component {
     if (!filter || !window.__LUNR__) return []
     const lunrIndex =  window.__LUNR__[SEARCH_LNG]
 
-    // Exact match
-    let results = lunrIndex.index.search(filter)
+    try {
+      const parts = filter.split(" ")
 
-    // Wildcard match
-    if (!results.length) {
-      results = lunrIndex.index.search(`${filter}*`)
+      var results = lunrIndex.index.search(parts.map( (item) => (`+${item}`)).join(" "))
+      
+      if (!results.length) {
+        results = lunrIndex.index.search(parts.map( (item) => (`+${item}*`)).join(" "))
+      }
+      return results.map(({ ref }) => lunrIndex.store[ref].Code)
+    } catch(error) {
+      return []
     }
-
-    // Edit distance match
-    if (!results.length) {
-      results = lunrIndex.index.search(`${filter}~2`)
-    }
-
-    return results.map(({ ref }) => lunrIndex.store[ref].Code)
   }
 
   componentDidMount() {
@@ -119,7 +117,7 @@ class Table extends React.Component {
               placeholder={intl.formatMessage({ id: "search.placeholder" })}
               value={filter}
               onChange={this.onSearch}
-              spellcheck={false}
+              spellCheck={false}
             />
             <button><FiDownload /></button>
             <button><FiShare2 /></button>
