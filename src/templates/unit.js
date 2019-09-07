@@ -69,7 +69,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($Code: String!) {
-    contactsCsv(Code: { eq: $Code }) {
+    contacts(Code: { eq: $Code }) {
       UnitName
       Description
       City

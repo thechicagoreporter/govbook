@@ -29,7 +29,7 @@ CLEAN_DIRECTORIES = downloads processed
 
 .DEFAULT_GOAL := all
 .PHONY: all
-all: data/processed/contacts.csv ## Build all
+all: data/processed/contacts.sqlite ## Build all
 
 .PHONY: clean
 clean: clean/data clean/caches ## Clean downloads, exports, and caches
@@ -46,10 +46,16 @@ download: data/downloads/contacts.csv ## Download contacts
 data/downloads/contacts.csv: # Download contacts
 	curl -o $@ https://illinoiscomptroller.gov/financial-data/local-government-division/view-local-government-contact-information/download-csv/
 
-data/processed/contacts.csv: data/downloads/contacts.csv # Process (sort) contacts
-	xsv sort -s County,City,UnitName,Description $< | xsv sample 1000 > $@
+##@ Processed data
+
+data/processed/contacts.sqlite: data/downloads/contacts.csv
+	(echo .separator ,; echo .import $(CURDIR)/$< contacts) | sqlite3 $@
 
 ##@ Utilities
+
+.PHONY: dbshell
+dbshell:
+	sqlite3 data/processed/*.sqlite
 
 .PHONY: install
 install: install/npm install ## Install project dependencies

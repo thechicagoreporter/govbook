@@ -89,7 +89,7 @@ class Table extends React.Component {
       const parts = filter.split(" ")
 
       var results = lunrIndex.index.search(parts.map( (item) => (`+${item}`)).join(" "))
-      
+
       if (!results.length) {
         results = lunrIndex.index.search(parts.map( (item) => (`+${item}*`)).join(" "))
       }
@@ -108,7 +108,6 @@ class Table extends React.Component {
     const { intl } = this.props
     const { contacts, filter, scrollOffset } = this.state
     const footHeight = FOOT_HEIGHT - scrollOffset
-    console.log(logo)
     return (
       <div className="table">
         <div className="table-search">
@@ -116,7 +115,6 @@ class Table extends React.Component {
             <input
               type="text"
               placeholder={intl.formatMessage({ id: "search.placeholder" })}
-              value={filter}
               onChange={this.onSearch}
               spellCheck={false}
             />
@@ -161,14 +159,19 @@ class Table extends React.Component {
           }}
         >
           <div>
-            <img src={logo} alt={intl.formatMessage({ id: "author" })} />
-            <p>
-              <FormattedMessage id="welcomeMessage.description" />
-              <FormattedMessage id="welcomeMessage.moreLink" />
-            </p>
-            <p>
-              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "TK" }} />
-            </p>
+            <div className="table-foot-logo">
+              <img src={logo} alt={intl.formatMessage({ id: "author" })} />
+            </div>
+            <div className="table-foot-description">
+              <p>
+                <FormattedMessage id="welcomeMessage.description" /> <FormattedMessage id="welcomeMessage.moreLink" />
+              </p>
+            </div>
+            <div className="table-foot-source-line">
+              <p>
+                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "TK" }} />
+              </p>
+            </div>
           </div>
         </div>
       </div>
