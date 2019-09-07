@@ -7,6 +7,7 @@ import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
 
 import UnitName from "../components/unitname"
+import { logo } from "../images/logo.png"
 
 const FOOT_HEIGHT = 160
 const SEARCH_LNG = "en"
@@ -107,7 +108,7 @@ class Table extends React.Component {
     const { intl } = this.props
     const { contacts, filter, scrollOffset } = this.state
     const footHeight = FOOT_HEIGHT - scrollOffset
-
+    console.log(logo)
     return (
       <div className="table">
         <div className="table-search">
@@ -156,11 +157,11 @@ class Table extends React.Component {
           className="table-foot"
           style={{
             height: (!filter && footHeight > 0) ? footHeight : 0,
-            display: (!filter && footHeight > 0) ? 'block' : 'none',
+            display: (!filter && footHeight > 0) ? "block" : "none",
           }}
         >
           <div>
-            <p>TCR LOGO TK</p>
+            <img src={logo} alt={intl.formatMessage({ id: "author" })} />
             <p>
               <FormattedMessage id="welcomeMessage.description" />
               <FormattedMessage id="welcomeMessage.moreLink" />
@@ -176,4 +177,3 @@ class Table extends React.Component {
 }
 
 export default injectIntl(Table)
-
