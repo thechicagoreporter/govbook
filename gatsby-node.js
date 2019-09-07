@@ -7,9 +7,10 @@ const SLUGOPTS = {
   remove: /[*#.]/g,
 }
 
+// @TODO move to query!
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `ContactsCsv`) {
+  if (node.internal.type === `Contacts`) {
     const category = slugify(node.Description, SLUGOPTS)
     const county = slugify(node.County, SLUGOPTS)
     const city = slugify(node.City, SLUGOPTS)
@@ -18,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `path`,
-      value: `${county}/${city}/${name}-${category}`,
+      value: `${county}/${category}/${name}`,
     })
     createNodeField({
       node,
@@ -31,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allContactsCsv {
+      allContacts {
         nodes {
           Code
           fields {
@@ -41,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  result.data.allContactsCsv.nodes.forEach((node) => {
+  result.data.allContacts.nodes.forEach((node) => {
     createPage({
       path: node.fields.path,
       component: path.resolve(`./src/templates/unit.js`),

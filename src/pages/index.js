@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allContactsCsv {
+    allContacts {
       nodes {
         UnitName
         Description

@@ -153,3 +153,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+src/images/logo.png
