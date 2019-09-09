@@ -12,7 +12,6 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
     {(firstName) && (
       <h2>
         <span className="contact-type"><FormattedMessage id={`unitLabels.${type}Contact`} /></span>
-        <span className="unit-name"><UnitName {...contact} /></span>
       </h2>
     )}
     <div className="meta">

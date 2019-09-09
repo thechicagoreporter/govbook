@@ -2,17 +2,27 @@ import React from "react"
 import Layout from "../components/layout"
 import UnitName from "../components/unitname"
 import GovContact from "../components/govcontact"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage, Link } from "gatsby-plugin-intl"
 
 
 export default ({ pageContext }) => {
   const { contact } = pageContext
   return (
     <Layout>
+      <div className="unit-header">
+        <h1>
+          <UnitName {...contact} />
+        </h1>
+        <h2>
+          <Link to={`/?q=${encodeURIComponent(contact.Description)}`}>
+            <FormattedMessage id="unitLabels.description" values={{...contact}} />
+          </Link>
+          <Link to={`/?q=${encodeURIComponent(contact.County)}`}>
+            <FormattedMessage id="unitLabels.county" values={{...contact}} />
+          </Link>
+        </h2>
+      </div>
       <div className="unit">
-        <h1><UnitName {...contact} /></h1>
-        <h2><FormattedMessage id="unitLabels.county" values={{...contact}} /></h2>
-
         <div className="unit-contact main-contact">
           <GovContact
             type="main"

@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `path`,
-      value: `${county}/${category}/${name}`,
+      value: `${county}/${name}-${category}`,
     })
     createNodeField({
       node,

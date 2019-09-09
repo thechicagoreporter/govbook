@@ -125,6 +125,7 @@ header .language > a {
 }
 .table-search {
   font-weight: 700;
+  background-color: darken($color-white, 2%);
   // background-color: $color-teal;
 }
 .table-search > div {
@@ -135,7 +136,7 @@ header .language > a {
   font-size: 1rem;
   line-height: 1;
   color: $color-black;
-  padding: .3rem .75rem .2rem;
+  padding: .1rem .75rem .1rem;
   border: 1px solid lighten($color-black, 40%);
   box-shadow: 1px 1px 0px lighten($color-black, 40%);
   border-radius: 1rem;
@@ -151,16 +152,12 @@ header .language > a {
   background: transparent;
   border: none;
 }
-.table-head {
-  background-color: darken($color-white, 2%);
-}
 .table-head .row > div {
   font-weight: 700;
   border-top: 1px dotted $color-light-gray;
   border-right: 1px dotted $color-light-gray;
 }
 .table-body {
-  background-color: darken($color-white, 2%);
   height: calc(100vh - 7.5rem);
   @include browser(Android) {
     height: calc(100vh - 56px - 7.5rem);
@@ -172,7 +169,7 @@ header .language > a {
   left: 0;
   width: 100%;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: darken($color-white, 2%);
   border-top: 1px solid $color-black;
   box-shadow: 0 -1px 4px rgba(90, 90, 90, 0.4);
 
@@ -245,16 +242,25 @@ header .language > a {
   padding: $padding-default;
   font-size: 0.8rem;
 }
-
-.unit h1 {
+.unit-header {
+  padding: $padding-default;
+  background-color: darken($color-white, 2%);
+}
+.unit-header > * {
+  display: inline-block
+}
+.unit-header h1 {
   font-family: $font-family-sans-condensed;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-bottom: 0;
+  margin-right: .5rem;
 }
-.unit h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1.6rem;
+.unit-header h2 {
+  font-family: $font-family-sans-condensed;
+  font-weight: 700;
+  font-size: 1rem;
 }
 .unit-contact {
   display: flex;

@@ -22,6 +22,7 @@
     "unit": "Government unit",
     "city": "City",
     "county": "County",
+    "description": "{Description} in",
     "contacts": "Primary contact"
   },
 

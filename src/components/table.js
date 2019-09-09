@@ -87,13 +87,14 @@ class Table extends React.Component {
     const lunrIndex =  window.__LUNR__[SEARCH_LNG]
 
     try {
-      const parts = filter.split(" ")
+      const parts = filter.replace(/[&|of]/gi, "").split(" ").filter( (item) => (item !== "") )
 
       var results = lunrIndex.index.search(parts.map( (item) => (`+${item}`)).join(" "))
 
       if (!results.length) {
         results = lunrIndex.index.search(parts.map( (item) => (`+${item}*`)).join(" "))
       }
+
       return results.map(({ ref }) => lunrIndex.store[ref].Code)
     } catch(error) {
       return []
@@ -118,6 +119,7 @@ class Table extends React.Component {
               placeholder={intl.formatMessage({ id: "search.placeholder" })}
               onChange={this.onSearch}
               spellCheck={false}
+              value={filter || ""}
             />
             <button><FiDownload /></button>
             <button><FiShare2 /></button>
