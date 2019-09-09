@@ -35,7 +35,69 @@ exports.createPages = async ({ graphql, actions }) => {
       allContacts {
         nodes {
           Code
+          UnitName
+          Description
+          City
+          County
+          Address
+          State
+          Phone
+          ZIP
+
+          FirstName
+          LastName
+          Email_GOV
+          Phone
+          Ext
+          Fax
+          Title
+
+          CEOFName
+          CEOLName
+          CEOEmail
+          CEOPhone
+          CEOExt
+          CEOFax
+          CEOTitle
+
+          CFOFName
+          CFOLName
+          CFOEmail
+          CFOPhone
+          CFOExt
+          CFOFax
+          CFOTitle
+          CFOAddr
+          CFOCity
+          CFOState
+          CFOZIP
+
+          FOIAFName
+          FOIALName
+          FOIAEmail
+          FOIAPhone
+          FOIAExt
+          FOIAFax
+          FOIATitle
+
+          PAFName
+          PALName
+          PAEmail
+          PAPhone
+          PAExt
+          PAFax
+          PATitle
+
+          TIFFName
+          TIFLName
+          TIFEmail
+          TIFPhone
+          TIFExt
+          TIFFax
+          TIFTitle
+
           fields {
+            categorySlug
             path
           }
         }
@@ -47,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.path,
       component: path.resolve(`./src/templates/unit.js`),
       context: {
-        Code: node.Code,
+        contact: node,
       },
     })
   })
