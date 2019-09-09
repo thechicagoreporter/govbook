@@ -125,42 +125,42 @@ module.exports = {
         redirect: true,
       },
     },
-    //{
-      //resolve: `gatsby-plugin-lunr`,
-      //options: {
-        //languages: [
-          //{
-            //name: 'en',
-          //},
-        //],
-        //// Fields to index. If store === true value will be stored in index file.
-        //// Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
-        //fields: [
-          //{ name: 'County', store: false },
-          //{ name: 'Description', store: false, boost: 10, },
-          //{ name: 'UnitName', store: false, boost: 20, },
-          //{ name: 'Code', store: true },
-        //],
-        //// How to resolve each field's value for a supported node type
-        //resolvers: {
-          //ContactsCsv: {
-            //County: node => node.County,
-            //Description: node => node.Description,
-            //UnitName: node => node.UnitName,
-            //Code: node => node.Code,
-          //},
-        //},
+    {
+      resolve: `gatsby-plugin-lunr`,
+      options: {
+        languages: [
+          {
+            name: 'en',
+          },
+        ],
+        // Fields to index. If store === true value will be stored in index file.
+        // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
+        fields: [
+          { name: 'County', store: false },
+          { name: 'Description', store: false, boost: 10, },
+          { name: 'UnitName', store: false, boost: 20, },
+          { name: 'Code', store: true },
+        ],
+        // How to resolve each field's value for a supported node type
+        resolvers: {
+          ContactsCsv: {
+            County: node => node.County,
+            Description: node => node.Description,
+            UnitName: node => node.UnitName,
+            Code: node => node.Code,
+          },
+        },
 
-        //filterNodes: (node) => (node.fields.path),
+        filterNodes: (node) => (node.fields.path),
 
-        ////custom index file name, default is search_index.json
-        //filename: 'search_index.json',
-        ////custom options on fetch api call for search_ındex.json
-        //fetchOptions: {
-          //credentials: 'same-origin'
-        //},
-      //},
-    //},
+        //custom index file name, default is search_index.json
+        filename: 'search_index.json',
+        //custom options on fetch api call for search_ındex.json
+        fetchOptions: {
+          credentials: 'same-origin'
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
