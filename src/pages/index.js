@@ -6,7 +6,7 @@ import Table from "../components/table"
 
 
 const IndexPage = ({ data }) => {
-  const { nodes: contacts } = data.allContactsCsv
+  const { nodes: contacts } = data.allContacts
   return (
     <Layout>
       <Table contacts={contacts} />
@@ -18,20 +18,62 @@ export const query = graphql`
   query {
     allContacts {
       nodes {
+        Code
         UnitName
         Description
-        City
         County
-        Phone
-        Email_GOV
-        Ext
-        Code
+
         FirstName
         LastName
+        Email_GOV
+        Phone
+        Ext
         Title
+        City
+        Address
+        State
+        Phone
+        ZIP
+
+        CEOFName
+        CEOLName
+        CEOEmail
+        CEOPhone
+        CEOExt
+        CEOFax
+        CEOTitle
+
+        CFOFName
+        CFOLName
+        CFOEmail
+        CFOPhone
+        CFOExt
+        CFOTitle
+
+        FOIAFName
+        FOIALName
+        FOIAEmail
+        FOIAPhone
+        FOIAExt
+        FOIATitle
+
+        PAFName
+        PALName
+        PAEmail
+        PAPhone
+        PAExt
+        PATitle
+
+        TIFFName
+        TIFLName
+        TIFEmail
+        TIFPhone
+        TIFExt
+        TIFTitle
+
         fields {
-          path
           categorySlug
+          path
         }
       }
     }
