@@ -92,6 +92,7 @@ module.exports = {
               "FOIAEmail",
             )
             .from("contacts")
+            .limit(500)
         }
       }
     },
@@ -118,7 +119,7 @@ module.exports = {
         // language JSON resource path
         path: `${__dirname}/src/intl`,
         // supported language
-        languages: [`en`],
+        languages: [`en`, `es`],
         // language file path
         defaultLanguage: `en`,
         redirect: true,
