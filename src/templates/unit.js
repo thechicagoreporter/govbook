@@ -1,13 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import UnitName from "../components/unitname"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { FiUserPlus } from "react-icons/fi";
 
 
-export default ({ data }) => {
-  const { contactsCsv: contact } = data
+export default ({ pageContext }) => {
+  const { contact } = pageContext
   return (
     <Layout>
       <div className="unit">
@@ -66,75 +65,3 @@ export default ({ data }) => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  query($Code: String!) {
-    contacts(Code: { eq: $Code }) {
-      UnitName
-      Description
-      City
-      County
-      Address
-      State
-      Phone
-      ZIP
-
-      FirstName
-      LastName
-      Email_GOV
-      Phone
-      Ext
-      Fax
-      Title
-
-      CEOFName
-      CEOLName
-      CEOEmail
-      CEOPhone
-      CEOExt
-      CEOFax
-      CEOTitle
-
-      CFOFName
-      CFOLName
-      CFOEmail
-      CFOPhone
-      CFOExt
-      CFOFax
-      CFOTitle
-      CFOAddr
-      CFOCity
-      CFOState
-      CFOZIP
-
-      FOIAFName
-      FOIALName
-      FOIAEmail
-      FOIAPhone
-      FOIAExt
-      FOIAFax
-      FOIATitle
-
-      PAFName
-      PALName
-      PAEmail
-      PAPhone
-      PAExt
-      PAFax
-      PATitle
-
-      TIFFName
-      TIFLName
-      TIFEmail
-      TIFPhone
-      TIFExt
-      TIFFax
-      TIFTitle
-
-      fields {
-        categorySlug
-      }
-
-    }
-  }
-`
