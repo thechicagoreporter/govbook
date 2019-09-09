@@ -143,7 +143,7 @@ module.exports = {
         ],
         // How to resolve each field's value for a supported node type
         resolvers: {
-          ContactsCsv: {
+          Contacts: {
             County: node => node.County,
             Description: node => node.Description,
             UnitName: node => node.UnitName,

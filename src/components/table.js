@@ -7,7 +7,7 @@ import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
 
 import UnitName from "../components/unitname"
-import { logo } from "../images/logo.png"
+import logo from "../images/logo.png"
 
 const FOOT_HEIGHT = 160
 const SEARCH_LNG = "en"

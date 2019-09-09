@@ -1,8 +1,5 @@
 /**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
+ * Format a unit's name
  */
 
 import React from "react"
@@ -19,6 +16,8 @@ function UnitName({ intl, UnitName, Description, fields }) {
             values={{ UnitName }}
           />
         </span>
+    case "community-college":
+      return <span>{UnitName}</span>
     default:
       return <span>{UnitName} {Description}</span>
   }
