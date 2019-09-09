@@ -10,6 +10,7 @@ import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
 const FOOT_HEIGHT = 160
+const LOGO_HEIGHT = 36
 const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
@@ -154,8 +155,7 @@ class Table extends React.Component {
         <div
           className="table-foot"
           style={{
-            height: (!filter && footHeight > 0) ? footHeight : 0,
-            display: (!filter && footHeight > 0) ? "block" : "none",
+            height: (!filter && footHeight > LOGO_HEIGHT) ? footHeight : LOGO_HEIGHT,
           }}
         >
           <div>
@@ -164,7 +164,7 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-description">
               <p>
-                <FormattedMessage id="welcomeMessage.description" /> <FormattedMessage id="welcomeMessage.moreLink" />
+                <FormattedMessage id="welcomeMessage.description" /> <Link to=""><FormattedMessage id="welcomeMessage.moreLink" /></Link>
               </p>
             </div>
             <div className="table-foot-source-line">

@@ -20,6 +20,11 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
         {firstName} {lastName}
       </h3>
       {(title) && (<h4>{title}</h4>)}
+      { (address) && (
+        <p className="address">
+          {address}, {city}, {state} {zip}
+        </p>
+      )}
     </div>
     <div className="details">
       { (phone) && (
@@ -35,11 +40,6 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
       { (email) && (
         <p className="email">
           Email: <a href={`mailto:${email}`}>{email}</a>
-        </p>
-      )}
-      { (address) && (
-        <p className="address">
-          Address: {address}, {city}, {state} {zip}
         </p>
       )}
     </div>

@@ -1,3 +1,11 @@
+@mixin browser($browsers: Mozilla) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
+
 $font-family-sans: "Open Sans", sans-serif;
 $font-family-sans-condensed: "Open Sans Condensed", sans-serif;
 $font-root-size: 16px;
@@ -67,6 +75,11 @@ body {
 header {
   display: flex;
   background-color: $color-black;
+  height: 2.4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 header > * {
   padding: $padding-default;
@@ -82,6 +95,9 @@ header h1 {
 header a {
   color: $color-white;
   text-decoration: none;
+}
+main {
+  padding-top: 2.4rem;
 }
 
 /* Language switcher */
@@ -100,6 +116,12 @@ header .language > a {
 /* (Virtualized) Table */
 .table {
   position: relative;
+  overflow: hidden;
+  height: calc(100vh - 2.4rem);
+  @include browser(Android) {
+    height: calc(100% - 56px - 2.4rem);
+  }
+
 }
 .table-search {
   font-weight: 700;
@@ -135,7 +157,10 @@ header .language > a {
   border-right: 1px dotted $color-light-gray;
 }
 .table-body {
-  height: calc(100vh - 7.3rem);
+  height: calc(100vh - 7.5rem);
+  @include browser(Android) {
+    height: calc(100vh - 56px - 7.5rem);
+  }
 }
 .table-foot {
   position: absolute;
@@ -145,7 +170,7 @@ header .language > a {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.9);
   border-top: 1px solid $color-black;
-  box-shadow: 0 0 0 $color-black;
+  box-shadow: 0 -1px 4px rgba(90, 90, 90, 0.7);
 
   &:before {
     content: "";
@@ -161,6 +186,7 @@ header .language > a {
 }
 .table-foot > div {
   padding: $padding-default;
+  max-width: 900px;
 }
 .table-foot p {
   margin-bottom: .8rem;
@@ -168,8 +194,11 @@ header .language > a {
   font-size: .9rem;
 }
 
-.table-foot img {
-  max-width: 200px;
+.table-foot .table-foot-logo img {
+  max-width: 150px;
+}
+.table-foot .table-foot-logo {
+  margin-bottom: 1rem;
 }
 
 .table .row {
@@ -240,15 +269,15 @@ header .language > a {
   display: block;
 }
 .unit-contact h2 .contact-type {
-  font-size: 1.1rem;
+  font-size: .95rem;
   font-weight: 700;
 }
 .unit-contact h2 .unit-name {
-  font-size: .9rem;
+  font-size: .8rem;
 }
 .unit-contact .meta {
-  width: 9rem;
-  margin-right: 1rem;
+  width: 11rem;
+  margin-right: 0.5rem;
   text-align: left;
 }
 .unit-contact .meta h3 {
@@ -259,8 +288,11 @@ header .language > a {
   font-size: 1rem;
   font-weight: 500;
 }
+.unit-contact .meta p {
+  font-size: .85rem;
+}
 .unit-contact .details {
-  width: calc(100% - 10rem);
+  width: calc(100% - 11.5rem);
 }
 .unit-contact p {
   font-size: 1rem;
