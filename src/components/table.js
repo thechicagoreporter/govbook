@@ -99,7 +99,7 @@ class Table extends React.Component {
       }
 
       if (!results.length) {
-        var results = lunrIndex.index.search(filter)
+        results = lunrIndex.index.search(filter)
       }
 
       if (!results.length) {

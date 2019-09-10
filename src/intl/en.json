@@ -34,10 +34,13 @@
   },
 
   "unitLabels": {
+    "headerDescription": "Category:",
+    "headerCounty": "County:",
     "village": "Village of {UnitName}",
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
     "county": "{County} county",
+    "seeAlso": "See also:",
     "mainContact": "Main contact",
     "ceoContact": "Chief Executive Officer",
     "cfoContact": "Chief Financial Officer",
