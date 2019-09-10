@@ -121,8 +121,7 @@ class Table extends React.Component {
               spellCheck={false}
               value={filter || ""}
             />
-            <button><FiDownload /></button>
-            <button><FiShare2 /></button>
+            <a className="button" href={"../contacts.csv"} ><FiDownload /></a>
           </div>
         </div>
 

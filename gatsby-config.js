@@ -171,16 +171,8 @@ module.exports = {
     //{
       //resolve: `gatsby-source-filesystem`,
       //options: {
-        //name: `data`,
-        //path: `${__dirname}/data/processed`,
-        //ignore: [`**/\.*`], // ignore files starting with a dot
-      //},
-    //},
-    //{
-      //resolve: `gatsby-source-filesystem`,
-      //options: {
-        //name: `pages`,
-        //path: `${__dirname}/src/pages/`,
+        //name: `static`,
+        //path: `${__dirname}/static`,
       //},
     //},
     //{
@@ -189,7 +181,6 @@ module.exports = {
         //checkType: false,
       //},
     //},
-
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
