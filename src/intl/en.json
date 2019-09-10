@@ -18,19 +18,29 @@
     "moreLink": "Learn more about this project"
   },
 
+  "scrollMessage": {
+    "scroll": "Scroll",
+    "search": "Search",
+    "backToTop": "Back to top",
+    "clearFilter": "Clear filter"
+  },
+
   "tableHeaders": {
     "unit": "Government unit",
     "city": "City",
     "county": "County",
-    "description": "{Description} in",
-    "contacts": "Primary contact"
+    "contacts": "Primary contact",
+    "filterMessage": "{results} units out of {total}"
   },
 
   "unitLabels": {
+    "headerDescription": "Category:",
+    "headerCounty": "County:",
     "village": "Village of {UnitName}",
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
     "county": "{County} county",
+    "seeAlso": "See also:",
     "mainContact": "Main contact",
     "ceoContact": "Chief Executive Officer",
     "cfoContact": "Chief Financial Officer",

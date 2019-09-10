@@ -14,12 +14,17 @@ export default ({ pageContext }) => {
           <UnitName {...contact} />
         </h1>
         <h2>
-          <Link to={`/?q=${encodeURIComponent(contact.Description)}`}>
-            <FormattedMessage id="unitLabels.description" values={{...contact}} />
-          </Link>
-          <Link to={`/?q=${encodeURIComponent(contact.County)}`}>
-            <FormattedMessage id="unitLabels.county" values={{...contact}} />
-          </Link>
+          <span>
+            <Link to={`/?q=${encodeURIComponent(contact.County)}`}>
+              <FormattedMessage id="unitLabels.county" values={{...contact}} />
+            </Link>
+          </span>
+          &nbsp;
+          <span>
+            <FormattedMessage id="unitLabels.headerDescription" /> <Link to={`/?q=${encodeURIComponent(contact.Description)}`}>
+              {contact.Description}
+            </Link>
+          </span>
         </h2>
       </div>
       <div className="unit">
