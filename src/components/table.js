@@ -1,7 +1,7 @@
 import React from "react"
 import ContainerDimensions from "react-container-dimensions"
 import queryString from "query-string"
-import { FiDownload, FiShare2 } from "react-icons/fi"
+import { FiDownload, FiX, FiArrowDown, FiArrowUp, FiSearch } from "react-icons/fi"
 import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
@@ -40,6 +40,8 @@ class Table extends React.Component {
 
   constructor(props) {
     super(props)
+    this.listRef = React.createRef()
+
     this.state = {
       scrollOffset: 0,
       filter: "",
@@ -87,18 +89,43 @@ class Table extends React.Component {
     const lunrIndex =  window.__LUNR__[SEARCH_LNG]
 
     try {
-      const parts = filter.replace(/[&|of]/gi, "").split(" ").filter( (item) => (item !== "") )
+      const cleanFilter = filter.replace(/[&|of]/gi, "")
+      const parts = cleanFilter.split(" ").filter( (item) => (item !== "") )
 
-      var results = lunrIndex.index.search(parts.map( (item) => (`+${item}`)).join(" "))
+      var results = []
+
+      if (!results.length) {
+        results = lunrIndex.index.search(parts.map( (item) => (`+${item}`)).join(" "))
+      }
+
+      if (!results.length) {
+        var results = lunrIndex.index.search(filter)
+      }
+
+      if (!results.length) {
+        results = lunrIndex.index.search(`${filter}*`)
+      }
 
       if (!results.length) {
         results = lunrIndex.index.search(parts.map( (item) => (`+${item}*`)).join(" "))
+      }
+
+      if (!results.length) {
+        results = lunrIndex.index.search(`${filter}~2`)
       }
 
       return results.map(({ ref }) => lunrIndex.store[ref].Code)
     } catch(error) {
       return []
     }
+  }
+
+  clearFilter = () => {
+    this.setState({ filter: "" }, this.resetData)
+  }
+
+  scrollToTop = () => {
+    this.listRef.current.scrollToItem(0)
   }
 
   componentDidMount() {
@@ -113,15 +140,28 @@ class Table extends React.Component {
     return (
       <div className="table">
         <div className="table-search">
-          <div>
-            <input
-              type="text"
-              placeholder={intl.formatMessage({ id: "search.placeholder" })}
-              onChange={this.onSearch}
-              spellCheck={false}
-              value={filter || ""}
-            />
+          <div className="input-wrapper">
+            <div className="search-box">
+              <input
+                type="text"
+                placeholder={intl.formatMessage({ id: "search.placeholder" })}
+                onChange={this.onSearch}
+                spellCheck={false}
+                value={filter || ""}
+              />
+              {(filter) && (
+                <a className="reset-button" onClick={this.clearFilter}><FiX /></a>
+              )}
+            </div>
             <a className="button" href={"../contacts.csv"} ><FiDownload /></a>
+          </div>
+          <div className="results">
+            <p>
+              <FormattedMessage
+                id="tableHeaders.filterMessage"
+                values={{ results: contacts.length, total: this.props.contacts.length }}
+              />
+            </p>
           </div>
         </div>
 
@@ -147,6 +187,7 @@ class Table extends React.Component {
               itemData={contacts}
               itemSize={74}
               onScroll={this.onScroll}
+              ref={this.listRef}
             >
               {Row}
             </List>
@@ -162,6 +203,22 @@ class Table extends React.Component {
           <div>
             <div className="table-foot-logo">
               <img src={logo} alt={intl.formatMessage({ id: "author" })} />
+
+              <div className="footer-state">
+                {(scrollOffset < LOGO_HEIGHT && !filter) && (<>
+                  <span><FormattedMessage id="scrollMessage.scroll" /> <FiArrowDown /></span>
+                </>)}
+                {(scrollOffset > LOGO_HEIGHT) && (
+                  <span className="button" onClick={this.scrollToTop}>
+                    <FormattedMessage id="scrollMessage.backToTop" /> <FiArrowUp />
+                  </span>
+                )}
+                {(scrollOffset < LOGO_HEIGHT && filter) && (
+                  <span className="button" onClick={this.clearFilter}>
+                    <FormattedMessage id="scrollMessage.clearFilter" /> <FiX />
+                  </span>
+                )}
+              </div>
             </div>
             <div className="table-foot-description">
               <p>
