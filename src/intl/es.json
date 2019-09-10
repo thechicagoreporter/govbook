@@ -2,14 +2,14 @@
   "title": "IL Local Govt Phonebook (NAME TK)",
   "author": "The Chicago Reporter",
 
-  "description": "Look up local government contacts in Illinois.",
-  "opengraphDescription": "Look up local government contacts in Illinois.",
-  "twitterDescription": "Look up local government contacts in Illinois.",
+  "description": "Busque contactos de gobiernos locales en Illinois.",
+  "opengraphDescription": "Busque contactos de gobiernos locales en Illinois.",
+  "twitterDescription": "Busque contactos de gobiernos locales en Illinois.",
 
   "search": {
-    "placeholder": "Search by name, city, county, and type",
-    "download": "Download",
-    "share": "Share"
+    "placeholder": "Busque por nombre, ciudad, condado o tipo",
+    "download": "Descarga",
+    "share": "Compartir"
   },
 
   "welcomeMessage": {
