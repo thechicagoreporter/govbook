@@ -4,6 +4,99 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      // Querying to a SQLite database
+      resolve: `gatsby-source-sql`,
+      options: {
+        typeName: 'Contacts',
+        // This is the field under which the data will be accessible in a future version
+        fieldName: 'dontunderstandthis',
+        dbEngine: {
+          client: 'sqlite3',
+          connection: {
+            filename: './data/processed/contacts.sqlite',
+          },
+          useNullAsDefault: true
+        },
+        queryChain: function(x) {
+          return x
+            .select(
+              "County",
+              "UnitName",
+              "Description",
+              "Code",
+              "Address",
+              "City",
+              "State",
+              "ZIP",
+              "FirstName",
+              "LastName",
+              "Title",
+              "Phone",
+              "Ext",
+              "Fax",
+              "Email_GOV",
+              "CEOFName",
+              "CEOLName",
+              "CEOTitle",
+              "CEOAddr",
+              "CEOCity",
+              "CEOState",
+              "CEOZIP",
+              "CEOPhone",
+              "CEOExt",
+              "CEOFax",
+              "CEOEmail",
+              "CFOFName",
+              "CFOLName",
+              "CFOTitle",
+              "CFOAddr",
+              "CFOCity",
+              "CFOState",
+              "CFOZIP",
+              "CFOPhone",
+              "CFOExt",
+              "CFOFax",
+              "CFOEmail",
+              "PAFName",
+              "PALName",
+              "PATitle",
+              "PAAddr",
+              "PACity",
+              "PAState",
+              "PAZIP",
+              "PAPhone",
+              "PAExt",
+              "PAFax",
+              "PAEmail",
+              "TIFFName",
+              "TIFLName",
+              "TIFTitle",
+              "TIFAddr",
+              "TIFCity",
+              "TIFState",
+              "TIFZIP",
+              "TIFPhone",
+              "TIFExt",
+              "TIFFax",
+              "TIFEmail",
+              "FOIAFName",
+              "FOIALName",
+              "FOIATitle",
+              "FOIAAddr",
+              "FOIACity",
+              "FOIAState",
+              "FOIAZIP",
+              "FOIAPhone",
+              "FOIAExt",
+              "FOIAFax",
+              "FOIAEmail",
+            )
+            .from("contacts")
+            .limit(500)
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -26,9 +119,9 @@ module.exports = {
         // language JSON resource path
         path: `${__dirname}/src/intl`,
         // supported language
-        languages: [`es`, `en`],
+        languages: [`en`, `es`],
         // language file path
-        defaultLanguage: `es`,
+        defaultLanguage: `en`,
         redirect: true,
       },
     },
@@ -50,7 +143,7 @@ module.exports = {
         ],
         // How to resolve each field's value for a supported node type
         resolvers: {
-          ContactsCsv: {
+          Contacts: {
             County: node => node.County,
             Description: node => node.Description,
             UnitName: node => node.UnitName,
@@ -75,27 +168,27 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/data/processed`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-csv`,
-      options: {
-        checkType: false,
-      },
-    },
+    //{
+      //resolve: `gatsby-source-filesystem`,
+      //options: {
+        //name: `data`,
+        //path: `${__dirname}/data/processed`,
+        //ignore: [`**/\.*`], // ignore files starting with a dot
+      //},
+    //},
+    //{
+      //resolve: `gatsby-source-filesystem`,
+      //options: {
+        //name: `pages`,
+        //path: `${__dirname}/src/pages/`,
+      //},
+    //},
+    //{
+      //resolve: `gatsby-transformer-csv`,
+      //options: {
+        //checkType: false,
+      //},
+    //},
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

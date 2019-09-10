@@ -1,3 +1,11 @@
+@mixin browser($browsers: Mozilla) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
+
 $font-family-sans: "Open Sans", sans-serif;
 $font-family-sans-condensed: "Open Sans Condensed", sans-serif;
 $font-root-size: 16px;
@@ -58,21 +66,27 @@ img {
 body {
   font-family: $font-family-sans;
   font-size: $font-root-size;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  //height: 100vh;
+  //width: 100%;
+  //overflow: hidden;
 }
 
 /* Header */
 header {
   display: flex;
   background-color: $color-black;
+  height: 2.4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 header > * {
   padding: $padding-default;
 }
 header h1 {
   font-family: $font-family-sans-condensed;
+  font-weight: bold;
   margin: 0;
   text-transform: uppercase;
   flex-grow: 1;
@@ -81,6 +95,9 @@ header h1 {
 header a {
   color: $color-white;
   text-decoration: none;
+}
+main {
+  padding-top: 2.4rem;
 }
 
 /* Language switcher */
@@ -99,23 +116,33 @@ header .language > a {
 /* (Virtualized) Table */
 .table {
   position: relative;
+  overflow: hidden;
+  height: calc(100vh - 2.4rem);
+  @include browser(Android) {
+    height: calc(100% - 56px - 2.4rem);
+  }
+
 }
 .table-search {
   font-weight: 700;
-  background-color: $color-teal;
+  background-color: darken($color-white, 2%);
+  // background-color: $color-teal;
 }
 .table-search > div {
   display: flex;
   padding: $padding-default;
 }
 .table-search input {
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1;
-  padding: .15rem .3rem;
-  border: 1px solid lighten($color-black, 10%);
+  color: $color-black;
+  padding: .1rem .75rem .1rem;
+  border: 1px solid lighten($color-black, 40%);
+  box-shadow: 1px 1px 0px lighten($color-black, 40%);
+  border-radius: 1rem;
   flex-grow: 1;
-  max-width: 380px;
-  margin-right: 2rem;
+  max-width: 420px;
+  margin-right: .75rem;
 }
 .table-search button {
   padding: 0;
@@ -125,11 +152,16 @@ header .language > a {
   background: transparent;
   border: none;
 }
-.table-head {
+.table-head .row > div {
   font-weight: 700;
+  border-top: 1px dotted $color-light-gray;
+  border-right: 1px dotted $color-light-gray;
 }
 .table-body {
-  height: calc(100vh - 7.3rem);
+  height: calc(100vh - 7.5rem);
+  @include browser(Android) {
+    height: calc(100vh - 56px - 7.5rem);
+  }
 }
 .table-foot {
   position: absolute;
@@ -137,18 +169,37 @@ header .language > a {
   left: 0;
   width: 100%;
   overflow: hidden;
-  background-color: $color-teal;
-  color: $color-white;
+  background-color: darken($color-white, 2%);
   border-top: 1px solid $color-black;
-  box-shadow: 0 0 0 $color-black;
+  box-shadow: 0 -1px 4px rgba(90, 90, 90, 0.4);
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 20%; width: 20%;
+    background-size: cover;
+    background: inherit;
+    z-index: -1;
+    transform: scale(5);
+    transform-origin: top left;
+    filter: blur(10px);
+  }
 }
 .table-foot > div {
   padding: $padding-default;
-  font-size: .7rem;
+  max-width: 900px;
 }
 .table-foot p {
   margin-bottom: .8rem;
   line-height: 1.6;
+  font-size: .9rem;
+}
+
+.table-foot .table-foot-logo img {
+  max-width: 150px;
+}
+.table-foot .table-foot-logo {
+  margin-bottom: 1rem;
 }
 
 .table .row {
@@ -191,47 +242,78 @@ header .language > a {
   padding: $padding-default;
   font-size: 0.8rem;
 }
-.unit h2 {
-  font-size: .8rem;
-  margin-bottom: 1rem;
+.unit-header {
+  padding: $padding-default;
+  background-color: darken($color-white, 2%);
 }
-
-.unit h1 {
+.unit-header > * {
+  display: inline-block
+}
+.unit-header h1 {
   font-family: $font-family-sans-condensed;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-bottom: 0;
+  margin-right: .5rem;
+}
+.unit-header h2 {
+  font-family: $font-family-sans-condensed;
+  font-weight: 700;
+  font-size: 1rem;
 }
 .unit-contact {
   display: flex;
   margin-bottom: 2rem;
+  flex-flow: row wrap;
+}
+.unit-contact h2 {
+  flex: 0 0 100%;
+  color: lighten($color-black, 35%);
+  text-transform: uppercase;
+  border-bottom: 1px dotted $color-light-gray;
+  line-height: 1.3;
+  margin-bottom: .5rem;
+}
+.unit-contact h2 span {
+  display: block;
+}
+.unit-contact h2 .contact-type {
+  font-size: .95rem;
+  font-weight: 700;
+}
+.unit-contact h2 .unit-name {
+  font-size: .8rem;
 }
 .unit-contact .meta {
-  width: 18%;
-  margin-right: 1rem;
-  font-size: .7rem;
-  text-align: center;
-}
-.unit-contact .meta button {
-  font-size: .7rem;
-  padding: .25rem 0;
-  border: 1px solid $color-light-gray;
-  background-color: transparent;
+  width: 11rem;
+  margin-right: 0.5rem;
+  text-align: left;
 }
 .unit-contact .meta h3 {
-  margin-bottom: .5rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  padding: .25rem 0;
-  color: $color-white;
-  background-color: darken($color-light-gray, 30%);
+}
+.unit-contact .meta h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.unit-contact .meta p {
+  font-size: .85rem;
 }
 .unit-contact .details {
-  flex-grow: 1;
+  width: calc(100% - 11.5rem);
 }
 .unit-contact p {
-  margin-bottom: 0.15rem;
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
 }
 .unit-contact h4 {
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 0.15rem;
+}
+.unit-contact h5 {
+  font-weight: 500;
+  font-size: 0.9rem;
 }

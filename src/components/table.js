@@ -7,8 +7,10 @@ import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
 
 import UnitName from "../components/unitname"
+import logo from "../images/logo.png"
 
 const FOOT_HEIGHT = 160
+const LOGO_HEIGHT = 36
 const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
@@ -85,13 +87,14 @@ class Table extends React.Component {
     const lunrIndex =  window.__LUNR__[SEARCH_LNG]
 
     try {
-      const parts = filter.split(" ")
+      const parts = filter.replace(/[&|of]/gi, "").split(" ").filter( (item) => (item !== "") )
 
       var results = lunrIndex.index.search(parts.map( (item) => (`+${item}`)).join(" "))
-      
+
       if (!results.length) {
         results = lunrIndex.index.search(parts.map( (item) => (`+${item}*`)).join(" "))
       }
+
       return results.map(({ ref }) => lunrIndex.store[ref].Code)
     } catch(error) {
       return []
@@ -107,7 +110,6 @@ class Table extends React.Component {
     const { intl } = this.props
     const { contacts, filter, scrollOffset } = this.state
     const footHeight = FOOT_HEIGHT - scrollOffset
-
     return (
       <div className="table">
         <div className="table-search">
@@ -115,9 +117,9 @@ class Table extends React.Component {
             <input
               type="text"
               placeholder={intl.formatMessage({ id: "search.placeholder" })}
-              value={filter}
               onChange={this.onSearch}
               spellCheck={false}
+              value={filter || ""}
             />
             <button><FiDownload /></button>
             <button><FiShare2 /></button>
@@ -155,19 +157,23 @@ class Table extends React.Component {
         <div
           className="table-foot"
           style={{
-            height: (!filter && footHeight > 0) ? footHeight : 0,
-            display: (!filter && footHeight > 0) ? 'block' : 'none',
+            height: (!filter && footHeight > LOGO_HEIGHT) ? footHeight : LOGO_HEIGHT,
           }}
         >
           <div>
-            <p>TCR LOGO TK</p>
-            <p>
-              <FormattedMessage id="welcomeMessage.description" />
-              <FormattedMessage id="welcomeMessage.moreLink" />
-            </p>
-            <p>
-              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "TK" }} />
-            </p>
+            <div className="table-foot-logo">
+              <img src={logo} alt={intl.formatMessage({ id: "author" })} />
+            </div>
+            <div className="table-foot-description">
+              <p>
+                <FormattedMessage id="welcomeMessage.description" /> <Link to=""><FormattedMessage id="welcomeMessage.moreLink" /></Link>
+              </p>
+            </div>
+            <div className="table-foot-source-line">
+              <p>
+                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "TK" }} />
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -176,4 +182,3 @@ class Table extends React.Component {
 }
 
 export default injectIntl(Table)
-

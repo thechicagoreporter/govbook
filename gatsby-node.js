@@ -7,9 +7,10 @@ const SLUGOPTS = {
   remove: /[*#.]/g,
 }
 
+// @TODO move to query!
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `ContactsCsv`) {
+  if (node.internal.type === `Contacts`) {
     const category = slugify(node.Description, SLUGOPTS)
     const county = slugify(node.County, SLUGOPTS)
     const city = slugify(node.City, SLUGOPTS)
@@ -18,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `path`,
-      value: `${county}/${city}/${name}-${category}`,
+      value: `${county}/${name}-${category}`,
     })
     createNodeField({
       node,
@@ -31,22 +32,84 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allContactsCsv {
+      allContacts {
         nodes {
           Code
+          UnitName
+          Description
+          City
+          County
+          Address
+          State
+          Phone
+          ZIP
+
+          FirstName
+          LastName
+          Email_GOV
+          Phone
+          Ext
+          Fax
+          Title
+
+          CEOFName
+          CEOLName
+          CEOEmail
+          CEOPhone
+          CEOExt
+          CEOFax
+          CEOTitle
+
+          CFOFName
+          CFOLName
+          CFOEmail
+          CFOPhone
+          CFOExt
+          CFOFax
+          CFOTitle
+          CFOAddr
+          CFOCity
+          CFOState
+          CFOZIP
+
+          FOIAFName
+          FOIALName
+          FOIAEmail
+          FOIAPhone
+          FOIAExt
+          FOIAFax
+          FOIATitle
+
+          PAFName
+          PALName
+          PAEmail
+          PAPhone
+          PAExt
+          PAFax
+          PATitle
+
+          TIFFName
+          TIFLName
+          TIFEmail
+          TIFPhone
+          TIFExt
+          TIFFax
+          TIFTitle
+
           fields {
+            categorySlug
             path
           }
         }
       }
     }
   `)
-  result.data.allContactsCsv.nodes.forEach((node) => {
+  result.data.allContacts.nodes.forEach((node) => {
     createPage({
       path: node.fields.path,
       component: path.resolve(`./src/templates/unit.js`),
       context: {
-        Code: node.Code,
+        contact: node,
       },
     })
   })

@@ -13,7 +13,7 @@
   },
 
   "welcomeMessage": {
-    "description": "Get contact information main offices, executives, financial officers, FOIA officers, purchasing agents, and TIF officers for every local government body in Illinois.",
+    "description": "Contact local government officers in Illinois. Call, email, fax, mail, or add to contacts.",
     "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
     "moreLink": "Learn more about this project"
   },
@@ -22,6 +22,7 @@
     "unit": "Government unit",
     "city": "City",
     "county": "County",
+    "description": "{Description} in",
     "contacts": "Primary contact"
   },
 
@@ -29,10 +30,13 @@
     "village": "Village of {UnitName}",
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
-    "townAndCounty": "{City}, {County} county",
-    "mainContact": "General contact",
-    "CFOContact": "Chief Financial Officer",
-    "vcf": "Add contact"
+    "county": "{County} county",
+    "mainContact": "Main contact",
+    "ceoContact": "Chief Executive Officer",
+    "cfoContact": "Chief Financial Officer",
+    "paContact": "Purchasing Agent",
+    "foiaContact": "Freedom of Information Act Officer",
+    "tifContact": "Tax Increment Financing District Administrator"
   },
 
   "contactLabels": {
