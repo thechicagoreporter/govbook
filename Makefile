@@ -29,7 +29,7 @@ CLEAN_DIRECTORIES = downloads processed
 
 .DEFAULT_GOAL := all
 .PHONY: all
-all: data/processed/contacts.sqlite ## Build all
+all: static/contacts.csv ## Build all
 
 .PHONY: clean
 clean: clean/data clean/caches ## Clean downloads, exports, and caches
@@ -50,6 +50,9 @@ data/downloads/contacts.csv: # Download contacts
 
 data/processed/contacts.sqlite: data/downloads/contacts.csv
 	(echo .separator ,; echo .import $(CURDIR)/$< contacts) | sqlite3 $@
+
+static/contacts.csv: data/processed/contacts.sqlite
+	(echo .headers on; echo .mode csv; echo "select * from contacts;") | sqlite3 $< > $@
 
 ##@ Utilities
 
