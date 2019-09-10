@@ -133,7 +133,7 @@ header .language > a {
   padding: $padding-default;
 }
 .table-search input {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1;
   color: $color-black;
   padding: .1rem .75rem .1rem;
@@ -141,8 +141,8 @@ header .language > a {
   box-shadow: 1px 1px 0px lighten($color-black, 40%);
   border-radius: 1rem;
   flex-grow: 1;
-  max-width: 380px;
-  margin-right: 2rem;
+  max-width: 420px;
+  margin-right: .75rem;
 }
 .table-search button {
   padding: 0;
