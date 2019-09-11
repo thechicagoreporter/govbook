@@ -11,7 +11,7 @@ import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
 const SLUG = "govbook"
-const FOOT_HEIGHT = 160
+const FOOT_HEIGHT = 154
 const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
@@ -185,10 +185,15 @@ class Table extends React.Component {
           </div>
           <div className="results">
             <p>
-              <FormattedMessage
-                id="tableHeaders.filterMessage"
-                values={{ results: contacts.length, total: this.props.contacts.length }}
-              />
+              {(contacts.length < this.props.contacts.length) && (
+                <FormattedMessage
+                  id="tableHeaders.filterMessage"
+                  values={{ results: contacts.length, total: this.props.contacts.length }}
+                />
+              )}
+              {(contacts.length === this.props.contacts.length) && (
+                <FormattedMessage id="tableHeaders.callToAction" values={{ total: this.props.contacts.length }} />
+              )}
             </p>
           </div>
         </div>
@@ -250,7 +255,10 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-description">
               <p>
-                <FormattedMessage id="welcomeMessage.description" /> <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link>
+                <FormattedMessage id="welcomeMessage.description" />
+              </p>
+              <p>
+                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a>
               </p>
             </div>
             <div className="table-foot-source-line">
