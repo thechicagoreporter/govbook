@@ -11,7 +11,7 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
   return <>
     {(firstName) && (
       <h2>
-        <span className="contact-type"><FormattedMessage id={`unitLabels.${type}Contact`} /></span>
+        <span className="contact-type"><FormattedMessage id={`contactLabels.${type}`} /></span>
       </h2>
     )}
     <div className="meta">
@@ -19,26 +19,26 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
         {firstName} {lastName}
       </h3>
       {(title) && (<h4>{title}</h4>)}
-      { (address) && (
-        <p className="address">
-          {address}, {city}, {state} {zip}
-        </p>
-      )}
     </div>
     <div className="details">
       { (phone) && (
         <p className="phone">
-          Phone: <a href={`tel:${phone}`}>{phone}{(ext) && (<>x{ext}</>)}</a>
-        </p>
-      )}
-      { (fax) && (
-        <p className="fax">
-          Fax: {fax}
+          <FormattedMessage id="contactLabels.phone" /> <a href={`tel:${phone}`}>{phone}{(ext) && (<>x{ext}</>)}</a>
         </p>
       )}
       { (email) && (
         <p className="email">
-          Email: <a href={`mailto:${email}`}>{email}</a>
+          <FormattedMessage id="contactLabels.email" /> <a href={`mailto:${email}`}>{email}</a>
+        </p>
+      )}
+      { (fax) && (
+        <p className="fax">
+          <FormattedMessage id="contactLabels.fax" /> {fax}
+        </p>
+      )}
+      { (address) && (
+        <p className="address">
+          {address}, {city}, {state} {zip}
         </p>
       )}
     </div>

@@ -19,33 +19,9 @@ export default ({ pageContext }) => {
               <FormattedMessage id="unitLabels.county" values={{...contact}} />
             </Link>
           </span>
-          &nbsp;
-          <span>
-            <FormattedMessage id="unitLabels.headerDescription" /> <Link to={`/?q=${encodeURIComponent(contact.Description)}`}>
-              {contact.Description}
-            </Link>
-          </span>
         </h2>
       </div>
       <div className="unit">
-        <div className="unit-contact main-contact">
-          <GovContact
-            type="main"
-            contact={contact}
-            firstName={contact.FirstName}
-            lastName={contact.LastName}
-            title={contact.Title}
-            phone={contact.Phone}
-            ext={contact.Ext}
-            fax={contact.Fax}
-            email={contact.Email_GOV}
-            address={contact.Address}
-            city={contact.City}
-            state={contact.State}
-            zip={contact.ZIP}
-          />
-        </div>
-
         <div className="unit-contact ceo-contact">
           <GovContact
             type="ceo"
@@ -61,6 +37,24 @@ export default ({ pageContext }) => {
             city={contact.CEOCity}
             state={contact.CEOState}
             zip={contact.CEOZIP}
+          />
+        </div>
+
+        <div className="unit-contact main-contact">
+          <GovContact
+            type="main"
+            contact={contact}
+            firstName={contact.FirstName}
+            lastName={contact.LastName}
+            title={contact.Title}
+            phone={contact.Phone}
+            ext={contact.Ext}
+            fax={contact.Fax}
+            email={contact.Email_GOV}
+            address={contact.Address}
+            city={contact.City}
+            state={contact.State}
+            zip={contact.ZIP}
           />
         </div>
 
@@ -140,29 +134,3 @@ export default ({ pageContext }) => {
     </Layout>
   )
 }
-
-/*
-        <div className="unit-contact main-contact">
-          <div className="meta">
-            <h3><FormattedMessage id="unitLabels.CFOContact" /></h3>
-            <button><FiUserPlus /> <FormattedMessage id="unitLabels.vcf" /></button>
-          </div>
-          <div className="details">
-            <h4 className="name">
-              {contact.CFOFName} {contact.CFOLName}{(contact.CFOTitle) && (<>, {contact.CFOTitle}</>)}
-            </h4>
-            <p className="phone">
-              <a href={`tel:${contact.CFOPhone}`}>{contact.CFOPhone}{(contact.CFOExt) && (<>x{contact.CFOExt}</>)}</a>
-            </p>
-            <p className="fax">
-              Fax: {contact.CFOFax}
-            </p>
-            <p className="email">
-              <a href={`mailto:${contact.CFOEmail}`}>{contact.CFOEmail}</a>
-            </p>
-            <p className="address">
-              {contact.CFOAddr}, {contact.CFOCity}, {contact.State} {contact.CFOZIP}
-            </p>
-          </div>
-          </div>
-          */

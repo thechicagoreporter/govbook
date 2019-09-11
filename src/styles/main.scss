@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,700&display=swap');
+
+@mixin small-phone {
+  @media (max-width: 599px) { @content; }
+}
+@mixin big-phone {
+  @media (max-width: 900px) { @content; }
+}
+@mixin big {
+  @media (min-width: 1200px) { @content; }
+}
+
+
 $font-family-sans: "Open Sans", sans-serif;
 $font-family-sans-condensed: "Open Sans Condensed", sans-serif;
 $font-root-size: 16px;
@@ -7,6 +20,7 @@ $color-white: #ffffff;
 $color-light-gray: #ccc;
 $color-very-light-gray: #eee;
 $color-teal: #3d9999;
+$color-red: #cc3300;
 
 $padding-default: 0.5rem;
 
@@ -59,10 +73,16 @@ body {
   font-family: $font-family-sans;
   font-size: $font-root-size;
   background-color: darken($color-white, 4%);
-  //height: 100vh;
-  //width: 100%;
-  //overflow: hidden;
 }
+a {
+  color: $color-teal;
+  text-decoration: underline;
+  transition: color 300ms ease;
+  &:hover {
+    color: $color-black;
+  }
+}
+
 
 /* Header */
 header {
@@ -88,15 +108,14 @@ header h1 {
 header a {
   color: $color-white;
   text-decoration: none;
+  &:hover {
+    color: $color-white;
+    text-decoration: underline;
+  }
 }
 main {
   padding-top: 2.4rem;
   background-color: $color-white;
-}
-
-a {
-  color: $color-black;
-  text-decoration: underline;
 }
 
 /* Language switcher */
@@ -113,10 +132,15 @@ header .language > a {
 }
 
 /* (Virtualized) Table */
-.table {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 56px - 2.4rem);
+.table .row {
+  display: flex;
+  justify-content: space-between;
+}
+.table .row > div {
+  font-size: 0.875rem;
+  width: 31%;
+  padding: .1rem 2%;
+  border-bottom: 1px dotted $color-light-gray;
 }
 .table-search {
   font-weight: 700;
@@ -147,8 +171,8 @@ header .language > a {
 }
 .table-search input {
   width: 95%;
-  font-size: 0.9rem;
-  line-height: 1.8rem;
+  font-size: 1rem;
+  line-height: 2.1rem;
   color: $color-black;
   padding-left: .6rem;
   border: 1px solid lighten($color-black, 40%);
@@ -161,16 +185,22 @@ header .language > a {
   line-height: 0;
   padding: 0;
   font-size: 1.9rem;
-  margin-left: .9rem;
+  margin-left: .2rem;
+  margin-right: .2rem;
+  margin-top: .2rem;
+  color: $color-black;
   text-align: center;
   background: transparent;
   border: none;
+  &:hover {
+    color: $color-teal;
+  }
 }
 .table-search .reset-button {
   display: block;
   position: absolute;
-  top: .3rem;
-  right: .7rem;
+  top: .5rem;
+  right: .9rem;
   border-radius: .9rem;
   font-size: 1rem;
   width: 1.5rem;
@@ -185,10 +215,17 @@ header .language > a {
 .table-head .row > div {
   font-weight: 700;
   border-top: 1px dotted $color-light-gray;
-  border-right: 1px dotted $color-light-gray;
+  padding-top: $padding-default;
+  padding-bottom: $padding-default;
 }
 .table-body {
-  height: calc(100vh - 56px - 8.3rem);
+  position: absolute !important;
+  top: 9.5rem;
+  background-color: $color-white;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
 }
 .table-foot {
   position: absolute;
@@ -242,7 +279,6 @@ header .language > a {
 }
 .table-foot .footer-state span {
   display: inline-block;
-  color: lighten($color-black, 40%);
   margin-left: 0.75rem;
 }
 .table-foot .footer-state svg {
@@ -250,22 +286,13 @@ header .language > a {
   margin-bottom: -0.1rem;
 }
 .table-foot .footer-state .button span {
-  color: $color-black;
+  color: $color-teal;
   text-decoration: underline;
 }
 .table-foot .footer-state .button svg {
-  color: $color-black;
+  color: $color-teal;
 }
-.table .row {
-  display: flex;
-}
-.table .row > div {
-  font-size: 0.7rem;
-  flex-grow: 1;
-  width: calc(33% - 2.2vh);
-  padding: $padding-default;
-  border-bottom: 1px dotted $color-light-gray;
-}
+
 .table .table-body .row {
   text-decoration: none;
   color: $color-black;
@@ -282,23 +309,30 @@ header .language > a {
   text-overflow: ellipsis;
 }
 .table .row .unit-name {
-  width: calc(40% - 2.2vh);
+  width: 41%;
 }
 .table .table-body .row .unit-name {
-  text-decoration: underline;
+  color: $color-teal;
+  font-weight: 600;
+  transition: color 300ms ease;
+  &:hover {
+    color: $color-black;
+  }
 }
 .table .row .county {
-  width: calc(20% - 2.2vh);
+  width: 15%;
 }
 .table .row .contacts {
-  width: calc(40% - 2.2vh);
+  width: 35%;
 }
 
 /* (Real) Unit table */
 .unit {
-  padding: $padding-default;
-  padding-top: 4.8rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.9rem;
   font-size: 0.8rem;
+  flex-flow: row wrap;
 }
 .unit-header {
   padding: $padding-default;
@@ -314,20 +348,26 @@ header .language > a {
 .unit-header h1 {
   font-family: $font-family-sans-condensed;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.1;
   margin-bottom: .2rem;
   margin-right: .5rem;
 }
 .unit-header h2 {
-  font-size: .9rem;
+  font-size: .875rem;
+  font-weight: 600;
 }
 .unit-header h2 a {
 }
 .unit-contact {
+  width: calc(50% - 2rem);
+  padding: $padding-default;
   display: flex;
   margin-bottom: 2rem;
   flex-flow: row wrap;
+  @include big-phone {
+    width: 100%;
+  }
 }
 .unit-contact h2 {
   flex: 0 0 100%;
@@ -341,41 +381,44 @@ header .language > a {
   display: block;
 }
 .unit-contact h2 .contact-type {
-  font-size: .95rem;
+  font-size: .725rem;
   font-weight: 700;
 }
 .unit-contact h2 .unit-name {
   font-size: .8rem;
 }
 .unit-contact .meta {
-  width: 11rem;
+  width: 9rem;
   margin-right: 0.5rem;
   text-align: left;
 }
 .unit-contact .meta h3 {
   font-size: 1.1rem;
+  line-height: 1.3rem;
   font-weight: 700;
 }
 .unit-contact .meta h4 {
-  font-size: 1rem;
-  font-weight: 500;
-}
-.unit-contact .meta p {
   font-size: .85rem;
+  font-weight: 500;
+  line-height: 1.4rem;
 }
 .unit-contact .details {
-  width: calc(100% - 11.5rem);
+  width: calc(100% - 12rem);
+  padding-top: .2rem;
 }
-.unit-contact p {
-  font-size: 1rem;
-  margin-bottom: 0.45rem;
+.unit-contact .details p {
+  line-height: 1.2rem;
+  margin-bottom: .9rem;
+  font-size: .925rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.unit-contact h4 {
+.unit-contact .details span {
+  display: inline-block;
+  width: 3.1rem;
+}
+.unit-contact .details a {
   font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 0.15rem;
-}
-.unit-contact h5 {
-  font-weight: 500;
-  font-size: 0.9rem;
 }

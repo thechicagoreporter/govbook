@@ -9,8 +9,9 @@ import { navigate } from "@reach/router"
 import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
+const SLUG = "govbook"
 const FOOT_HEIGHT = 160
-const LOGO_HEIGHT = 36
+const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
@@ -24,13 +25,13 @@ const Row = ({ index, style, data }) => {
     </div>
     <div className="contacts">
       <p>
-        {item.FirstName} {item.LastName}, {item.Title}
+        {item.CEOFName} {item.CEOLName}, {item.CEOTitle}
       </p>
       <p>
         {item.Email_GOV}
       </p>
       <p>
-        {item.Phone}{(item.Ext) && (<>x{item.Ext}</>)}
+        {item.CEOPhone}{(item.Ext) && (<>x{item.Ext}</>)}
       </p>
     </div>
   </Link>
@@ -121,10 +122,20 @@ class Table extends React.Component {
   }
 
   clearFilter = () => {
+    window.gtag("event", "click", {
+      event_category: SLUG,
+      event_action: "filter",
+      event_label: "clear",
+    })
     this.setState({ filter: "" }, this.resetData)
   }
 
   scrollToTop = () => {
+    window.gtag("event", "click", {
+      event_category: SLUG,
+      event_action: "footer",
+      event_label: "scroll to top",
+    })
     this.listRef.current.scrollToItem(0)
   }
 
