@@ -119,8 +119,9 @@ module.exports = {
         // Fields to index. If store === true value will be stored in index file.
         // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
         fields: [
+          { name: 'County', store: false, boost: 30 },
           { name: 'UnitName', store: false, boost: 10, },
-          { name: 'County', store: false, boost: 20 },
+          { name: 'ExecName', store: false, boost: 10 },
           { name: 'Description', store: false },
           { name: 'Code', store: true },
         ],
@@ -131,10 +132,11 @@ module.exports = {
             Description: node => node.Description,
             UnitName: node => node.UnitName,
             Code: node => node.Code,
+            ExecName: node => (`${node.CEOFName} ${node.CEOLName}`),
           },
         },
 
-        filterNodes: (node) => (node.fields.path),
+        filterNodes: (node) => (node.fields.Address),
 
         //custom index file name, default is search_index.json
         filename: 'search_index.json',
