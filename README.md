@@ -28,6 +28,14 @@ Resources:
     npm install
     ```
 
+To enable deployment, create a `.env` file with the lines:
+
+```
+BUCKET=my.bucket.aws
+SLUG=govbook
+LIMIT=0
+```
+
 1.  **Build data.**
 
     The project comes with a recent version of the comptroller data. To build the latest, you must clean first. Because the data is bundled, this step is optional.
@@ -45,17 +53,13 @@ Resources:
     gatsby develop
     ```
 
-1.  **Publish with Netlify**
+1. ** Deploy.**
 
-    Just push to Github's master branch or create a pull request and merge it to master. Netlify will do the rest!
+    Deploy to the currently activated environment (a bucket and slug combo).
 
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    ```sh
+    make deploy
+    ```
 
 ## 🧐 What's inside?
 
