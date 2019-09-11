@@ -1,22 +1,22 @@
 <h1 align="center">
-  Illinois Phonebook
+    Gov Book
 </h1>
 
-The Chicago Reporter's Illinois Phonebook.
+The Chicago Reporter's government phonebook for Illinois.
 
 Resources:
 
 * [Production](https://il-phonebook.netlify.com/)
-* [Staging](https://il-phonebook.netlify.com/) (this is the same as production for now)
 * [Public Google Drive folder](https://drive.google.com/open?id=1TOPJV777cxm63pN56ujRelKA9F-RymzG)
 * [Private Google Drive folder](https://drive.google.com/drive/folders/19VgPYMBrVSXkCXu_cbm3XAdcvp7SVuvm) for Chicago Reporter use only
 
 ## Requirements
 
 * GNU Make, Git, standard build tools (`xcode-select --install` on Mac, `apt install build-essential` on Ubuntu)
-* NodeJS (`brew install node`, `apt install nodejs` on Ubuntu)
-* xsv (`brew install xsv` on Mac, `cargo install xsv` on Ubuntu with Rust installed)
-* Gatsby CLI (`npm install -g gatsby-cli` with NPM available) 
+* nodejs (`brew install node`, `apt install nodejs` on Ubuntu)
+* xsv (`brew install sqlite3` on Mac, `apt install sqlite3` on Ubuntu)
+* Gatsby CLI (`npm install -g gatsby-cli` with npm available)
+
 
 ## 🚀 Get started
 
@@ -27,6 +27,14 @@ Resources:
     ```sh
     npm install
     ```
+
+To enable deployment, create a `.env` file with the lines:
+
+```
+BUCKET=my.bucket.aws
+SLUG=govbook
+LIMIT=0
+```
 
 1.  **Build data.**
 
@@ -45,17 +53,13 @@ Resources:
     gatsby develop
     ```
 
-1.  **Publish with Netlify**
+1. ** Deploy.**
 
-    Just push to Github's master branch or create a pull request and merge it to master. Netlify will do the rest!
+    Deploy to the currently activated environment (a bucket and slug combo).
 
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    ```sh
+    make deploy
+    ```
 
 ## 🧐 What's inside?
 

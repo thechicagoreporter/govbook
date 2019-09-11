@@ -5,12 +5,14 @@ import { FiDownload, FiX, FiArrowDown, FiArrowUp, FiSearch } from "react-icons/f
 import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
+import debounce from "lodash/debounce"
 
 import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
+const SLUG = "govbook"
 const FOOT_HEIGHT = 160
-const LOGO_HEIGHT = 36
+const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
@@ -23,14 +25,14 @@ const Row = ({ index, style, data }) => {
       {item.County}
     </div>
     <div className="contacts">
-      <p>
-        {item.FirstName} {item.LastName}, {item.Title}
+      <p className="name">
+        {item.CEOFName} {item.CEOLName}, {item.CEOTitle}
       </p>
-      <p>
-        {item.Email_GOV}
+      <p className="email">
+        {item.CEOEmail}
       </p>
-      <p>
-        {item.Phone}{(item.Ext) && (<>x{item.Ext}</>)}
+      <p className="phone">
+        {item.CEOPhone}{(item.Ext) && (<>x{item.Ext}</>)}
       </p>
     </div>
   </Link>
@@ -41,6 +43,7 @@ class Table extends React.Component {
   constructor(props) {
     super(props)
     this.listRef = React.createRef()
+    this._debouncedTrackSearch = debounce(this._trackSearch, 500)
 
     this.state = {
       scrollOffset: 0,
@@ -54,8 +57,17 @@ class Table extends React.Component {
     this.setState({ scrollOffset })
   }
 
+  _trackSearch = (filter) => {
+    window.gtag && window.gtag("event", "click", {
+      event_category: SLUG,
+      event_action: "query",
+      event_label: filter,
+    })
+  }
+
   onSearch = (event) => {
     const filter = event.target.value
+    this._debouncedTrackSearch(filter)
     this.setState({ filter }, this.resetData)
   }
 
@@ -121,10 +133,27 @@ class Table extends React.Component {
   }
 
   clearFilter = () => {
+    window.gtag && window.gtag("event", "click", {
+      event_category: SLUG,
+      event_action: "filter",
+      event_label: "clear",
+    })
     this.setState({ filter: "" }, this.resetData)
   }
 
+  launchDownload = () => {
+    window.gtag && window.gtag("event", "click", {
+      event_category: SLUG,
+      event_action: "download",
+    })
+  }
+
   scrollToTop = () => {
+    window.gtag && window.gtag("event", "click", {
+      event_category: SLUG,
+      event_action: "footer",
+      event_label: "scroll to top",
+    })
     this.listRef.current.scrollToItem(0)
   }
 
@@ -153,7 +182,7 @@ class Table extends React.Component {
                 <a className="reset-button" onClick={this.clearFilter}><FiX /></a>
               )}
             </div>
-            <a className="button" href={"../contacts.csv"} ><FiDownload /></a>
+            <a className="button" onClick={this.launchDownload} href={"../contacts.csv"} ><FiDownload /></a>
           </div>
           <div className="results">
             <p>

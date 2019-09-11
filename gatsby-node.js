@@ -37,12 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
           Code
           UnitName
           Description
-          City
           County
-          Address
-          State
-          Phone
-          ZIP
 
           FirstName
           LastName
@@ -51,6 +46,11 @@ exports.createPages = async ({ graphql, actions }) => {
           Ext
           Fax
           Title
+          City
+          Address
+          State
+          Phone
+          ZIP
 
           CEOFName
           CEOLName
@@ -59,6 +59,10 @@ exports.createPages = async ({ graphql, actions }) => {
           CEOExt
           CEOFax
           CEOTitle
+          CEOAddr
+          CEOCity
+          CEOState
+          CEOZIP
 
           CFOFName
           CFOLName
@@ -79,6 +83,10 @@ exports.createPages = async ({ graphql, actions }) => {
           FOIAExt
           FOIAFax
           FOIATitle
+          FOIAAddr
+          FOIACity
+          FOIAState
+          FOIAZIP
 
           PAFName
           PALName
@@ -87,6 +95,10 @@ exports.createPages = async ({ graphql, actions }) => {
           PAExt
           PAFax
           PATitle
+          PAAddr
+          PACity
+          PAState
+          PAZIP
 
           TIFFName
           TIFLName

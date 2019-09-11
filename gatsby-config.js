@@ -1,5 +1,6 @@
-module.exports = {
+require('dotenv').config()
 
+module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -92,26 +93,9 @@ module.exports = {
               "FOIAEmail",
             )
             .from("contacts")
-            .limit(500)
+            .limit(20)
         }
       }
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            subsets: [`latin`],
-            variants: [`400`, `400i`, `600`, `700`],
-          },
-          {
-            family: `Open Sans Condensed`,
-            subsets: [`latin`],
-            variants: [`300l`, `300i`, `700`],
-          },
-        ],
-      },
     },
     {
       resolve: `gatsby-plugin-intl`,
@@ -136,8 +120,9 @@ module.exports = {
         // Fields to index. If store === true value will be stored in index file.
         // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
         fields: [
+          { name: 'County', store: false, boost: 30 },
           { name: 'UnitName', store: false, boost: 10, },
-          { name: 'County', store: false, boost: 20 },
+          { name: 'ExecName', store: false, boost: 10 },
           { name: 'Description', store: false },
           { name: 'Code', store: true },
         ],
@@ -148,10 +133,11 @@ module.exports = {
             Description: node => node.Description,
             UnitName: node => node.UnitName,
             Code: node => node.Code,
+            ExecName: node => (`${node.CEOFName} ${node.CEOLName}`),
           },
         },
 
-        filterNodes: (node) => (node.fields.path),
+        filterNodes: (node) => (node.fields.Address),
 
         //custom index file name, default is search_index.json
         filename: 'search_index.json',
@@ -168,19 +154,23 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    //{
-      //resolve: `gatsby-source-filesystem`,
-      //options: {
-        //name: `static`,
-        //path: `${__dirname}/static`,
-      //},
-    //},
-    //{
-      //resolve: `gatsby-transformer-csv`,
-      //options: {
-        //checkType: false,
-      //},
-    //},
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "UA-2350659-1", // Google Analytics / GA
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+          send_pageview: false,
+        },
+        pluginConfig: {
+          // We'll dispatch our own prefixed pageviews
+          exclude: ["/*"],
+        },
+      },
+    },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
