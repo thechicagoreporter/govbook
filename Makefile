@@ -35,7 +35,7 @@ all: static/contacts.csv ## Build all
 
 .PHONY: deploy
 deploy: clean/public clean/cache public ## Deploy site from public directory
-	aws s3 sync public s3://${BUCKET}/${SLUG} --acl public-read --delete
+	aws s3 sync public s3://${BUCKET}/${SLUG} --acl public-read
 
 .PHONY: teardown
 teardown: ## Teardown active site; use with extreme care, very slow

@@ -10,26 +10,38 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { injectIntl } from "gatsby-plugin-intl"
 
-function SEO({ intl, meta }) {
+function SEO({ intl, meta, contact }) {
+  const description = (contact.Code) ?
+    intl.formatMessage({'id': 'unitSocialDescription'}, contact) :
+      intl.formatMessage({ id: "description" })
+
+  const unitTitle = (contact.Code) ?
+    intl.formatMessage({ id: "unitTitle" }, contact) :
+      null
+
+  const title = (unitTitle) ?
+    `${unitTitle} | ${intl.formatMessage({ id: "shortTitle" })}` :
+      intl.formatMessage({ id: "shortTitle" })
+
   return (
     <Helmet
       htmlAttributes={{
         lang: intl.locale,
       }}
-      title={intl.formatMessage({ id: "title" })}
-      titleTemplate={`%s | ${intl.formatMessage({ id: "title" })}`}
+      title={title}
+      titleTemplate={title}
       meta={[
         {
           name: `description`,
-          content: intl.formatMessage({ id: "description" }),
+          content: description,
         },
         {
           property: `og:title`,
-          content: intl.formatMessage({ id: "title" }),
+          content: title,
         },
         {
           property: `og:description`,
-          content: intl.formatMessage({ id: "opengraphDescription" }),
+          content: description,
         },
         {
           property: `og:type`,
@@ -45,11 +57,11 @@ function SEO({ intl, meta }) {
         },
         {
           name: `twitter:title`,
-          content: intl.formatMessage({ id: "title" }),
+          content: title,
         },
         {
           name: `twitter:description`,
-          content: intl.formatMessage({ id: "twitterDescription" }),
+          content: description,
         },
       ].concat(meta)}
     />
@@ -57,13 +69,15 @@ function SEO({ intl, meta }) {
 }
 
 SEO.defaultProps = {
-  lang: `es`,
+  lang: `en`,
   meta: [],
+  contact: {},
 }
 
 SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  contact: PropTypes.object,
 }
 
 export default injectIntl(SEO)
