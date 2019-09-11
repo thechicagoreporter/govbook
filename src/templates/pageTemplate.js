@@ -42,7 +42,6 @@ const Page = ({ currentLanguage, current }) => {
 }
 
 export default function Template({ data }) {
-  console.log(data)
   return (
     <IntlContextConsumer>
       {({ language: currentLanguage }) => (
