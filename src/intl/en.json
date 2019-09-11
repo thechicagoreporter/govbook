@@ -1,5 +1,5 @@
 {
-  "title": "IL Local Govt Phonebook (NAME TK)",
+  "title": "Gov Book",
   "author": "The Chicago Reporter",
 
   "description": "Look up local government contacts in Illinois.",
@@ -29,7 +29,7 @@
     "unit": "Government unit",
     "city": "City",
     "county": "County",
-    "contacts": "Primary contact",
+    "contacts": "Executive",
     "filterMessage": "{results} units out of {total}"
   },
 
@@ -40,20 +40,18 @@
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
     "county": "{County} county",
-    "seeAlso": "See also:",
-    "mainContact": "Main contact",
-    "ceoContact": "Chief Executive Officer",
-    "cfoContact": "Chief Financial Officer",
-    "paContact": "Purchasing Agent",
-    "foiaContact": "Freedom of Information Act Officer",
-    "tifContact": "Tax Increment Financing District Administrator"
+    "seeAlso": "See also:"
   },
 
   "contactLabels": {
-    "ceo": "Executive",
-    "cfo": "CFO",
-    "foia": "FOIA",
-    "pa": "Purchasing agent",
-    "tif": "TIF officer"
+    "main": "Main contact",
+    "ceo": "Chief Executive Officer",
+    "cfo": "Chief Financial Officer",
+    "pa": "Purchasing Agent",
+    "foia": "Freedom of Information Act Officer",
+    "tif": "Tax Increment Financing District Administrator",
+    "phone": "Phone:",
+    "fax": "Fax:",
+    "email": "Email:"
   }
 }

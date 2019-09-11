@@ -10,7 +10,7 @@ import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
 const FOOT_HEIGHT = 160
-const LOGO_HEIGHT = 36
+const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
