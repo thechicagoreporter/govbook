@@ -62,9 +62,6 @@ body {
   font-family: $font-family-sans;
   font-size: $font-root-size;
   background-color: darken($color-white, 4%);
-  //height: 100vh;
-  //width: 100%;
-  //overflow: hidden;
 }
 
 /* Header */
@@ -116,11 +113,9 @@ header .language > a {
 }
 
 /* (Virtualized) Table */
-.table {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 56px - 2.4rem);
-}
+//.table {
+  //overflow: hidden;
+//}
 .table-search {
   font-weight: 700;
   background-color: darken($color-white, 4%);
@@ -188,10 +183,15 @@ header .language > a {
 .table-head .row > div {
   font-weight: 700;
   border-top: 1px dotted $color-light-gray;
-  border-right: 1px dotted $color-light-gray;
 }
 .table-body {
-  height: calc(100vh - 56px - 8.3rem);
+  position: absolute !important;
+  top: 9rem;
+  background-color: $color-white;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
 }
 .table-foot {
   position: absolute;
