@@ -182,7 +182,6 @@ class Table extends React.Component {
                 <a className="reset-button" onClick={this.clearFilter}><FiX /></a>
               )}
             </div>
-            <a className="button" onClick={this.launchDownload} href={"../contacts.csv"} ><FiDownload /></a>
           </div>
           <div className="results">
             <p>
