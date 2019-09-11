@@ -1,22 +1,22 @@
 <h1 align="center">
-  Illinois Phonebook
+    Gov Book
 </h1>
 
-The Chicago Reporter's Illinois Phonebook.
+The Chicago Reporter's government phonebook for Illinois.
 
 Resources:
 
 * [Production](https://il-phonebook.netlify.com/)
-* [Staging](https://il-phonebook.netlify.com/) (this is the same as production for now)
 * [Public Google Drive folder](https://drive.google.com/open?id=1TOPJV777cxm63pN56ujRelKA9F-RymzG)
 * [Private Google Drive folder](https://drive.google.com/drive/folders/19VgPYMBrVSXkCXu_cbm3XAdcvp7SVuvm) for Chicago Reporter use only
 
 ## Requirements
 
 * GNU Make, Git, standard build tools (`xcode-select --install` on Mac, `apt install build-essential` on Ubuntu)
-* NodeJS (`brew install node`, `apt install nodejs` on Ubuntu)
-* xsv (`brew install xsv` on Mac, `cargo install xsv` on Ubuntu with Rust installed)
-* Gatsby CLI (`npm install -g gatsby-cli` with NPM available) 
+* nodejs (`brew install node`, `apt install nodejs` on Ubuntu)
+* xsv (`brew install sqlite3` on Mac, `apt install sqlite3` on Ubuntu)
+* Gatsby CLI (`npm install -g gatsby-cli` with npm available)
+
 
 ## 🚀 Get started
 
