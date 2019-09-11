@@ -251,12 +251,12 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-description">
               <p>
-                <FormattedMessage id="welcomeMessage.description" /> <Link to=""><FormattedMessage id="welcomeMessage.moreLink" /></Link>
+                <FormattedMessage id="welcomeMessage.description" /> <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link>
               </p>
             </div>
             <div className="table-foot-source-line">
               <p>
-                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "TK" }} />
+                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-09-12" }} />
               </p>
             </div>
           </div>

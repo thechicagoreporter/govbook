@@ -1,6 +1,9 @@
 require('dotenv').config()
 
 module.exports = {
+  siteMetadata: {
+    defaultLanguage: 'en',
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -147,13 +150,15 @@ module.exports = {
         },
       },
     },
+    // Markdown driven pages
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `markdown`,
+        path: `${__dirname}/src/pages/markdown`,
       },
     },
+
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -188,9 +193,6 @@ module.exports = {
         ],
       },
     },
-
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
 
     {
       resolve: `gatsby-plugin-manifest`,

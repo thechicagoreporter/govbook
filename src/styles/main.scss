@@ -249,6 +249,11 @@ header .language > a {
     filter: blur(10px);
   }
 }
+.table-foot a {
+  &:hover {
+    color: $color-white;
+  }
+}
 .table-foot > div {
   padding: $padding-default;
   max-width: 900px;
@@ -425,4 +430,8 @@ header .language > a {
 }
 .unit-contact .details a {
   font-weight: 700;
+}
+
+.page-body {
+  padding: $padding-default;
 }
