@@ -171,19 +171,37 @@ module.exports = {
       },
     },
 
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Open Sans`,
+            subsets: [`latin`],
+            variants: [`400`, `400i`, `600`, `700`],
+          },
+          {
+            family: `Open Sans Condensed`,
+            subsets: [`latin`],
+            variants: [`300l`, `300i`, `700`],
+          },
+        ],
+      },
+    },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Illinois Phonebook`,
-        short_name: `il-phonebook`,
+        name: `GovBook`,
+        short_name: `GovBook`,
         start_url: `/`,
-        background_color: `#eeeeee`,
-        theme_color: `#663399`,
+        background_color: `#000000`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

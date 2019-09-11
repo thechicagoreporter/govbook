@@ -3,12 +3,16 @@ import Layout from "../components/layout"
 import UnitName from "../components/unitname"
 import GovContact from "../components/govcontact"
 import { FormattedMessage, Link } from "gatsby-plugin-intl"
+import SEO from "../components/seo"
 
 
 export default ({ pageContext }) => {
   const { contact } = pageContext
   return (
     <Layout>
+      <SEO
+        contact={contact}
+      />
       <div className="unit-header">
         <h1>
           <UnitName {...contact} />

@@ -9,14 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import SEO from "./seo"
 
 import "../styles/main.scss"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <SEO />
       <Header />
       <main>{children}</main>
     </>

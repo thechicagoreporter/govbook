@@ -2,13 +2,9 @@ const URL_PREFIX = "govbook.chicagoreporter.com"
 
 // Dispatch prefixed pageview
 exports.onRouteUpdate = ({ location }) => {
-  console.log("firing onRouteUpdate")
-
   if (process.env.NODE_ENV !== `production` || typeof gtag !== `function`) {
     return null
   }
-
-  console.log("firing PV")
 
   // wrap inside a timeout to make sure react-helmet is done with its changes (https://github.com/gatsbyjs/gatsby/issues/11592)
   const sendPageView = () => {
