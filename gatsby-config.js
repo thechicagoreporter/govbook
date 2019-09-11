@@ -92,26 +92,9 @@ module.exports = {
               "FOIAEmail",
             )
             .from("contacts")
-            .limit(500)
+            .limit(process.env.LIMIT || 0)
         }
       }
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            subsets: [`latin`],
-            variants: [`400`, `400i`, `600`, `700`],
-          },
-          {
-            family: `Open Sans Condensed`,
-            subsets: [`latin`],
-            variants: [`300l`, `300i`, `700`],
-          },
-        ],
-      },
     },
     {
       resolve: `gatsby-plugin-intl`,
