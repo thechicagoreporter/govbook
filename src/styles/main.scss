@@ -166,7 +166,6 @@ header .language > a {
 }
 .table-search .results p {
   font-size: .7rem;
-  padding-left: 0.7rem;
 }
 .table-search input {
   width: 95%;
@@ -250,8 +249,9 @@ header .language > a {
   }
 }
 .table-foot a {
+  color: $color-white;
   &:hover {
-    color: $color-white;
+    color: $color-teal;
   }
 }
 .table-foot > div {
@@ -259,9 +259,9 @@ header .language > a {
   max-width: 900px;
 }
 .table-foot p {
-  margin-bottom: .8rem;
-  line-height: 1.6;
-  font-size: .9rem;
+  margin-bottom: .7rem;
+  line-height: 1.5;
+  font-size: .8rem;
 }
 .table-foot .table-foot-logo {
   display: flex;
@@ -291,11 +291,11 @@ header .language > a {
   margin-bottom: -0.1rem;
 }
 .table-foot .footer-state .button span {
-  color: $color-teal;
+  color: $color-white;
   text-decoration: underline;
 }
 .table-foot .footer-state .button svg {
-  color: $color-teal;
+  color: $color-white;
 }
 
 .table .table-body .row {
@@ -434,7 +434,9 @@ header .language > a {
 
 .page-body {
   padding: $padding-default * 2;
-  max-width: 900px;
+  max-width: 700px;
+  font-size: 0.925rem;
+  line-height: 1.4;
 }
 .page-body h1 {
   font-size: 2rem;
@@ -451,6 +453,6 @@ header .language > a {
   margin-bottom: 3rem;
 }
 
-.page-body p {
-  margin-bottom: 0.75rem;
+.page-body p, .page-body ul {
+  margin-bottom: 1rem;
 }

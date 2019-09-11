@@ -14,9 +14,10 @@
   },
 
   "welcomeMessage": {
-    "description": "Contact local government officers in Illinois. Call, email, fax, mail, or add to contacts.",
     "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
-    "moreLink": "Learn more about this project"
+    "moreLink": "About GovBook",
+    "description": "GovBook is your source for contact information for officials in every unit of government in Illinois.",
+    "downloadLink": "Download the data"
   },
 
   "scrollMessage": {
@@ -31,7 +32,8 @@
     "city": "City",
     "county": "County",
     "contacts": "Executive",
-    "filterMessage": "{results} units out of {total}"
+    "filterMessage": "{results} units out of {total}",
+    "callToAction": "Contact officials from {total} government units in Illinois"
   },
 
   "unitLabels": {
