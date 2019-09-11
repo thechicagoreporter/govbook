@@ -23,16 +23,29 @@
 include .env
 export
 
-CLEAN_DIRECTORIES = downloads processed
+DOWNLOAD_DIRECTORIES = downloads
+PROCESSED_DIRECTORIES = processed
 
 ##@ Basic usage
 
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := help
+
 .PHONY: all
 all: static/contacts.csv ## Build all
 
+.PHONY: deploy
+deploy: clean/public clean/cache public ## Deploy site from public directory
+	aws s3 sync public s3://${BUCKET}/${SLUG} --acl public-read --delete
+
+.PHONY: teardown
+teardown: ## Teardown active site; use with extreme care, very slow
+	aws s3 rm s3://${BUCKET}/${SLUG} --recursive
+
+public: all ## Build site in public directory
+	gatsby build
+
 .PHONY: clean
-clean: clean/data clean/caches ## Clean downloads, exports, and caches
+clean: clean/processed clean/cache clean/public clean/static ## Clean processed data, cache, and builds.
 
 .PHONY: help
 help:  ## Display this help
@@ -67,12 +80,26 @@ install: install/npm install ## Install project dependencies
 install/npm: # Install from NPM
 	npm install
 
-.PHONY: clean/data
-clean/data: $(patsubst %, rm/%, $(CLEAN_DIRECTORIES)) ## Remove all downloads
+.PHONY: clean/processed
+clean/processed: $(patsubst %, rm/%, $(PROCESSED_DIRECTORIES)) ## Remove processed files
 
-.PHONY: clean/caches
-clean/caches:
+.PHONY: clean/downloads
+clean/downloads: $(patsubst %, rm/%, $(DOWNLOAD_DIRECTORIES)) ## Remove processed files
+
+.PHONY: clean/cache
+clean/cache:
 	rm -rf .cache/
+
+.PHONY: clean/public
+clean/public:
+	rm -rf public/
+
+.PHONY: clean/static
+clean/static: clean/static/contacts.csv ## Make static data files
+
+.PHONY: clean/static/contacts.csv
+clean/static/contacts.csv:
+	rm -rf static/contacts.csv
 
 .PHONY: rm/%
 rm/%: ## Remove data/% where % is a directory name
