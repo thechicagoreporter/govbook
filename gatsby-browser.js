@@ -1,7 +1,31 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+const URL_PREFIX = "govbook.chicagoreporter.com"
 
-// You can delete this file if you're not using it
+// Dispatch prefixed pageview
+exports.onRouteUpdate = ({ location }) => {
+  console.log("firing onRouteUpdate")
+
+  if (process.env.NODE_ENV !== `production` || typeof gtag !== `function`) {
+    return null
+  }
+
+  console.log("firing PV")
+
+  // wrap inside a timeout to make sure react-helmet is done with its changes (https://github.com/gatsbyjs/gatsby/issues/11592)
+  const sendPageView = () => {
+    const pagePath = URL_PREFIX + (location
+      ? location.pathname + location.search + location.hash
+      : undefined)
+    window.gtag(`event`, `page_view`, { page_path: pagePath })
+  }
+
+  if (`requestAnimationFrame` in window) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(sendPageView)
+    })
+  } else {
+    // simulate 2 rAF calls
+    setTimeout(sendPageView, 32)
+  }
+
+  return null
+}
