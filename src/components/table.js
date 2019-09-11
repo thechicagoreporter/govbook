@@ -24,13 +24,13 @@ const Row = ({ index, style, data }) => {
     </div>
     <div className="contacts">
       <p>
-        {item.FirstName} {item.LastName}, {item.Title}
+        {item.CEOFName} {item.CEOLName}, {item.CEOTitle}
       </p>
       <p>
         {item.Email_GOV}
       </p>
       <p>
-        {item.Phone}{(item.Ext) && (<>x{item.Ext}</>)}
+        {item.CEOPhone}{(item.Ext) && (<>x{item.Ext}</>)}
       </p>
     </div>
   </Link>
