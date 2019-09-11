@@ -3,7 +3,7 @@
   "shortTitle": "GovBook",
   "author": "The Chicago Reporter",
 
-  "description": "Look up local government contacts in Illinois.",
+  "description": "Your source for local government contacts in Illinois.",
   "unitSocialDescription": "Get contact information for {UnitName} {Description} from GovBook.",
   "unitTitle": "{UnitName} {Description}",
 
