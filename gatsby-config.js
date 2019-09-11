@@ -1,5 +1,6 @@
-module.exports = {
+require('dotenv').config()
 
+module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -92,7 +93,7 @@ module.exports = {
               "FOIAEmail",
             )
             .from("contacts")
-            .limit(process.env.LIMIT || 0)
+            .limit(250)
         }
       }
     },

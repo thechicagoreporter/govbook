@@ -23,25 +23,12 @@ export const query = graphql`
         Description
         County
 
-        FirstName
-        LastName
-        Email_GOV
-        Phone
-        Ext
-        Title
-
         CEOFName
         CEOLName
         CEOEmail
         CEOPhone
         CEOExt
         CEOTitle
-
-        FOIAFName
-        FOIALName
-        FOIAEmail
-        FOIAPhone
-        FOIATitle
 
         fields {
           categorySlug
