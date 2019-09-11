@@ -3,7 +3,7 @@ title: About GovBook
 date: '2019-01-01'
 ---
 
-_Developed by David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
+### _Developed by David Eads, Asraa Mustufa, Fernando Diaz, and Olivia Obineme_
 
 GovBook provides basic contact information for every unit of government that reports to the Illinois Comptroller.
 
@@ -17,35 +17,34 @@ The source data contains self-reported, high-level contact information for local
 
 Each unit is described by:
 
-Unit name: The name of the unit
-Description: The type/category of unit, e.g. "City" or "Road & Bridge"
-City: The listed city
-County: The listed county
-Code: The unit's unique identifier
+* Unit name: The name of the unit
+* Description: The type/category of unit, e.g. "City" or "Road & Bridge"
+* County: The listed county
+* Code: The unit's unique identifier
 
 The data includes the same types of contacts for each unit of government:
 
-General contact information, often the executive and/or finance officer
-Chief executive officer (CEO), often a mayor or agency head
-Chief financial officer (CFO), the person in charge of accounting
-Freedom Of Information Act (FOIA) Officer, the person in charge of FOIA requests
-Purchasing agent, the person in charge of purchasing decisions
-Tax Increment Financing (TIF) administrator, the person in charge of TIF districts
+* General contact information, often the executive and/or finance officer
+* Chief executive officer (CEO), often a mayor or agency head
+* Chief financial officer (CFO), the person in charge of accounting
+* Freedom Of Information Act (FOIA) Officer, the person in charge of FOIA requests
+* Purchasing agent, the person in charge of purchasing decisions
+* Tax Increment Financing (TIF) administrator, the person in charge of TIF districts
 
 Many units only have a few of these roles. 
 
 Each type of contact includes:
 
-First name
-Last name
-Title
-Street address
-City
-State
-ZIP
-Phone (plus optional extension)
-Fax
-Email
+* First name
+* Last name
+* Title
+* Street address
+* City
+* State
+* ZIP
+* Phone (plus optional extension)
+* Fax
+* Email
 
 ## Are these all the contacts for each government unit?
 
