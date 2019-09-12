@@ -1,60 +1,60 @@
 {
-  "title": "IL Local Govt Phonebook (NAME TK)",
+  "title": "govbook.chicagoreporter.com",
+  "shortTitle": "GovBook",
   "author": "The Chicago Reporter",
 
-  "description": "Busque contactos de gobiernos locales en Illinois.",
-  "opengraphDescription": "Busque contactos de gobiernos locales en Illinois.",
-  "twitterDescription": "Busque contactos de gobiernos locales en Illinois.",
+  "description": "Su fuente para contactar a gobiernos locales en Illinois.",
+  "unitSocialDescription": "Obtenga datos para comunicarse con {UnitName} {Description} de GovBook.",
+  "unitTitle": "{UnitName} {Description}",
 
   "search": {
-    "placeholder": "Busque por nombre, ciudad, condado o tipo",
-    "download": "Descarga",
+    "placeholder": "Busque por nombre, ciudad, condado, and o tipo de gobierno",
+    "download": "Descargar",
     "share": "Compartir"
   },
 
   "welcomeMessage": {
-    "description": "Contact local government officers in Illinois. Call, email, fax, mail, or add to contacts.",
-    "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
-    "moreLink": "Learn more about this project"
+    "sourceLine": "Última actualización: {lastUpdated}, Fuente: Illinois Comptroller",
+    "moreLink": "Aerca de GovBook",
+    "description": "GovBook es su fuente para contactar a oficiales en cada unidad de gobierno local en Illinois.",
+    "downloadLink": "Descargar la data"
   },
 
   "scrollMessage": {
-    "scroll": "Scroll",
-    "search": "Search",
-    "backToTop": "Back to top",
-    "clearFilter": "Clear filter"
+    "scroll": "Navegar",
+    "search": "Buscar",
+    "backToTop": "Volver al inicio",
+    "clearFilter": "Borrar filtro"
   },
 
   "tableHeaders": {
-    "unit": "Government unit",
-    "city": "City",
-    "county": "County",
-    "contacts": "Primary contact",
-    "filterMessage": "{results} units out of {total}"
+    "unit": "Unidad de gobierno",
+    "city": "Ciudad",
+    "county": "Condado",
+    "contacts": "Ejecutivo",
+    "filterMessage": "{results} unidades de un total de {total}",
+    "callToAction": "Contacte oficiales de {total} unidades de gobierno en Illinois"
   },
 
   "unitLabels": {
-    "headerDescription": "Category:",
-    "headerCounty": "County:",
+    "headerDescription": "Categoría:",
+    "headerCounty": "Condado:",
     "village": "Village of {UnitName}",
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
-    "county": "{County} county",
-    "seeAlso": "See also:",
-    "mainContact": "Main contact",
-    "ceoContact": "Chief Executive Officer",
-    "cfoContact": "Chief Financial Officer",
-    "paContact": "Purchasing Agent",
-    "foiaContact": "Freedom of Information Act Officer",
-    "tifContact": "Tax Increment Financing District Administrator"
+    "county": "Condado de {County}"
+
   },
 
   "contactLabels": {
-    "ceo": "Executive",
-    "cfo": "CFO",
-    "foia": "FOIA",
-    "pa": "Purchasing agent",
-    "tif": "TIF officer"
+    "main": "Contacto principal",
+    "ceo": "Director Ejecutivo",
+    "cfo": "Director Financiero",
+    "pa": "Agente de Compras",
+    "foia": "Oficial del Libertad de Información (FOIA)",
+    "tif": "Administrador de distrito de financiamiento de incremento de impuestos (TIF)",
+    "phone": "Teléfono:",
+    "fax": "Fax:",
+    "email": "Email:"
   }
 }
-
