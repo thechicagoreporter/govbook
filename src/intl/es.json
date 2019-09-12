@@ -21,7 +21,7 @@
   },
 
   "scrollMessage": {
-    "scroll": "Scroll",
+    "scroll": "Navegar",
     "search": "Buscar",
     "backToTop": "Volver al inicio",
     "clearFilter": "Borrar filtro"
@@ -47,12 +47,12 @@
   },
 
   "contactLabels": {
-    "main": "Main contact",
-    "ceo": "Chief Executive Officer",
-    "cfo": "Chief Financial Officer",
-    "pa": "Purchasing Agent",
-    "foia": "Freedom of Information Act Officer",
-    "tif": "Tax Increment Financing District Administrator",
+    "main": "Contacto principal",
+    "ceo": "Director Ejecutivo",
+    "cfo": "Director Financiero",
+    "pa": "Agente de Compras",
+    "foia": "Oficial del Libertad de Información (FOIA)",
+    "tif": "Administrador de distrito de financiamiento de incremento de impuestos (TIF)",
     "phone": "Teléfono:",
     "fax": "Fax:",
     "email": "Email:"
