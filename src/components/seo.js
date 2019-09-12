@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { injectIntl } from "gatsby-plugin-intl"
 
+const IMAGEURL = "https://govbook.chicagoreporter.com/social-image.png"
+
 function SEO({ intl, meta, contact }) {
   const description = (contact.Code) ?
     intl.formatMessage({'id': 'unitSocialDescription'}, contact) :
@@ -48,6 +50,10 @@ function SEO({ intl, meta, contact }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: IMAGEURL,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -58,6 +64,10 @@ function SEO({ intl, meta, contact }) {
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          property: `twitter:image`,
+          content: IMAGEURL,
         },
         {
           name: `twitter:description`,
