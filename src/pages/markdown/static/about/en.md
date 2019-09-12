@@ -3,17 +3,17 @@ title: About GovBook
 date: '2019-01-01'
 ---
 
-### _Developed by David Eads, Asraa Mustufa, Fernando Diaz, and Olivia Obineme_
+### _David Eads, Asraa Mustufa, Fernando Diaz, and Olivia Obineme_
 
 GovBook provides basic contact information for every unit of government that reports to the Illinois Comptroller.
 
 ## How often is the site updated?
 
-We try to update the site at least once a day, but the data changes sporadically. 
+We try to update the site at least once a day, but the data changes sporadically.
 
 ## What's in the data?
 
-The source data contains self-reported, high-level contact information for local units of government in Illinois from the most recent Annual Financial Report or Registration Report submitted to the state Comptroller. 
+The source data contains self-reported, high-level contact information for local units of government in Illinois from the most recent Annual Financial Report or Registration Report submitted to the state Comptroller.
 
 Each unit is described by:
 
@@ -31,7 +31,7 @@ The data includes the same types of contacts for each unit of government:
 * Purchasing agent, the person in charge of purchasing decisions
 * Tax Increment Financing (TIF) administrator, the person in charge of TIF districts
 
-Many units only have a few of these roles. 
+Many units only have a few of these roles.
 
 Each type of contact includes:
 
@@ -48,7 +48,7 @@ Each type of contact includes:
 
 ## Are these all the contacts for each government unit?
 
-This data doesn’t include the full contact information for all employees or agents of a unit of government. This is an area where we need your help. Want the contact information for the Schaumburg village board? Let us know. 
+This data doesn’t include the full contact information for all employees or agents of a unit of government. This is an area where we need your help. Want the contact information for the Schaumburg village board? [Let us know](mailto:deads@chicagoreporter.com). 
 
 ## Can I search by the name of a government officer?
 
@@ -56,15 +56,15 @@ Currently, you can search for the name of the government unit, the type of unit,
 
 ## Where can I learn more about the data?
 
-This data is collected and published by the lllinois Comptroller's office. The Comptroller provides a PDF data dictionary for the data. 
+This data is [collected and published](https://illinoiscomptroller.gov/financial-data/local-government-division/) by the lllinois Comptroller's office. [The Comptroller provides a PDF data dictionary](ftp://ftp.illinoiscomptroller.com/LocGov/AboutUnitData.pdf) for the data.
 
 ## What if the data needs to be updated?
 
-Please let us know and we’ll check it out.
+Please [let us](mailto:deads@chicagoreporter.com) know and we’ll check it out.
 
-## What parts of the site are translated?
+What parts of the site are translated?
 
-Any text written by The Chicago Reporter is available in English and Spanish. 
+Any text written by The Chicago Reporter is available in English and Spanish.
 
 Text that comes from the Comptroller, specifically the type of a given unit of government (e.g. “Road & Bridge” or “Drainage District”), is presented as-is, even when viewing the Spanish language version of the site. Because these designations are reported in English only, we do not feel it is appropriate to attempt to translate them without further reporting.
 
