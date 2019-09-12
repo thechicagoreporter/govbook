@@ -8,7 +8,7 @@
   "unitTitle": "{UnitName} {Description}",
 
   "search": {
-    "placeholder": "Busque por nombre, ciudad, condado, and o tipo de gobierno",
+    "placeholder": "Busque por nombre, ciudad, condado, o tipo de gobierno",
     "download": "Descargar",
     "share": "Compartir"
   },
