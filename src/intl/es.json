@@ -1,21 +1,23 @@
 {
-  "title": "IL Local Govt Phonebook (NAME TK)",
+  "title": "govbook.chicagoreporter.com",
+  "shortTitle": "GovBook",
   "author": "The Chicago Reporter",
 
-  "description": "Busque contactos de gobiernos locales en Illinois.",
-  "opengraphDescription": "Busque contactos de gobiernos locales en Illinois.",
-  "twitterDescription": "Busque contactos de gobiernos locales en Illinois.",
+  "description": "Your source for local government contacts in Illinois.",
+  "unitSocialDescription": "Get contact information for {UnitName} {Description} from GovBook.",
+  "unitTitle": "{UnitName} {Description}",
 
   "search": {
-    "placeholder": "Busque por nombre, ciudad, condado o tipo",
-    "download": "Descarga",
-    "share": "Compartir"
+    "placeholder": "Search by name, city, county, and type",
+    "download": "Download",
+    "share": "Share"
   },
 
   "welcomeMessage": {
-    "description": "Contact local government officers in Illinois. Call, email, fax, mail, or add to contacts.",
     "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
-    "moreLink": "Learn more about this project"
+    "moreLink": "About GovBook",
+    "description": "GovBook is your source for contact information for officials in every unit of government in Illinois.",
+    "downloadLink": "Download the data"
   },
 
   "scrollMessage": {
@@ -29,8 +31,9 @@
     "unit": "Government unit",
     "city": "City",
     "county": "County",
-    "contacts": "Primary contact",
-    "filterMessage": "{results} units out of {total}"
+    "contacts": "Executive",
+    "filterMessage": "{results} units out of {total}",
+    "callToAction": "Contact officials from {total} government units in Illinois"
   },
 
   "unitLabels": {
@@ -40,21 +43,18 @@
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
     "county": "{County} county",
-    "seeAlso": "See also:",
-    "mainContact": "Main contact",
-    "ceoContact": "Chief Executive Officer",
-    "cfoContact": "Chief Financial Officer",
-    "paContact": "Purchasing Agent",
-    "foiaContact": "Freedom of Information Act Officer",
-    "tifContact": "Tax Increment Financing District Administrator"
+    "seeAlso": "See also:"
   },
 
   "contactLabels": {
-    "ceo": "Executive",
-    "cfo": "CFO",
-    "foia": "FOIA",
-    "pa": "Purchasing agent",
-    "tif": "TIF officer"
+    "main": "Main contact",
+    "ceo": "Chief Executive Officer",
+    "cfo": "Chief Financial Officer",
+    "pa": "Purchasing Agent",
+    "foia": "Freedom of Information Act Officer",
+    "tif": "Tax Increment Financing District Administrator",
+    "phone": "Phone:",
+    "fax": "Fax:",
+    "email": "Email:"
   }
 }
-
