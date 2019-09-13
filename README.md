@@ -10,6 +10,10 @@ Resources:
 * [Public Google Drive folder](https://drive.google.com/open?id=1TOPJV777cxm63pN56ujRelKA9F-RymzG)
 * [Private Google Drive folder](https://drive.google.com/drive/folders/19VgPYMBrVSXkCXu_cbm3XAdcvp7SVuvm) for Chicago Reporter use only
 
+## Adapting this code
+
+We welcome and encourage users to adapt this open source software for your purposes. However, as specified in the license, you may not publish your own version of the site using the assets in `src/images` without replacing with your own assets or asking our permission.
+
 ## Requirements
 
 * GNU Make, Git, standard build tools (`xcode-select --install` on Mac, `apt install build-essential` on Ubuntu)
