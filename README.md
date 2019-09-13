@@ -6,7 +6,7 @@ The Chicago Reporter's government phonebook for Illinois.
 
 Resources:
 
-* [govbook.chicagoreporter.org](https://govbook.chicagoreporter.org)
+* [govbook.chicagoreporter.com](https://govbook.chicagoreporter.com)
 * [Public Google Drive folder](https://drive.google.com/open?id=1TOPJV777cxm63pN56ujRelKA9F-RymzG)
 * [Private Google Drive folder](https://drive.google.com/drive/folders/19VgPYMBrVSXkCXu_cbm3XAdcvp7SVuvm) for Chicago Reporter use only
 
