@@ -3,6 +3,11 @@ The MIT License (MIT)
 Copyright (c) 2019 The Chicago Reporter
 Copyright (c) 2015 gatsbyjs
 
+All assets in `src/images/` are copyright (c) the Chicago Reporter 2019. These
+assets are excluded from this license. If you'd like to use this software to
+publish a public version of this site, you must ask permission to use these
+assets or adapt the code to reflect other assets.
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -20,4 +25,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
