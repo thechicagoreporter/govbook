@@ -7,7 +7,7 @@ date: '2019-01-01'
 
 GovBook contiene información básica para poder contactar a cada unidad de gobierno de Illinois que contribuye datos al Comptroller.
 
-## ¿Con qué frecuencia se actualiza este servicio? 
+## ¿Con qué frecuencia se actualiza este servicio?
 
 Intentamos actualizar este servicio al menos una vez al día, pero la data cambia esporádicamente.
 
@@ -17,8 +17,8 @@ La data contiene la información necesaria para contactar a altos funcionarios d
 
 Cada unidad es descrita de la siguiente manera:
 
-* Nombre de unidad: El nombre de la agencia. 
-* Descripción: El tipo o categoría en inglés. No hemos traducido los nombres de los departamentos para evitar crear confusión. 
+* Nombre de unidad: El nombre de la agencia.
+* Descripción: El tipo o categoría en inglés. No hemos traducido los nombres de los departamentos para evitar crear confusión.
 * Condado: El condado donde se encuentra la unidad de gobierno.
 * Código: Una combinación de letras y números que identifica a la unidad de gobierno.
 
@@ -48,7 +48,7 @@ Cada tipo de contacto incluye:
 
 ## ¿Son estos todos los contactos para cada unidad de gobierno?
 
-La data no incluye toda la información para contactar a todos los empleados o agentes de las unidades de gobierno. En esto podríamos utilizar vuestra ayuda. Si encuentra que falte algo, por favor déjenos saber.  
+La data no incluye toda la información para contactar a todos los empleados o agentes de las unidades de gobierno. En esto podríamos utilizar vuestra ayuda. Si encuentra que falte algo, por favor déjenos saber.
 
 ## ¿Puedo buscar utilizando el nombre de un oficial específico?
 
@@ -64,6 +64,6 @@ Déjenos saber y lo arreglaremos.
 
 ## ¿Cuáles partes de este sitio han traducido?
 
-Cualquier texto escrito por el equipo de The Chicago Reporter está disponible en inglés y español. 
+Cualquier texto escrito por el equipo de The Chicago Reporter está disponible en inglés y español.
 
 Texto que viene directamente de la oficina del Comptroller, específicamente los nombres de las unidades de gobierno, está presentado tal y como existe en la data — aún cuando se está utilizando la versión del sitio en español. Estas designaciones tienen propios nombres en inglés y no quisimos confundir a usuarios de este sitio con erróneas traducciones.
