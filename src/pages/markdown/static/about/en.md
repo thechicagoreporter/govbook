@@ -62,7 +62,7 @@ This data is [collected and published](https://illinoiscomptroller.gov/financial
 
 Please [let us](mailto:deads@chicagoreporter.com) know and we’ll check it out.
 
-What parts of the site are translated?
+## What parts of the site are translated?
 
 Any text written by The Chicago Reporter is available in English and Spanish.
 
