@@ -98,7 +98,7 @@ module.exports = {
           return x
             .select(...QUERY_FIELDS)
             .from("contacts")
-            .limit(20)
+            .limit(process.env.GOVBOOK_QUERY_LIMIT)
         }
       }
     },
