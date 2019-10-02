@@ -45,7 +45,7 @@ public: all ## Build site in public directory
 	gatsby build
 
 .PHONY: clean
-clean: clean/processed clean/cache clean/public clean/static ## Clean processed data, cache, and builds.
+clean: clean/downloads clean/processed clean/cache clean/public clean/static ## Clean processed data, cache, and builds.
 
 .PHONY: help
 help:  ## Display this help
