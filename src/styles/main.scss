@@ -350,7 +350,7 @@ header .language > a {
 .unit .call-to-action p {
   padding: $padding-default;
   margin: 0;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 .unit-header {
   padding: $padding-default;
@@ -467,4 +467,9 @@ header .language > a {
 
 .page-body p, .page-body ul {
   margin-bottom: 1rem;
+}
+
+span.donate {
+  //background-color: $color-teal;
+  color: #fd7e14;
 }

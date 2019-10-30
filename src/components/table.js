@@ -258,8 +258,9 @@ class Table extends React.Component {
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
               <p>
-                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a>
+                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> | <span className="donate">Donate</span>
               </p>
+              <p>Contribute now and your donation will be matched</p>
             </div>
             <div className="table-foot-source-line">
               <p>
