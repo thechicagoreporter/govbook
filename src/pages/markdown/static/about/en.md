@@ -58,9 +58,11 @@ Currently, you can search for the name of the government unit, the type of unit,
 
 This data is [collected and published](https://illinoiscomptroller.gov/financial-data/local-government-division/) by the lllinois Comptroller's office. [The Comptroller provides a PDF data dictionary](ftp://ftp.illinoiscomptroller.com/LocGov/AboutUnitData.pdf) for the data.
 
-## What if the data needs to be updated?
+## What if the data needs to be updated? Do you have ideas about how to make this more useful?
 
-Please [let us](mailto:deads@chicagoreporter.com) know and we’ll check it out.
+Please [let us know](mailto:deads@chicagoreporter.com) and we'll follow up.
+
+If you are comfortable with Github, [you can also create an issue](https://github.com/thechicagoreporter/govbook/issues/new).
 
 ## What parts of the site are translated?
 

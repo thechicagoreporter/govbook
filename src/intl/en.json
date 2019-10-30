@@ -42,7 +42,7 @@
     "village": "Village of {UnitName}",
     "city": "City of {UnitName}",
     "township": "Township of {UnitName}",
-    "county": "{County} county",
+    "county": "{County} County",
     "seeAlso": "See also:"
   },
 

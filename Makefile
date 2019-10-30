@@ -34,7 +34,7 @@ PROCESSED_DIRECTORIES = processed
 all: static/contacts.csv ## Build all
 
 .PHONY: deploy
-deploy: clean/public clean/cache public ## Deploy site from public directory
+deploy: public ## Deploy site from public directory
 	aws s3 sync public s3://${BUCKET}/${SLUG} --acl public-read
 
 .PHONY: teardown

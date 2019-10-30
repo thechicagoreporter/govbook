@@ -340,9 +340,17 @@ header .language > a {
 .unit {
   display: flex;
   justify-content: space-between;
-  margin-top: 3.9rem;
+  margin-top: 2.9rem;
   font-size: 0.8rem;
   flex-flow: row wrap;
+}
+.unit .call-to-action {
+  padding: $padding-default;
+}
+.unit .call-to-action p {
+  padding: $padding-default;
+  margin: 0;
+  background-color: #ccc;
 }
 .unit-header {
   padding: $padding-default;
