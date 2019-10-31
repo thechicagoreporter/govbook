@@ -7,9 +7,6 @@ import remark2react from 'remark-react'
 import { Link } from 'gatsby-plugin-intl'
 
 const Container = styled.div()
-const CodeSpan = styled.span`
-  font-family: monospace;
-`
 const P = styled.p()
 const ImgDiv = styled.div()
 
@@ -42,10 +39,6 @@ const RenderAnchor = ({ href, title, children }) => {
   } else {
     return <Link to={href} title={title}>{children}</Link>
   }
-}
-
-const RenderCode = ({ children }) => {
-  return <CodeSpan>{children}</CodeSpan>
 }
 
 const Markdown = ({ markdown, className }) => {

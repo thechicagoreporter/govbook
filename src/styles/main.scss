@@ -117,12 +117,15 @@ main {
 }
 
 /* Language switcher */
-header .language > a {
+header .language > button {
   display: inline-block;
   font-family: $font-family-sans;
   font-size: .8rem;
   margin-left: 0.3rem;
   padding: .1rem .3rem;
+  color: $color-white;
+  border: none;
+  background: transparent;
   &.active {
     color: $color-black;
     background-color: $color-white;
@@ -206,6 +209,7 @@ header .language > a {
   overflow: hidden;
   background-color: lighten(black, 40%);
   color: white;
+  border: none;
 }
 .table-search .reset-button svg {
   margin-bottom: -0.1rem;
@@ -346,11 +350,12 @@ header .language > a {
 }
 .unit .call-to-action {
   padding: $padding-default;
+  flex-grow: 1;
 }
 .unit .call-to-action p {
   padding: $padding-default;
   margin: 0;
-  background-color: #ccc;
+  background-color: $color-very-light-gray;
 }
 .unit-header {
   padding: $padding-default;

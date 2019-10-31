@@ -1,7 +1,7 @@
 import React from "react"
 import ContainerDimensions from "react-container-dimensions"
 import queryString from "query-string"
-import { FiDownload, FiX, FiArrowDown, FiArrowUp, FiSearch } from "react-icons/fi"
+import { FiX, FiArrowDown, FiArrowUp } from "react-icons/fi"
 import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
@@ -179,7 +179,7 @@ class Table extends React.Component {
                 value={filter || ""}
               />
               {(filter) && (
-                <a className="reset-button" onClick={this.clearFilter}><FiX /></a>
+                <button className="reset-button" onClick={this.clearFilter}><FiX /></button>
               )}
             </div>
           </div>
