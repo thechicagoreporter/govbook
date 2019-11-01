@@ -7,7 +7,7 @@
   "unitSocialDescription": "Obtenga datos para comunicarse con {UnitName} {Description} de GovBook.",
   "unitTitle": "{UnitName} {Description}",
 
-  "feedbackCallout": "Falta algo, ve algo erroneo, o tiene información que añadir? <a href=\"mailto:deads@chicagoreporter.com\">Ayúdenos!</a>",
+  "feedbackCallout": "¿Falta algo, ve algo erroneo, o tiene información que añadir? <a href=\"mailto:deads@chicagoreporter.com\">¡Ayúdenos!</a>",
   
   "search": {
     "placeholder": "Busque por nombre, ciudad, condado, o tipo de gobierno",

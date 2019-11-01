@@ -11,7 +11,7 @@ import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
 const SLUG = "govbook"
-const FOOT_HEIGHT = 154
+const FOOT_HEIGHT = 194
 const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
@@ -258,9 +258,9 @@ class Table extends React.Component {
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
               <p>
-                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> | <span className="donate">Donate</span>
+                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> | <a href="https://www.chicagoreporter.com/donate/" className="donate"><FormattedMessage id="welcomeMessage.donateLink" /></a>
               </p>
-              <p>Contribute now and your donation will be matched</p>
+              <p><FormattedMessage id="welcomeMessage.newsmatchCallout" /></p>
             </div>
             <div className="table-foot-source-line">
               <p>

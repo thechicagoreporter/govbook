@@ -350,6 +350,7 @@ header .language > button {
 }
 .unit .call-to-action {
   padding: $padding-default;
+  width: 100%;
   flex-grow: 1;
 }
 .unit .call-to-action p {
@@ -379,8 +380,6 @@ header .language > button {
 .unit-header h2 {
   font-size: .875rem;
   font-weight: 600;
-}
-.unit-header h2 a {
 }
 .unit-contact {
   width: calc(33% - 2rem);
@@ -474,7 +473,7 @@ header .language > button {
   margin-bottom: 1rem;
 }
 
-span.donate {
-  //background-color: $color-teal;
+a.donate {
+  font-weight: bold;
   color: #fd7e14;
 }
