@@ -4,8 +4,6 @@
 
 import React from "react"
 import { FormattedMessage } from "gatsby-plugin-intl"
-import { FiUserPlus } from "react-icons/fi";
-import UnitName from "../components/unitname"
 
 const SLUG = "govbook"
 
@@ -21,7 +19,6 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
   }
 
   const emailClick = (event) => {
-    const phone = event.target.href.slice(6, 0)
     window.gtag && window.gtag("event", "click", {
       event_category: SLUG,
       event_action: "email-click",

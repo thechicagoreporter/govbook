@@ -1,7 +1,7 @@
 import React from "react"
 import ContainerDimensions from "react-container-dimensions"
 import queryString from "query-string"
-import { FiDownload, FiX, FiArrowDown, FiArrowUp, FiSearch } from "react-icons/fi"
+import { FiX, FiArrowDown, FiArrowUp } from "react-icons/fi"
 import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
@@ -179,7 +179,7 @@ class Table extends React.Component {
                 value={filter || ""}
               />
               {(filter) && (
-                <a className="reset-button" onClick={this.clearFilter}><FiX /></a>
+                <button className="reset-button" onClick={this.clearFilter}><FiX /></button>
               )}
             </div>
           </div>
@@ -264,7 +264,7 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-source-line">
               <p>
-                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-10-18" }} />
+                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-10-31" }} />
               </p>
             </div>
           </div>
