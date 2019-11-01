@@ -28,6 +28,7 @@ export default ({ pageContext }) => {
       <div className="unit">
         <div className="call-to-action">
           <p>Are we missing something? See anything wrong? Have information to add? <a href="mailto:deads@chicagoreporter.com">Help us out</a></p>
+
         </div>
         <div className="unit-contact ceo-contact">
           <GovContact
@@ -141,3 +142,8 @@ export default ({ pageContext }) => {
     </Layout>
   )
 }
+/*
+
+          <p>Falta algo, ve algo erroneo, o tiene información que añadir? Ayúdenos!</p>
+
+*/
