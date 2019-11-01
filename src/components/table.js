@@ -258,7 +258,7 @@ class Table extends React.Component {
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
               <p>
-                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> | <a href="https://www.chicagoreporter.com/donate/" className="donate"><FormattedMessage id="welcomeMessage.donateLink" /></a>
+                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> | <a href="https://www.chicagoreporter.com/donate/utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate"><FormattedMessage id="welcomeMessage.donateLink" /></a>
               </p>
               <p><FormattedMessage id="welcomeMessage.newsmatchCallout" /></p>
             </div>
