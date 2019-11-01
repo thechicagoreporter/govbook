@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import UnitName from "../components/unitname"
 import GovContact from "../components/govcontact"
-import { FormattedMessage, Link } from "gatsby-plugin-intl"
+import { FormattedMessage, FormattedHTMLMessage, Link } from "gatsby-plugin-intl"
 import SEO from "../components/seo"
 
 
@@ -27,7 +27,7 @@ export default ({ pageContext }) => {
       </div>
       <div className="unit">
         <div className="call-to-action">
-          <p>Are we missing something? See anything wrong? Have information to add? <a href="mailto:deads@chicagoreporter.com">Help us out</a></p>
+          <p><FormattedHTMLMessage id="feedbackCallout" /></p>
         </div>
         <div className="unit-contact ceo-contact">
           <GovContact

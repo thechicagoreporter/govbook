@@ -7,6 +7,8 @@
   "unitSocialDescription": "Get contact information for {UnitName} {Description} from GovBook.",
   "unitTitle": "{UnitName} {Description}",
 
+  "feedbackCallout": "Are we missing something? See anything wrong? Have information to add? <a href=\"mailto:deads@chicagoreporter.com\">Help us out</a>",
+
   "search": {
     "placeholder": "Search by name, city, county, and type",
     "download": "Download",
@@ -17,7 +19,9 @@
     "sourceLine": "Last updated: {lastUpdated}, Source: Illinois Comptroller",
     "moreLink": "About GovBook",
     "description": "GovBook is your source for contact information for officials in every unit of government in Illinois.",
-    "downloadLink": "Download the data"
+    "downloadLink": "Download the data",
+    "donateLink": "Donate",
+    "newsmatchCallout": "Contribute now and your donation will be matched"
   },
 
   "scrollMessage": {

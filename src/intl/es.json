@@ -7,6 +7,8 @@
   "unitSocialDescription": "Obtenga datos para comunicarse con {UnitName} {Description} de GovBook.",
   "unitTitle": "{UnitName} {Description}",
 
+  "feedbackCallout": "Are we missing something? See anything wrong? Have information to add? <a href=\"mailto:deads@chicagoreporter.com\">Help us out</a>",
+  
   "search": {
     "placeholder": "Busque por nombre, ciudad, condado, o tipo de gobierno",
     "download": "Descargar",
@@ -17,7 +19,9 @@
     "sourceLine": "Última actualización: {lastUpdated}, Fuente: Illinois Comptroller",
     "moreLink": "Aerca de GovBook",
     "description": "GovBook es su fuente para contactar a oficiales en cada unidad de gobierno local en Illinois.",
-    "downloadLink": "Descargar la data"
+    "downloadLink": "Descargar la data",
+    "donateLink": "Dona",
+    "newsmatchCallout": "Contribuye ahora y su donación será duplicada"
   },
 
   "scrollMessage": {
