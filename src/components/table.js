@@ -2,6 +2,7 @@ import React from "react"
 import ContainerDimensions from "react-container-dimensions"
 import queryString from "query-string"
 import { FiX, FiArrowDown, FiArrowUp } from "react-icons/fi"
+import { MdAttachMoney } from "react-icons/md"
 import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
@@ -257,16 +258,18 @@ class Table extends React.Component {
               <p>
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
-              <p>
-                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> | <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate"><FormattedMessage id="welcomeMessage.donateLink" /></a>
+                <div className="table-foot-source-line">
+                 <p>
+                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> 
               </p>
-              <p><FormattedMessage id="welcomeMessage.newsmatchCallout" /></p>
+                </div>
+              <p> <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate"><MdAttachMoney /><FormattedMessage id="welcomeMessage.donateLink" /> <FormattedMessage id="welcomeMessage.newsmatchCallout" /></a></p>
             </div>
-            <div className="table-foot-source-line">
               <p>
                 <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-11-04" }} />
               </p>
-            </div>
+          
+          
           </div>
         </div>
       </div>
