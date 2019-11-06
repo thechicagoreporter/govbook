@@ -3,7 +3,7 @@ title: Acerca de GovBook
 date: '2019-01-01'
 ---
 
-### _David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
+### _Princess Ojiaku, David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
 
 GovBook contiene información básica para poder contactar a cada unidad de gobierno de Illinois que contribuye datos al Comptroller.
 
