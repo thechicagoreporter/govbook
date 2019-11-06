@@ -474,6 +474,25 @@ header .language > button {
 }
 
 a.donate {
+  display: flex;
   color: $color-white;
+  max-width: 600px;
   background-color: #33BF95;
+  transition: background-color 0.5s ease;
+  padding: 3px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  &:hover {
+    color: $color-white;
+    background-color: rgb(58, 139, 115);
+  }
+}
+
+a.donate svg {
+  font-size: 1.5rem;
+  margin-top: -0.15rem;
+  @include big {
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
 }

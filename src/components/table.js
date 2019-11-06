@@ -12,7 +12,7 @@ import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
 const SLUG = "govbook"
-const FOOT_HEIGHT = 194
+const FOOT_HEIGHT = 214
 const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
@@ -256,14 +256,19 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-description">
               <p>
+                <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate">
+                  <MdAttachMoney />
+                  <span><FormattedMessage id="welcomeMessage.donateLink" /></span>
+                </a>
+              </p>
+              <p>
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
-                <div className="table-foot-source-line">
+              <div className="table-foot-source-line">
                  <p>
                 <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> 
-              </p>
-                </div>
-              <p> <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate"><MdAttachMoney /><FormattedMessage id="welcomeMessage.donateLink" /> <FormattedMessage id="welcomeMessage.newsmatchCallout" /></a></p>
+                </p>
+              </div>
             </div>
             <p>
               <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-11-06" }} />
