@@ -265,11 +265,9 @@ class Table extends React.Component {
                 </div>
               <p> <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate"><MdAttachMoney /><FormattedMessage id="welcomeMessage.donateLink" /> <FormattedMessage id="welcomeMessage.newsmatchCallout" /></a></p>
             </div>
-              <p>
-                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-11-04" }} />
-              </p>
-          
-          
+            <p>
+              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-11-06" }} />
+            </p>
           </div>
         </div>
       </div>
