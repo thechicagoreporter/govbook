@@ -271,7 +271,7 @@ class Table extends React.Component {
               </div>
             </div>
             <p>
-              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-11-12" }} />
+              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-11-14" }} />
             </p>
           </div>
         </div>
