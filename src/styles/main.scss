@@ -462,11 +462,20 @@ header .language > button {
 .page-body h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .page-body h3 {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.page-body h5 {
+  margin-bottom: 2.5rem;
+}
+
+.page-body hr {
+  margin-bottom: 1.5rem;
+  border: 0.5px solid $color-teal;
 }
 
 .page-body p, .page-body ul {
