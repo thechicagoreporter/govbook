@@ -92,17 +92,16 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-
-  **GovBook-specific architecture:**
-    * **`src/intl/en.json`**: pulls from here for the English version of the site
-    * **`src/intl/es.json`**: pulls from here for the Spanish version of the site
-    * **`src/pages/index.js`**: GraphQL query that calls **`table.js`** to build the main landing page of the site.
-    * **`src/components/table.js`**: controls main landing page for GovBook
-    * **`src/styles/main.scss`**: CSS formatting for the site
-    * **`src/templates/pageTemplate.js`**: controls the About page for GovBook
-    * **`src/templates/unit.js`**: controls the ‘units’ or individual listings of govt officials
-    * **`src/pages/markdown/static/about/en.md`**:  defines content for the English “About” page
-    * **`src/pages/markdown/static/about/es.md`**:  defines content for the Spanish “About” page
+**GovBook-specific architecture:**
+  * **`src/intl/en.json`**: pulls from here for the English version of the site
+  * **`src/intl/es.json`**: pulls from here for the Spanish version of the site
+  * **`src/pages/index.js`**: GraphQL query that calls **`table.js`** to build the main landing page of the site.
+  * **`src/components/table.js`**: controls main landing page for GovBook
+  * **`src/styles/main.scss`**: CSS formatting for the site
+  * **`src/templates/pageTemplate.js`**: controls the About page for GovBook
+  * **`src/templates/unit.js`**: controls the ‘units’ or individual listings of govt officials
+  * **`src/pages/markdown/static/about/en.md`**:  defines content for the English “About” page
+  * **`src/pages/markdown/static/about/es.md`**:  defines content for the Spanish “About” page
 
 3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
