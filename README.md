@@ -93,8 +93,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
 **GovBook-specific architecture:**
-  * **`src/intl/en.json`**: pulls from here for the English version of the site
-  * **`src/intl/es.json`**: pulls from here for the Spanish version of the site
+  * **`src/intl/en.json`**: the English version of the site pulls its strings from this file 
+  * **`src/intl/es.json`**: the Spanish version of the site pulls its strings from this file 
   * **`src/pages/index.js`**: GraphQL query that calls **`table.js`** to build the main landing page of the site.
   * **`src/components/table.js`**: controls main landing page for GovBook
   * **`src/styles/main.scss`**: CSS formatting for the site
@@ -119,7 +119,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project. It include dependencies for the project.
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project. It includes dependencies for the project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
