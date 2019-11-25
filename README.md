@@ -48,7 +48,7 @@ LIMIT=0
     make clean
     make all
     ```
- To learn more about makefiles, read [Mike Bostock’s guide](https://bost.ocks.org/mike/make/)
+ To learn more about makefiles, read [Mike Bostock’s guide.](https://bost.ocks.org/mike/make/)
 
 1.  **Start developing.**
 
@@ -60,7 +60,7 @@ LIMIT=0
       * View at [http://localhost:8000/](http://localhost:8000/).
       * To quit, use Ctrl-C.
 
-    Note: You must re-build the site using `gatsby develop` if you change items in the translation string files (e.g. `es.json` or `en.json`). Sometimes there is a bug where the new changes don’t show up after saving and rebuilding. This is an issue with the cache. To address it, type `rm -Rf .cache` and then try the build again.
+    **Note**: You must re-build the site using `gatsby develop` to view changed items in the translation string files (e.g. after making changes in `es.json` or `en.json`). Sometimes there is a bug where the new changes don’t show up after saving and rebuilding. This is an issue with the cache. To address it, type `rm -Rf .cache` and then try the build again.
 
 2. ** Deploy.**
 
@@ -91,7 +91,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-  * GovBook-specific architecture:
+  **GovBook-specific architecture:**
   * **`src/intl/en.json`**: pulls from here for the English version of the site
   * **`src/intl/es.json`**: pulls from here for the Spanish version of the site
   * **`src/pages/index.js`**: GraphQL query that calls **`table.js`** to build the main landing page of the site.
