@@ -45,11 +45,7 @@ Create a `.env` file with:
 touch .env
 ```
 
-This configuration file is not necessary for local development, but could include deployment details. A basic S3 uploader is included. To use it, add a line to the `.env` file like:
-
-```
-BUCKET=my.bucket.aws
-```
+This file may remain empty for local development. See the deployment section below to learn how to use this file to deploy the site.
 
 ## Develop locally
 
@@ -70,7 +66,17 @@ To learn more about Makefiles in journalism, read Mike Bostock’s guide: https:
 
 ## Deploy
 
-To deploy to an S3 bucket specified in the `.env` file, run:
+Deployment is currently a bit of a mess because of the number of files generated (see [this Gatsby ticket](https://github.com/gatsbyjs/gatsby/issues/19512) to track performance improvements; GovBook is one of the sites the Gatsby team is testing to make improvements).
+
+For now, a simple configuration variable and Makefile target do the job for S3 users.
+
+Add a line to the `.env` file specifying your S3 bucket where `my-s3.bucket.tld` is the full name of your S3 bucket:
+
+```
+BUCKET=my-s3.bucket.tld
+```
+
+Then, to deploy to the S3 bucket specified in the `.env` file, run:
 
 ```
 make deploy
