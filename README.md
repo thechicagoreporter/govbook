@@ -104,7 +104,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-3. **/`src`**: **GovBook-specific architecture**
+3. **`/src`**: _GovBook-specific architecture_
 
   * **`src/intl/en.json`**: the English version of the site pulls its strings from this file 
   * **`src/intl/es.json`**: the Spanish version of the site pulls its strings from this file 
