@@ -14,63 +14,69 @@ Resources:
 
 We welcome and encourage users to adapt this open source software for your purposes. However, as specified in the license, you may not publish your own version of the site using the assets in `src/images` without replacing with your own assets or asking our permission.
 
-## Requirements
+## Install requirements
+
+### System requirements
 
 * GNU Make, Git, standard build tools (`xcode-select --install` on Mac, `apt install build-essential` on Ubuntu)
 * nodejs (`brew install node`, `apt install nodejs` on Ubuntu)
 * sqlite3 (`brew install sqlite3` on Mac, `apt install sqlite3` on Ubuntu)
 * Gatsby CLI (`npm install -g gatsby-cli` with npm available)
 
+### Clone the repository
 
-## 🚀 Get started
+```
+git clone https://github.com/thechicagoreporter/govbook.git
+```
 
-1.  ** Install**
+### Install Javascript requirements
 
-    Install Javascript requirements.
+In the directory you cloned the software, run:
 
-    ```sh
-    npm install
-    ```
+```
+npm install
+```
 
-To enable deployment, create a `.env` file with the lines:
+### Set up config file
+
+Create a `.env` file with:
+
+```
+touch .env
+```
+
+This configuration file is not necessary for local development, but could include deployment details. A basic S3 uploader is included. To use it, add a line to the `.env` file like:
 
 ```
 BUCKET=my.bucket.aws
-SLUG=govbook
-LIMIT=0
 ```
 
-1.  **Build data.**
+## Develop locally
 
-    The project comes with a recent version of the comptroller data. To build the latest, you must clean first. Because the data is bundled, this step is optional.
+* Start running the app locally (`gatsby develop`)
+* View at http://localhost:8000/
+* To stop the server, Ctrl-C
 
-    ```sh
-    make clean
-    make all
-    ```
- To learn more about makefiles, read [Mike Bostock’s guide.](https://bost.ocks.org/mike/make/)
+**Note**: You must re-build the site using `gatsby develop` to view changed items in the translation string files (e.g. after making changes in `es.json` or `en.json`). Sometimes there is a bug where the new changes don’t show up after saving and rebuilding. This is an issue with the cache. To address it, type `rm -Rf .cache` and then try the build again.
 
-1.  **Start developing.**
+## Get the latest data
 
-    Start local server.
+A recent data snapshot will be in the repository, but for the most recent data, do the following:
 
-    ```sh
-    gatsby develop
-    ```
-      * View at [http://localhost:8000/](http://localhost:8000/).
-      * To quit, use Ctrl-C.
+* Run `make clean`
+* Run `make all`
 
-    **Note**: You must re-build the site using `gatsby develop` to view changed items in the translation string files (e.g. after making changes in `es.json` or `en.json`). Sometimes there is a bug where the new changes don’t show up after saving and rebuilding. This is an issue with the cache. To address it, type `rm -Rf .cache` and then try the build again.
+To learn more about Makefiles in journalism, read Mike Bostock’s guide: https://bost.ocks.org/mike/make/
 
-2. ** Deploy.**
+## Deploy
 
-    Deploy to the currently activated environment (a bucket and slug combo).
+To deploy to an S3 bucket specified in the `.env` file, run:
 
-    ```sh
-    make deploy
-    ```
+```
+make deploy
+```
 
-## 🧐 What's inside?
+## What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
@@ -123,11 +129,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
+## Learning Gatsby
 
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+This site runs Gatsby. If you're looking for more guidance, full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
