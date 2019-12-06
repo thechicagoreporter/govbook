@@ -2,7 +2,9 @@
 title: About GovBook
 date: '2019-01-01'
 ---
+
 ### _Princess Ojiaku, David Eads, Asraa Mustufa, Fernando Diaz, and Olivia Obineme_
+
 ##### __GovBook__ provides basic contact information for every unit of government that reports to the Illinois Comptroller. [Contact us](mailto:deads@chicagoreporter.com) for help with any questions that aren't answered below. 
 
 ___

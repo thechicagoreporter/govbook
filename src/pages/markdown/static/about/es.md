@@ -2,9 +2,10 @@
 title: Acerca de GovBook
 date: '2019-01-01'
 ---
-### _Princess Ojiaku, David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
-##### __GovBook__ proporciona información de contacto básica para cada unidad de gobierno en Illinois que comparte esos datos con el Contralor de Illinois. [Contáctenos](mailto:deads@chicagoreporter.com) para ayuda con cualquier pregunta que no sea resuelta con las siguientes respuestas.
 
+### _Princess Ojiaku, David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
+
+##### __GovBook__ proporciona información de contacto básica para cada unidad de gobierno en Illinois que comparte esos datos con el Contralor de Illinois. [Contáctenos](mailto:deads@chicagoreporter.com) para ayuda con cualquier pregunta que no sea resuelta con las siguientes respuestas.
 
 ___
 
