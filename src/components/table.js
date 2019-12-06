@@ -1,7 +1,8 @@
 import React from "react"
 import ContainerDimensions from "react-container-dimensions"
 import queryString from "query-string"
-import { FiDownload, FiX, FiArrowDown, FiArrowUp, FiSearch } from "react-icons/fi"
+import { FiX, FiArrowDown, FiArrowUp } from "react-icons/fi"
+import { MdAttachMoney } from "react-icons/md"
 import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
@@ -11,7 +12,7 @@ import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
 
 const SLUG = "govbook"
-const FOOT_HEIGHT = 154
+const FOOT_HEIGHT = 214
 const LOGO_HEIGHT = 40
 const SEARCH_LNG = "en"
 
@@ -179,7 +180,7 @@ class Table extends React.Component {
                 value={filter || ""}
               />
               {(filter) && (
-                <a className="reset-button" onClick={this.clearFilter}><FiX /></a>
+                <button className="reset-button" onClick={this.clearFilter}><FiX /></button>
               )}
             </div>
           </div>
@@ -255,17 +256,23 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-description">
               <p>
+                <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate">
+                  <MdAttachMoney />
+                  <span><FormattedMessage id="welcomeMessage.donateLink" /></span>
+                </a>
+              </p>
+              <p>
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
-              <p>
-                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a>
-              </p>
+              <div className="table-foot-source-line">
+                 <p>
+                <Link to="/about"><FormattedMessage id="welcomeMessage.moreLink" /></Link> | <a href={"contacts.csv"}><FormattedMessage id="welcomeMessage.downloadLink" /></a> 
+                </p>
+              </div>
             </div>
-            <div className="table-foot-source-line">
-              <p>
-                <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-09-22" }} />
-              </p>
-            </div>
+            <p>
+              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-12-05" }} />
+            </p>
           </div>
         </div>
       </div>

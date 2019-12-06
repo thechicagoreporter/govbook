@@ -34,7 +34,7 @@ PROCESSED_DIRECTORIES = processed
 all: static/contacts.csv ## Build all
 
 .PHONY: deploy
-deploy: clean/public clean/cache public ## Deploy site from public directory
+deploy: public ## Deploy site from public directory
 	aws s3 sync public s3://${BUCKET}/${SLUG} --acl public-read
 
 .PHONY: teardown
@@ -45,7 +45,7 @@ public: all ## Build site in public directory
 	gatsby build
 
 .PHONY: clean
-clean: clean/processed clean/cache clean/public clean/static ## Clean processed data, cache, and builds.
+clean: clean/downloads clean/processed clean/cache clean/public clean/static ## Clean processed data, cache, and builds.
 
 .PHONY: help
 help:  ## Display this help

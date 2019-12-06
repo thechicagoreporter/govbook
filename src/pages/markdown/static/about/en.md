@@ -3,15 +3,17 @@ title: About GovBook
 date: '2019-01-01'
 ---
 
-### _David Eads, Asraa Mustufa, Fernando Diaz, and Olivia Obineme_
+### _Princess Ojiaku, David Eads, Asraa Mustufa, Fernando Diaz, and Olivia Obineme_
 
-GovBook provides basic contact information for every unit of government that reports to the Illinois Comptroller.
+##### __GovBook__ provides basic contact information for every unit of government that reports to the Illinois Comptroller. [Contact us](mailto:deads@chicagoreporter.com) for help with any questions that aren't answered below. 
 
-## How often is the site updated?
+___
+
+## __How often is the site updated?__
 
 We try to update the site at least once a day, but the data changes sporadically.
 
-## What's in the data?
+## __What's in the data?__
 
 The source data contains self-reported, high-level contact information for local units of government in Illinois from the most recent Annual Financial Report or Registration Report submitted to the state Comptroller.
 
@@ -46,23 +48,25 @@ Each type of contact includes:
 * Fax
 * Email
 
-## Are these all the contacts for each government unit?
+## __Are these all the contacts for each government unit?__
 
 This data doesn’t include the full contact information for all employees or agents of a unit of government. This is an area where we need your help. Want the contact information for the Schaumburg village board? [Let us know](mailto:deads@chicagoreporter.com). 
 
-## Can I search by the name of a government officer?
+## __Can I search by the name of a government officer?__
 
 Currently, you can search for the name of the government unit, the type of unit, the county the unit is in, and the name of the reported chief executive officer. We hope to add the ability to search for any officer’s name in the near future.
 
-## Where can I learn more about the data?
+## __Where can I learn more about the data?__
 
 This data is [collected and published](https://illinoiscomptroller.gov/financial-data/local-government-division/) by the lllinois Comptroller's office. [The Comptroller provides a PDF data dictionary](ftp://ftp.illinoiscomptroller.com/LocGov/AboutUnitData.pdf) for the data.
 
-## What if the data needs to be updated?
+## __What if the data needs to be updated? Do you have ideas about how to make this more useful?__
 
-Please [let us](mailto:deads@chicagoreporter.com) know and we’ll check it out.
+Please [let us know](mailto:deads@chicagoreporter.com) and we'll follow up.
 
-## What parts of the site are translated?
+If you are comfortable with Github, [you can also create an issue](https://github.com/thechicagoreporter/govbook/issues/new).
+
+## __What parts of the site are translated?__
 
 Any text written by The Chicago Reporter is available in English and Spanish.
 

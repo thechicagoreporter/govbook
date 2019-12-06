@@ -3,15 +3,17 @@ title: Acerca de GovBook
 date: '2019-01-01'
 ---
 
-### _David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
+### _Princess Ojiaku, David Eads, Asraa Mustufa, Fernando Diaz, Olivia Obineme_
 
-GovBook contiene información básica para poder contactar a cada unidad de gobierno de Illinois que contribuye datos al Comptroller.
+##### __GovBook__ proporciona información de contacto básica para cada unidad de gobierno en Illinois que comparte esos datos con el Contralor de Illinois. [Contáctenos](mailto:deads@chicagoreporter.com) para ayuda con cualquier pregunta que no sea resuelta con las siguientes respuestas.
 
-## ¿Con qué frecuencia se actualiza este servicio?
+___
+
+## __¿Con qué frecuencia se actualiza este servicio?__
 
 Intentamos actualizar este servicio al menos una vez al día, pero la data cambia esporádicamente.
 
-## ¿Qué hay en la data?
+## __¿Qué hay en la data?__
 
 La data contiene la información necesaria para contactar a altos funcionarios de unidades locales de gobierno en Illinois que viene de reportes financieros anuales o el reporte de registración que se entrega al Comptroller del estado.
 
@@ -46,23 +48,23 @@ Cada tipo de contacto incluye:
 * Fax
 * Email
 
-## ¿Son estos todos los contactos para cada unidad de gobierno?
+## __¿Son estos todos los contactos para cada unidad de gobierno?__
 
 La data no incluye toda la información para contactar a todos los empleados o agentes de las unidades de gobierno. En esto podríamos utilizar vuestra ayuda. Si encuentra que falte algo, por favor déjenos saber.
 
-## ¿Puedo buscar utilizando el nombre de un oficial específico?
+## __¿Puedo buscar utilizando el nombre de un oficial específico?__
 
 Por ahora, se puede buscar utilizando el nombre de la unidad de gobierno, el tipo de unidad, el condado donde se ubica la unidad y el nombre del director ejecutivo. Esperamos permitir buscar por nombres de oficiales próximamente.
 
-## ¿Dónde puedo aprender más acerca de la data?
+## __¿Dónde puedo aprender más acerca de la data?__
 
 Esta data es colectada y publicada por la oficina del Comptroller de Illinois. Esa oficina también provee un diccionario para la data disponible en PDF.
 
-## ¿Qué pasa si se tiene que actualizar la data?
+## __¿Qué pasa si se tiene que actualizar la data?__
 
 Déjenos saber y lo arreglaremos.
 
-## ¿Cuáles partes de este sitio han traducido?
+## __¿Cuáles partes de este sitio han traducido?__
 
 Cualquier texto escrito por el equipo de The Chicago Reporter está disponible en inglés y español.
 

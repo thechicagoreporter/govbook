@@ -117,12 +117,15 @@ main {
 }
 
 /* Language switcher */
-header .language > a {
+header .language > button {
   display: inline-block;
   font-family: $font-family-sans;
   font-size: .8rem;
   margin-left: 0.3rem;
   padding: .1rem .3rem;
+  color: $color-white;
+  border: none;
+  background: transparent;
   &.active {
     color: $color-black;
     background-color: $color-white;
@@ -206,6 +209,7 @@ header .language > a {
   overflow: hidden;
   background-color: lighten(black, 40%);
   color: white;
+  border: none;
 }
 .table-search .reset-button svg {
   margin-bottom: -0.1rem;
@@ -340,9 +344,19 @@ header .language > a {
 .unit {
   display: flex;
   justify-content: space-between;
-  margin-top: 3.9rem;
+  margin-top: 2.9rem;
   font-size: 0.8rem;
   flex-flow: row wrap;
+}
+.unit .call-to-action {
+  padding: $padding-default;
+  width: 100%;
+  flex-grow: 1;
+}
+.unit .call-to-action p {
+  padding: $padding-default;
+  margin: 0;
+  background-color: $color-very-light-gray;
 }
 .unit-header {
   padding: $padding-default;
@@ -366,8 +380,6 @@ header .language > a {
 .unit-header h2 {
   font-size: .875rem;
   font-weight: 600;
-}
-.unit-header h2 a {
 }
 .unit-contact {
   width: calc(33% - 2rem);
@@ -450,13 +462,46 @@ header .language > a {
 .page-body h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .page-body h3 {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.page-body h5 {
+  margin-bottom: 2.5rem;
+}
+
+.page-body hr {
+  margin-bottom: 1.5rem;
+  border: 0.5px solid $color-teal;
 }
 
 .page-body p, .page-body ul {
   margin-bottom: 1rem;
+}
+
+a.donate {
+  display: flex;
+  color: $color-white;
+  max-width: 600px;
+  background-color: #33BF95;
+  transition: background-color 0.5s ease;
+  padding: 3px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  &:hover {
+    color: $color-white;
+    background-color: rgb(58, 139, 115);
+  }
+}
+
+a.donate svg {
+  font-size: 1.5rem;
+  margin-top: -0.15rem;
+  @include big {
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
 }
