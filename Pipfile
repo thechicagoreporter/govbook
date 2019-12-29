@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipdb = "*"
+
+[packages]
+click = "*"
+jinja2 = "*"
+python-slugify = "*"
+
+[requires]
+python_version = "3.7"
