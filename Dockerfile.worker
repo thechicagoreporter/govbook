@@ -1,9 +1,11 @@
 FROM debian:stable-slim
 
-RUN apt-get update && apt-get install -y build-essential python pipenv
+RUN apt-get update && apt-get install -y build-essential python pipenv cargo
+RUN cargo install xsv
 
 ADD ./* $HOME/govbook/
 
 WORKDIR $HOME/govbook
 
 RUN pipenv install
+RUN touch .env
