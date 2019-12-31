@@ -7,17 +7,17 @@ RUN apt-get -y update \
     && cargo install xsv \
     && pip install pipenv
 
-COPY ./* $HOME/govbook/
-
-WORKDIR $HOME/govbook/
-
-RUN pipenv install
-RUN touch .env
+# COPY ./* $HOME/govbook/
 
 # copy hausra binary from base container
 COPY --from=base /bin/graphql-engine /bin/graphql-engine
 
 # Enable the console
+WORKDIR $HOME/govbook/
+
+# RUN pipenv install
+RUN touch .env
+
 ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
 
 # Change $DATABASE_URL to your heroku postgres URL if you're not using
