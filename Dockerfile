@@ -11,7 +11,7 @@ ADD ./* $HOME/govbook/
 
 WORKDIR $HOME/govbook/
 
-RUN pipenv install
+# RUN pipenv install
 RUN touch .env
 
 # copy hausra binary from base container
