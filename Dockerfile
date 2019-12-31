@@ -4,7 +4,7 @@ FROM python:3.7-slim-buster
 WORKDIR /govbook/
 
 RUN apt-get -y update \
-    && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev postgresql \
+    && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev postgresql-client \
     && pip install pipenv
 
 # Copy the whole govbook directory
