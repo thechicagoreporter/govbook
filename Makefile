@@ -139,6 +139,13 @@ data/stats/%.csv: data/processed/%.csv # Get CSV stats
 	xsv stats $< > $@
 
 
+##@ Heroku
+
+.PHONY: heroku/config/set
+heroku/config/set: ## Copy .env to Heroku variables
+	heroku config:set $(shell grep "^[^#;]" .env | tr '\n' ' ')
+
+
 ##@ Maintenance
 
 .PHONY: dbshell
