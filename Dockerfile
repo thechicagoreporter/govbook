@@ -6,7 +6,7 @@ WORKDIR $HOME/govbook/
 RUN apt-get -y update \
     && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev \
     && pip install pipenv \
-    && pipenv install && \
+    && pipenv install \
     && cargo install xsv
 
 COPY ./ $HOME/govbook/
