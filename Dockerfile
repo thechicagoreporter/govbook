@@ -7,7 +7,7 @@ RUN apt-get -y update \
     && cargo install xsv \
     && pip install pipenv
 
-ADD ./* $HOME/govbook/
+COPY ./* $HOME/govbook/
 
 WORKDIR $HOME/govbook/
 
