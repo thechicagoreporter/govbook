@@ -1,6 +1,6 @@
 FROM hasura/graphql-engine:v1.0.0 as base
 
-FROM python:3.7-slim-stretch
+FROM python:3.7-slim-buster
 
 RUN apt-get -y update \
     && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev
