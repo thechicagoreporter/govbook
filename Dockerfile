@@ -1,13 +1,13 @@
 FROM hasura/graphql-engine:v1.0.0 as base
-
 FROM python:3.7-slim-buster
 
 RUN apt-get -y update \
     && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev \
-    && cargo install xsv \
     && pip install pipenv
+    # && pip install pipenv \
+    # && cargo install xsv \
 
-# COPY ./* $HOME/govbook/
+COPY ./ $HOME/govbook/
 
 # copy hausra binary from base container
 COPY --from=base /bin/graphql-engine /bin/graphql-engine
@@ -26,15 +26,3 @@ CMD graphql-engine \
     --database-url $DATABASE_URL \
     serve \
     --server-port $PORT
-
-## Comment the command above and use the command below to
-## enable an access-key and an auth-hook
-## Recommended that you set the access-key as a environment variable in heroku
-#CMD graphql-engine \
-#    --database-url $DATABASE_URL \
-#    serve \
-#    --server-port $PORT \
-#    --access-key XXXXX \
-#    --auth-hook https://myapp.com/hasura-webhook 
-#
-# Console can be enable/disabled by the env var HASURA_GRAPHQL_ENABLE_CONSOLE
