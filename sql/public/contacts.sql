@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS public.contacts (like raw.contacts);
 ALTER TABLE public.contacts DROP CONSTRAINT IF EXISTS code_pk;
 ALTER TABLE public.contacts ADD CONSTRAINT code_pk PRIMARY KEY (code);
 
-COMMENT ON COLUMN raw.contacts.code IS 'Unique government unit ID';
+COMMENT ON COLUMN public.contacts.code IS 'Unique government unit ID';
 
 LOCK TABLE public.contacts IN EXCLUSIVE MODE;
 
