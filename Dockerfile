@@ -3,8 +3,9 @@ FROM hasura/graphql-engine:v1.0.0 as base
 FROM python:3.7-slim-buster
 
 RUN apt-get -y update \
-    && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev
-RUN cargo install xsv
+    && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev \
+    && cargo install xsv \
+    && pip install pipenv
 
 ADD ./* $HOME/govbook/
 
