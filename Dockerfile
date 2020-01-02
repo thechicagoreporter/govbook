@@ -2,8 +2,7 @@ FROM hasura/graphql-engine:v1.0.0 as base
 FROM python:3.7-slim-buster
 
 RUN apt-get update -qq \
-    && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev postgresql-client \
-    && pip install pipenv
+    && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev postgresql-client
 
 # Copy hausra binary from base container
 COPY --from=base /bin/graphql-engine /bin/graphql-engine
