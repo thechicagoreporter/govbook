@@ -11,27 +11,23 @@ COPY --from=base /bin/graphql-engine /bin/graphql-engine
 WORKDIR /govbook/
 
 # Install Python environment
-COPY requirements.txt requirements.txt
-RUN pip install -r /govbook/requirements.txt
+# COPY requirements.txt requirements.txt
+# RUN pip install -r /govbook/requirements.txt
 
 # Install ETL / processing
 COPY Makefile Makefile
-COPY data/processed/contacts.csv data/processed/contacts.csv
-COPY data/stats/contacts.csv data/stats/contacts.csv
-ADD processors/ processors/
 ADD sql/ sql/
 
 # Install xsv
-
-# @TODO restore
+RUN cargo install xsv
 
 # Add xsv binary to PATH
-# ENV PATH="/root/.cargo/bin/:${PATH}"
+ENV PATH="/root/.cargo/bin/:${PATH}"
 
+# The makefile requires a dot env file
 RUN touch .env
 
-# Change $DATABASE_URL to your heroku postgres URL if you're not using
-# the primary postgres instance in your app
+# Run Hasura
 CMD graphql-engine \
     --database-url $DATABASE_URL \
     serve \
