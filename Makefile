@@ -35,6 +35,8 @@ RAW_TABLES = contacts
 # Views
 PUBLIC_TABLES = $(basename $(notdir $(wildcard sql/public/*.sql)))
 
+# Functions can be found in sql/functions
+FUNCTIONS = $(basename $(notdir $(wildcard sql/functions/*.sql)))
 
 ##@ Basic usage
 
@@ -82,6 +84,12 @@ define load_public_table
 	@psql -v ON_ERROR_STOP=1 -qX1ef sql/public/$(subst db/public,,$@).sql
 endef
 
+define create_function
+	@(psql -c "\df $(subst db/functions/,,$@)" | grep $(subst db/functions/,,$@) > /dev/null 2>&1 && \
+	 echo "function $(subst db/functions/,,$@) exists")	|| \
+	 psql -v ON_ERROR_STOP=1 -qX1ef sql/functions/$(subst db/functions/,,$@).sql
+endef
+
 .PHONY: db
 db: ## Create database
 	@(psql -c "SELECT 1" > /dev/null 2>&1 && \
@@ -103,6 +111,13 @@ db/schemas/%: db # Create schema % (where % is 'raw', etc)
 db/raw_table/%: sql/raw/%.sql db/schemas/raw # Create table % from sql/tables/%.sql
 	$(call create_raw_table)
 
+.PHONY: db/functions
+db/functions: $(patsubst %, db/functions/%, $(FUNCTIONS)) ## Make all functions
+
+.PHONY: db/functions/%
+db/functions/%: db db/schemas/public
+	$(call create_function)
+
 .PHONY: dropdb
 dropdb: ## Drop database
 	dropdb --if-exists -e $(PGDATABASE)
@@ -114,7 +129,7 @@ db/raw/%: data/processed/%.csv db/raw_table/% ## Load raw data into raw.% from d
 	$(call load_raw_csv)
 
 .PHONY: db/public/%
-db/public/%: load/raw db/schemas/public ## Update % from raw data
+db/public/%: load/raw db/functions db/schemas/public ## Update % from raw data
 	$(call load_public_table)
 
 .PHONY: db/dropschema/%

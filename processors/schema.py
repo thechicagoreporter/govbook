@@ -7,7 +7,7 @@ from slugify import slugify
 
 SQL_TEMPLATE = """
 create table raw.{{tablename|lower}} (
-    {% for field in fields %}{{field}} character varying{{ ',' if not loop.last }}
+    {% for field in fields %}{{field}} text{{ ',' if not loop.last }}
     {% endfor %}
 );
 """
