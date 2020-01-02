@@ -1,7 +1,8 @@
 #!/bin/sh
 
+make sql/raw/contacts.sql > /dev/null
+touch sql/raw/contacts.sql
+
 make download
 make db/dropschema/raw
-
-touch sql/raw/contacts.sql
 make load/public
