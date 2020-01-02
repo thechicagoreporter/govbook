@@ -12,9 +12,8 @@ RUN mkdir /govbook
 WORKDIR /govbook
 
 # Install Python environment
-COPY Pipfile Pipfile
-COPY Pipfile.lock Pipfile.lock
-RUN pipenv install --deploy --ignore-pipfile --system
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 # Install ETL / processing
 COPY Makefile Makefile
