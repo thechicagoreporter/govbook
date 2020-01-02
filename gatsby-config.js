@@ -29,44 +29,44 @@ module.exports = {
         redirect: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-lunr`,
-      options: {
-        languages: [
-          {
-            name: 'en',
-          },
-        ],
-        // Fields to index. If store === true value will be stored in index file.
-        // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
-        fields: [
-          { name: 'County', store: false, boost: 30 },
-          { name: 'UnitName', store: false, boost: 10, },
-          { name: 'ExecName', store: false, boost: 10 },
-          { name: 'Description', store: false },
-          { name: 'Code', store: true },
-        ],
-        // How to resolve each field's value for a supported node type
-        resolvers: {
-          Contacts: {
-            County: node => node.County,
-            Description: node => node.Description,
-            UnitName: node => node.UnitName,
-            Code: node => node.Code,
-            ExecName: node => (`${node.CEOFName} ${node.CEOLName}`),
-          },
-        },
+    // {
+    //   resolve: `gatsby-plugin-lunr`,
+    //   options: {
+    //     languages: [
+    //       {
+    //         name: 'en',
+    //       },
+    //     ],
+    //     // Fields to index. If store === true value will be stored in index file.
+    //     // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
+    //     fields: [
+    //       { name: 'County', store: false, boost: 30 },
+    //       { name: 'UnitName', store: false, boost: 10, },
+    //       { name: 'ExecName', store: false, boost: 10 },
+    //       { name: 'Description', store: false },
+    //       { name: 'Code', store: true },
+    //     ],
+    //     // How to resolve each field's value for a supported node type
+    //     resolvers: {
+    //       Contacts: {
+    //         County: node => node.County,
+    //         Description: node => node.Description,
+    //         UnitName: node => node.UnitName,
+    //         Code: node => node.Code,
+    //         ExecName: node => (`${node.CEOFName} ${node.CEOLName}`),
+    //       },
+    //     },
 
-        filterNodes: (node) => (node.fields.Address),
+    //     filterNodes: (node) => (node.fields.Address),
 
-        //custom index file name, default is search_index.json
-        filename: 'search_index.json',
-        //custom options on fetch api call for search_ındex.json
-        fetchOptions: {
-          credentials: 'same-origin'
-        },
-      },
-    },
+    //     //custom index file name, default is search_index.json
+    //     filename: 'search_index.json',
+    //     //custom options on fetch api call for search_ındex.json
+    //     fetchOptions: {
+    //       credentials: 'same-origin'
+    //     },
+    //   },
+    // },
     // Markdown driven pages
     {
       resolve: `gatsby-source-filesystem`,

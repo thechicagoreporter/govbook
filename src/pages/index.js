@@ -7,7 +7,9 @@ import SEO from "../components/seo"
 
 
 const IndexPage = ({ data }) => {
-  const { nodes: contacts } = data.allContacts
+  const { contacts } = data.sourceData
+  console.log(contacts)
+
   return (
     <Layout>
       <SEO />
@@ -32,15 +34,9 @@ export const query = graphql`
         ceoext
         ceotitle
 
-        fields {
-          categorySlug
-          path
-        }
       }
     }
   }
 `
 
 export default IndexPage
-
-
