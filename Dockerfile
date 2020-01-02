@@ -1,7 +1,7 @@
 FROM hasura/graphql-engine:v1.0.0 as base
 FROM python:3.7-slim-buster
 
-RUN apt-get -y update \
+RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends build-essential cargo curl libpq-dev postgresql-client \
     && pip install pipenv
 
