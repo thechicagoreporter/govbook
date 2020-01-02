@@ -18,22 +18,22 @@ const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
   const item = data[index]
-  return <Link to={`/${item.fields.path}`} className="row" style={style}>
+  return <Link to={`/${item.slug}`} className="row" style={style}>
     <div className="unit-name">
       <UnitName {...item} />
     </div>
     <div className="county">
-      {item.County}
+      {item.county}
     </div>
     <div className="contacts">
       <p className="name">
-        {item.CEOFName} {item.CEOLName}, {item.CEOTitle}
+        {item.ceofname} {item.ceolname}, {item.ceotitle}
       </p>
       <p className="email">
-        {item.CEOEmail}
+        {item.ceoemail}
       </p>
       <p className="phone">
-        {item.CEOPhone}{(item.Ext) && (<>x{item.Ext}</>)}
+        {item.ceophone}{(item.ext) && (<>x{item.ext}</>)}
       </p>
     </div>
   </Link>
@@ -91,7 +91,7 @@ class Table extends React.Component {
   _resetData(contacts, filter) {
     if (filter) {
       const resultCodes = this.getSearchResults(filter)
-      return contacts.filter( (item) => (resultCodes.includes(item.Code)) )
+      return contacts.filter( (item) => (resultCodes.includes(item.code)) )
     } else {
       return contacts
     }
@@ -127,7 +127,7 @@ class Table extends React.Component {
         results = lunrIndex.index.search(`${filter}~2`)
       }
 
-      return results.map(({ ref }) => lunrIndex.store[ref].Code)
+      return results.map(({ ref }) => lunrIndex.store[ref].code)
     } catch(error) {
       return []
     }

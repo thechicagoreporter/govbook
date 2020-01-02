@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const { contacts } = data.sourceData
-  console.log(contacts)
 
   return (
     <Layout>
@@ -33,6 +32,8 @@ export const query = graphql`
         ceophone
         ceoext
         ceotitle
+
+        slug
 
       }
     }
