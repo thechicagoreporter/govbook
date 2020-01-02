@@ -127,7 +127,7 @@ db/dropschema/%: ## Drop a schema (e.g. public); allows recreating database in s
 data/downloads/contacts.csv: ## Download contacts CSV
 	curl -o $@ $(CONTACT_URL) 
 
-.PRECIOUS: sql/raw/%.sql
+.PHONY: sql/raw/%.sql
 sql/raw/%.sql: data/stats/%.csv ## Generate SQL table schema
 	$(PIPENV) python processors/schema.py $< $@
 
