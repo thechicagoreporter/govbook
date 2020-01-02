@@ -96,7 +96,7 @@ module.exports = {
               "FOIAEmail",
             )
             .from("contacts")
-            // .limit(20)
+             .limit(20)
         }
       }
     },

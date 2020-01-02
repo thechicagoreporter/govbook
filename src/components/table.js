@@ -256,7 +256,7 @@ class Table extends React.Component {
             </div>
             <div className="table-foot-description">
               <p>
-                <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate">
+                <a href="https://www.chicagoreporter.com/donate/" className="donate">
                   <MdAttachMoney />
                   <span><FormattedMessage id="welcomeMessage.donateLink" /></span>
                 </a>
