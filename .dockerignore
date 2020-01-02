@@ -1,5 +1,5 @@
 public/*
 .cache
 data/downloads/*
-# data/processed/*
-# data/stats/*
+data/processed/*
+data/stats/*
