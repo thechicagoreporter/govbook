@@ -7,11 +7,14 @@ RUN apt-get update -qq \
 # Copy hausra binary from base container
 COPY --from=base /bin/graphql-engine /bin/graphql-engine
 
-WORKDIR /govbook/
+# Install xsv
+RUN cargo install xsv
 
-# Install Python environment
-# COPY requirements.txt requirements.txt
-# RUN pip install -r /govbook/requirements.txt
+# Add xsv binary to PATH
+ENV PATH="/root/.cargo/bin/:${PATH}"
+
+# Set up shop in govbook directory
+WORKDIR /govbook/
 
 # Install ETL / processing
 COPY Makefile Makefile
@@ -19,13 +22,8 @@ ADD data/ data/
 ADD sql/ sql/
 ADD scripts/ scripts/
 
-# Install xsv
-RUN cargo install xsv
-
-# Add xsv binary to PATH
-ENV PATH="/root/.cargo/bin/:${PATH}"
-
-# The makefile requires a dot env file
+# The makefile requires a dotenv file; it's empty because the variables come from
+# Heroku instead
 RUN touch .env
 
 # Run Hasura
