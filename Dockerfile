@@ -16,6 +16,7 @@ WORKDIR /govbook/
 
 # Install ETL / processing
 COPY Makefile Makefile
+ADD data/ data/
 ADD sql/ sql/
 
 # Install xsv
