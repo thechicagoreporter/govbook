@@ -16,9 +16,6 @@ COPY Pipfile Pipfile
 COPY Pipfile.lock Pipfile.lock
 RUN pipenv install --deploy --ignore-pipfile --system
 
-ADD . /govbook
-RUN pip install .
-
 # Install ETL / processing
 COPY Makefile Makefile
 ADD data/ data/
