@@ -18,6 +18,7 @@ WORKDIR /govbook/
 COPY Makefile Makefile
 ADD data/ data/
 ADD sql/ sql/
+ADD scripts/ scripts/
 
 # Install xsv
 RUN cargo install xsv
