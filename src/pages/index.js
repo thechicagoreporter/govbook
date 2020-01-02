@@ -18,19 +18,19 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allContacts {
-      nodes {
-        Code
-        UnitName
-        Description
-        County
+    sourceData {
+      contacts {
+        code
+        unitname
+        description
+        county
 
-        CEOFName
-        CEOLName
-        CEOEmail
-        CEOPhone
-        CEOExt
-        CEOTitle
+        ceofname
+        ceolname
+        ceoemail
+        ceophone
+        ceoext
+        ceotitle
 
         fields {
           categorySlug

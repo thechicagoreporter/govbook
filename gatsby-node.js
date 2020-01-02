@@ -68,10 +68,10 @@ const _createMarkdownPages = ({ pages, getNode, createPage }, cb) => {
 exports.onCreateNode = ({ node, getNodes, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `Contacts`) {
-    const category = slugify(node.Description, SLUGOPTS)
-    const county = slugify(node.County, SLUGOPTS)
-    const city = slugify(node.City, SLUGOPTS)
-    const name = slugify(node.UnitName, SLUGOPTS)
+    const category = slugify(node.description, SLUGOPTS)
+    const county = slugify(node.county, SLUGOPTS)
+    const city = slugify(node.city, SLUGOPTS)
+    const name = slugify(node.unitname, SLUGOPTS)
 
     createNodeField({
       node,
@@ -139,81 +139,81 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
   const { createPage, createNodeField } = actions
   const result = await graphql(`
     query {
-      allContacts {
-        nodes {
-          Code
-          UnitName
-          Description
-          County
+      sourceData {
+        contacts {
+          code
+          unitname
+          description
+          county
 
-          FirstName
-          LastName
-          Email_GOV
-          Phone
-          Ext
-          Fax
-          Title
-          City
-          Address
-          State
-          Phone
-          ZIP
+          firstname
+          lastname
+          email_gov
+          phone
+          ext
+          fax
+          title
+          city
+          address
+          state
+          phone
+          zip
 
-          CEOFName
-          CEOLName
-          CEOEmail
-          CEOPhone
-          CEOExt
-          CEOFax
-          CEOTitle
-          CEOAddr
-          CEOCity
-          CEOState
-          CEOZIP
+          ceofname
+          ceolname
+          ceoemail
+          ceophone
+          ceoext
+          ceofax
+          ceotitle
+          ceoaddr
+          ceocity
+          ceostate
+          ceozip
 
-          CFOFName
-          CFOLName
-          CFOEmail
-          CFOPhone
-          CFOExt
-          CFOFax
-          CFOTitle
-          CFOAddr
-          CFOCity
-          CFOState
-          CFOZIP
+          cfofname
+          cfolname
+          cfoemail
+          cfophone
+          cfoext
+          cfofax
+          cfotitle
+          cfoaddr
+          cfocity
+          cfostate
+          cfozip
 
-          FOIAFName
-          FOIALName
-          FOIAEmail
-          FOIAPhone
-          FOIAExt
-          FOIAFax
-          FOIATitle
-          FOIAAddr
-          FOIACity
-          FOIAState
-          FOIAZIP
+          foiafname
+          foialname
+          foiaemail
+          foiaphone
+          foiaext
+          foiafax
+          foiatitle
+          foiaaddr
+          foiacity
+          foiastate
+          foiazip
 
-          PAFName
-          PALName
-          PAEmail
-          PAPhone
-          PAExt
-          PAFax
-          PATitle
-          PAAddr
-          PACity
-          PAState
-          PAZIP
+          pafname
+          palname
+          paemail
+          paphone
+          paext
+          pafax
+          patitle
+          paaddr
+          pacity
+          pastate
+          pazip
 
-          TIFFName
-          TIFLName
-          TIFEmail
-          TIFPhone
-          TIFExt
-          TIFFax
-          TIFTitle
+          tiffname
+          tiflname
+          tifemail
+          tifphone
+          tifext
+          tiffax
+          tiftitle
 
           fields {
             categorySlug
@@ -223,15 +223,15 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
       }
     }
   `)
-  result.data.allContacts.nodes.forEach((node) => {
-    createPage({
-      path: node.fields.path,
-      component: path.resolve(`./src/templates/unit.js`),
-      context: {
-        contact: node,
-      },
-    })
-  })
+ // result.data.sourceData.contacts.forEach((node) => {
+    // createPage({
+    //   path: node.fields.path,
+    //   component: path.resolve(`./src/templates/unit.js`),
+    //   context: {
+    //     contact: node,
+    //   },
+    // })
+ // })
 
   const _graphql = _wrapGraphql(graphql)
   const { data: { allFile: { nodes: staticPages } } } = await _graphql(`
