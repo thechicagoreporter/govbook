@@ -42,7 +42,7 @@ PUBLIC_TABLES = $(basename $(notdir $(wildcard sql/public/*.sql)))
 all: load/public ## Build database
 
 .PHONY: download
-download: $(patsubst %, data/download/%.csv, $(RAW_TABLES)) ## Download source data
+download: $(patsubst %, data/downloads/%.csv, $(RAW_TABLES)) ## Download source data
 
 .PHONY: process
 process: $(patsubst %, data/processed/%.csv, $(RAW_TABLES)) ## Minimally process source data for import
