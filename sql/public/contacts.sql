@@ -69,6 +69,7 @@ CREATE TABLE IF NOT EXISTS public.contacts (
     foiaext character varying,
     foiafax character varying,
     foiaemail character varying,
+    unittypeslug character varying,
     slug character varying
 );
 
@@ -151,6 +152,7 @@ INSERT INTO public.contacts
         foiaext,
         regexp_replace(foiafax, '[^0-9]', '', 'g'),
         lower(foiaemail),
+        slugify(description),
         concat(slugify(county), '/', slugify(unitname), '-', slugify(description))
     FROM raw.contacts
 ON CONFLICT (code)
