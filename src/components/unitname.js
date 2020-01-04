@@ -5,21 +5,21 @@
 import React from "react"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
-function UnitName({ intl, UnitName, Description, fields }) {
-  switch (fields.categorySlug) {
+function UnitName({ intl, unitname, description, unittypeslug }) {
+  switch (unittypeslug) {
     case "city":
     case "village":
     case "township":
       return <span>
           <FormattedMessage
-            id={`unitLabels.${fields.categorySlug}`}
-            values={{ UnitName }}
+            id={`unitLabels.${unittypeslug}`}
+            values={{ unitname }}
           />
         </span>
     case "community-college":
-      return <span>{UnitName}</span>
+      return <span>{unitname}</span>
     default:
-      return <span>{UnitName} {Description}</span>
+      return <span>{unitname} {description}</span>
   }
 }
 

@@ -33,8 +33,8 @@ export const query = graphql`
         ceoext
         ceotitle
 
+        unittypeslug
         slug
-
       }
     }
   }

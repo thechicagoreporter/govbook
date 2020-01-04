@@ -40,24 +40,24 @@ module.exports = {
     //     // Fields to index. If store === true value will be stored in index file.
     //     // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
     //     fields: [
-    //       { name: 'County', store: false, boost: 30 },
-    //       { name: 'UnitName', store: false, boost: 10, },
-    //       { name: 'ExecName', store: false, boost: 10 },
-    //       { name: 'Description', store: false },
-    //       { name: 'Code', store: true },
+    //       { name: 'county', store: false, boost: 30 },
+    //       { name: 'unitname', store: false, boost: 10, },
+    //       { name: 'execname', store: false, boost: 10 },
+    //       { name: 'description', store: false },
+    //       { name: 'code', store: true },
     //     ],
     //     // How to resolve each field's value for a supported node type
     //     resolvers: {
     //       Contacts: {
-    //         County: node => node.County,
-    //         Description: node => node.Description,
-    //         UnitName: node => node.UnitName,
-    //         Code: node => node.Code,
-    //         ExecName: node => (`${node.CEOFName} ${node.CEOLName}`),
+    //         county: node => node.county,
+    //         description: node => node.description,
+    //         unitname: node => node.unitname,
+    //         code: node => node.code,
+    //         execname: node => (`${node.ceofname} ${node.ceolname}`),
     //       },
     //     },
 
-    //     filterNodes: (node) => (node.fields.Address),
+    //     filterNodes: (node) => (node.fields.address),
 
     //     //custom index file name, default is search_index.json
     //     filename: 'search_index.json',

@@ -68,24 +68,6 @@ const _createMarkdownPages = ({ pages, getNode, createPage }, cb) => {
 exports.onCreateNode = ({ node, getNodes, actions }) => {
   const { createNodeField } = actions
 
-  // if (node.internal.type === `GraphQLSource`) {
-  //   const category = slugify(node.description, SLUGOPTS)
-  //   const county = slugify(node.county, SLUGOPTS)
-  //   const city = slugify(node.city, SLUGOPTS)
-  //   const name = slugify(node.unitname, SLUGOPTS)
-
-  //   createNodeField({
-  //     node,
-  //     name: `path`,
-  //     value: `${county}/${name}-${category}`,
-  //   })
-  //   createNodeField({
-  //     node,
-  //     name: `categorySlug`,
-  //     value: category,
-  //   })
-  // }
-
   // From https://hiddentao.com/archives/2019/05/07/building-a-multilingual-static-site-with-gatsby
   if (_isMarkdownNode(node)) {
     // pageType = "blog" or "static"
@@ -138,101 +120,99 @@ exports.onCreateNode = ({ node, getNodes, actions }) => {
 }
 exports.createPages = async ({ graphql, actions, getNode }) => {
   const { createPage, createNodeField } = actions
-  // const result = await graphql(`
-  //   query {
-  //     sourceData {
-  //       contacts {
-  //         code
-  //         unitname
-  //         description
-  //         county
+  const result = await graphql(`
+    query {
+      sourceData {
+        contacts(limit: 10) {
+          code
+          unitname
+          description
+          county
 
-  //         firstname
-  //         lastname
-  //         email_gov
-  //         phone
-  //         ext
-  //         fax
-  //         title
-  //         city
-  //         address
-  //         state
-  //         phone
-  //         zip
+          firstname
+          lastname
+          email_gov
+          phone
+          ext
+          fax
+          title
+          city
+          address
+          state
+          phone
+          zip
 
-  //         ceofname
-  //         ceolname
-  //         ceoemail
-  //         ceophone
-  //         ceoext
-  //         ceofax
-  //         ceotitle
-  //         ceoaddr
-  //         ceocity
-  //         ceostate
-  //         ceozip
+          ceofname
+          ceolname
+          ceoemail
+          ceophone
+          ceoext
+          ceofax
+          ceotitle
+          ceoaddr
+          ceocity
+          ceostate
+          ceozip
 
-  //         cfofname
-  //         cfolname
-  //         cfoemail
-  //         cfophone
-  //         cfoext
-  //         cfofax
-  //         cfotitle
-  //         cfoaddr
-  //         cfocity
-  //         cfostate
-  //         cfozip
+          cfofname
+          cfolname
+          cfoemail
+          cfophone
+          cfoext
+          cfofax
+          cfotitle
+          cfoaddr
+          cfocity
+          cfostate
+          cfozip
 
-  //         foiafname
-  //         foialname
-  //         foiaemail
-  //         foiaphone
-  //         foiaext
-  //         foiafax
-  //         foiatitle
-  //         foiaaddr
-  //         foiacity
-  //         foiastate
-  //         foiazip
+          foiafname
+          foialname
+          foiaemail
+          foiaphone
+          foiaext
+          foiafax
+          foiatitle
+          foiaaddr
+          foiacity
+          foiastate
+          foiazip
 
-  //         pafname
-  //         palname
-  //         paemail
-  //         paphone
-  //         paext
-  //         pafax
-  //         patitle
-  //         paaddr
-  //         pacity
-  //         pastate
-  //         pazip
+          pafname
+          palname
+          paemail
+          paphone
+          paext
+          pafax
+          patitle
+          paaddr
+          pacity
+          pastate
+          pazip
 
-  //         tiffname
-  //         tiflname
-  //         tifemail
-  //         tifphone
-  //         tifext
-  //         tiffax
-  //         tiftitle
+          tiffname
+          tiflname
+          tifemail
+          tifphone
+          tifext
+          tiffax
+          tiftitle
 
-  //         fields {
-  //           categorySlug
-  //           path
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
- // result.data.sourceData.contacts.forEach((node) => {
-    // createPage({
-    //   path: node.fields.path,
-    //   component: path.resolve(`./src/templates/unit.js`),
-    //   context: {
-    //     contact: node,
-    //   },
-    // })
- // })
+          unittypeslug
+          slug
+        }
+      }
+    }
+  `)
+ result.data.sourceData.contacts.forEach((node) => {
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/unit.js`),
+      context: {
+        contact: node,
+      },
+    })
+ })
 
   const _graphql = _wrapGraphql(graphql)
   const { data: { allFile: { nodes: staticPages } } } = await _graphql(`
