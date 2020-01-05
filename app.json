@@ -1,0 +1,28 @@
+{
+  "name": "Govbook Hasura GraphQL Engine",
+  "description": "Govbook Illinois government contact data GraphQL API.",
+  "logo": "https://storage.googleapis.com/hasura-graphql-engine/console/assets/favicon.png",
+  "keywords": [
+    "database",
+    "api",
+    "graphql",
+    "heroku",
+    "postgres",
+    "hasura"
+  ],
+  "success_url": "/console",
+  "website": "https://hasura.io",
+  "repository": "https://github.com/hasura/graphql-engine-heroku",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "stack": "container",
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-1"
+    }
+  ]
+}

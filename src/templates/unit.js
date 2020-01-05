@@ -19,7 +19,7 @@ export default ({ pageContext }) => {
         </h1>
         <h2>
           <span>
-            <Link to={`/?q=${encodeURIComponent(contact.County)}`}>
+            <Link to={`/?q=${encodeURIComponent(contact.county)}`}>
               <FormattedMessage id="unitLabels.county" values={{...contact}} />
             </Link>
           </span>
@@ -33,17 +33,17 @@ export default ({ pageContext }) => {
           <GovContact
             type="ceo"
             contact={contact}
-            firstName={contact.CEOFName}
-            lastName={contact.CEOLName}
-            title={contact.CEOTitle}
-            phone={contact.CEOPhone}
-            ext={contact.CEOExt}
-            fax={contact.CEOFax}
-            email={contact.CEOEmail}
-            address={contact.CEOAddr}
-            city={contact.CEOCity}
-            state={contact.CEOState}
-            zip={contact.CEOZIP}
+            firstname={contact.ceofname}
+            lastname={contact.ceolname}
+            title={contact.ceotitle}
+            phone={contact.ceophone}
+            ext={contact.ceoext}
+            fax={contact.ceofax}
+            email={contact.ceoemail}
+            address={contact.ceoaddr}
+            city={contact.ceocity}
+            state={contact.ceostate}
+            zip={contact.ceozip}
           />
         </div>
 
@@ -51,17 +51,17 @@ export default ({ pageContext }) => {
           <GovContact
             type="main"
             contact={contact}
-            firstName={contact.FirstName}
-            lastName={contact.LastName}
-            title={contact.Title}
-            phone={contact.Phone}
-            ext={contact.Ext}
-            fax={contact.Fax}
-            email={contact.Email_GOV}
-            address={contact.Address}
-            city={contact.City}
-            state={contact.State}
-            zip={contact.ZIP}
+            firstname={contact.firstname}
+            lastname={contact.lastname}
+            title={contact.title}
+            phone={contact.phone}
+            ext={contact.ext}
+            fax={contact.fax}
+            email={contact.email_gov}
+            address={contact.address}
+            city={contact.city}
+            state={contact.state}
+            zip={contact.zip}
           />
         </div>
 
@@ -69,17 +69,17 @@ export default ({ pageContext }) => {
           <GovContact
             type="cfo"
             contact={contact}
-            firstName={contact.CFOFName}
-            lastName={contact.CFOLName}
-            title={contact.CFOTitle}
-            phone={contact.CFOPhone}
-            ext={contact.CFOExt}
-            fax={contact.CFOFax}
-            email={contact.CFOEmail}
-            address={contact.CFOAddr}
-            city={contact.CFOCity}
-            state={contact.CFOState}
-            zip={contact.CFOZIP}
+            firstname={contact.cfofname}
+            lastname={contact.cfolname}
+            title={contact.cfotitle}
+            phone={contact.cfophone}
+            ext={contact.cfoext}
+            fax={contact.cfofax}
+            email={contact.cfoemail}
+            address={contact.cfoaddr}
+            city={contact.cfocity}
+            state={contact.cfostate}
+            zip={contact.cfozip}
           />
         </div>
 
@@ -87,17 +87,17 @@ export default ({ pageContext }) => {
           <GovContact
             type="pa"
             contact={contact}
-            firstName={contact.PAFName}
-            lastName={contact.PALName}
-            title={contact.PATitle}
-            phone={contact.PAPhone}
-            ext={contact.PAExt}
-            fax={contact.PAFax}
-            email={contact.PAEmail}
-            address={contact.PAAddr}
-            city={contact.PACity}
-            state={contact.PAState}
-            zip={contact.PAZIP}
+            firstname={contact.pafname}
+            lastname={contact.palname}
+            title={contact.patitle}
+            phone={contact.paphone}
+            ext={contact.paext}
+            fax={contact.pafax}
+            email={contact.paemail}
+            address={contact.paaddr}
+            city={contact.pacity}
+            state={contact.pastate}
+            zip={contact.pazip}
           />
         </div>
 
@@ -105,17 +105,17 @@ export default ({ pageContext }) => {
           <GovContact
             type="foia"
             contact={contact}
-            firstName={contact.FOIAFName}
-            lastName={contact.FOIALName}
-            title={contact.FOIATitle}
-            phone={contact.FOIAPhone}
-            ext={contact.FOIAExt}
-            fax={contact.FOIAFax}
-            email={contact.FOIAEmail}
-            address={contact.FOIAAddr}
-            city={contact.FOIACity}
-            state={contact.FOIAState}
-            zip={contact.FOIAZIP}
+            firstname={contact.foiafname}
+            lastname={contact.foialname}
+            title={contact.foiatitle}
+            phone={contact.foiaphone}
+            ext={contact.foiaext}
+            fax={contact.foiafax}
+            email={contact.foiaemail}
+            address={contact.foiaaddr}
+            city={contact.foiacity}
+            state={contact.foiastate}
+            zip={contact.foiazip}
           />
         </div>
 
@@ -123,17 +123,17 @@ export default ({ pageContext }) => {
           <GovContact
             type="tif"
             contact={contact}
-            firstName={contact.TIFFName}
-            lastName={contact.TIFLName}
-            title={contact.TIFTitle}
-            phone={contact.TIFPhone}
-            ext={contact.TIFExt}
-            fax={contact.TIFFax}
-            email={contact.TIFEmail}
-            address={contact.TIFAddr}
-            city={contact.TIFCity}
-            state={contact.TIFState}
-            zip={contact.TIFZIP}
+            firstname={contact.tiffname}
+            lastname={contact.tiflname}
+            title={contact.tiftitle}
+            phone={contact.tifphone}
+            ext={contact.tifext}
+            fax={contact.tiffax}
+            email={contact.tifemail}
+            address={contact.tifaddr}
+            city={contact.tifcity}
+            state={contact.tifstate}
+            zip={contact.tifzip}
           />
         </div>
 

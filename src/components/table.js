@@ -7,6 +7,7 @@ import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
 import debounce from "lodash/debounce"
+import moment from "moment"
 
 import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
@@ -18,22 +19,22 @@ const SEARCH_LNG = "en"
 
 const Row = ({ index, style, data }) => {
   const item = data[index]
-  return <Link to={`/${item.fields.path}`} className="row" style={style}>
+  return <Link to={`/${item.slug}`} className="row" style={style}>
     <div className="unit-name">
       <UnitName {...item} />
     </div>
     <div className="county">
-      {item.County}
+      {item.county}
     </div>
     <div className="contacts">
       <p className="name">
-        {item.CEOFName} {item.CEOLName}, {item.CEOTitle}
+        {item.ceofname} {item.ceolname}, {item.ceotitle}
       </p>
       <p className="email">
-        {item.CEOEmail}
+        {item.ceoemail}
       </p>
       <p className="phone">
-        {item.CEOPhone}{(item.Ext) && (<>x{item.Ext}</>)}
+        {item.ceophone}{(item.ext) && (<>x{item.ext}</>)}
       </p>
     </div>
   </Link>
@@ -91,7 +92,7 @@ class Table extends React.Component {
   _resetData(contacts, filter) {
     if (filter) {
       const resultCodes = this.getSearchResults(filter)
-      return contacts.filter( (item) => (resultCodes.includes(item.Code)) )
+      return contacts.filter( (item) => (resultCodes.includes(item.code)) )
     } else {
       return contacts
     }
@@ -127,7 +128,7 @@ class Table extends React.Component {
         results = lunrIndex.index.search(`${filter}~2`)
       }
 
-      return results.map(({ ref }) => lunrIndex.store[ref].Code)
+      return results.map(({ ref }) => lunrIndex.store[ref].code)
     } catch(error) {
       return []
     }
@@ -164,7 +165,7 @@ class Table extends React.Component {
   }
 
   render() {
-    const { intl } = this.props
+    const { intl, lastUpdated } = this.props
     const { contacts, filter, scrollOffset } = this.state
     const footHeight = FOOT_HEIGHT - scrollOffset
     return (
@@ -180,7 +181,7 @@ class Table extends React.Component {
                 value={filter || ""}
               />
               {(filter) && (
-                <button className="reset-button" onClick={this.clearFilter}><FiX /></button>
+                <button className="reset-button" onClick={this.clearFilter} onKeyDown={this.clearFilter}><FiX /></button>
               )}
             </div>
           </div>
@@ -243,24 +244,18 @@ class Table extends React.Component {
                   <span><FormattedMessage id="scrollMessage.scroll" /> <FiArrowDown /></span>
                 </>)}
                 {(scrollOffset > LOGO_HEIGHT) && (
-                  <span className="button" onClick={this.scrollToTop}>
+                  <span className="button" role="button" tabIndex="0" onClick={this.scrollToTop} onKeyDown={this.scrollToTop}>
                     <FormattedMessage id="scrollMessage.backToTop" /> <FiArrowUp />
                   </span>
                 )}
                 {(scrollOffset < LOGO_HEIGHT && filter) && (
-                  <span className="button" onClick={this.clearFilter}>
+                  <span className="button" role="button" tabIndex="-1" onClick={this.clearFilter} onKeyDown={this.clearFilter}>
                     <FormattedMessage id="scrollMessage.clearFilter" /> <FiX />
                   </span>
                 )}
               </div>
             </div>
             <div className="table-foot-description">
-              <p>
-                <a href="https://www.chicagoreporter.com/donate/?utm_source=govbook&utm_medium=footer&utm_campaign=newsmatch" className="donate">
-                  <MdAttachMoney />
-                  <span><FormattedMessage id="welcomeMessage.donateLink" /></span>
-                </a>
-              </p>
               <p>
                 <FormattedMessage id="welcomeMessage.description" />
               </p>
@@ -271,7 +266,7 @@ class Table extends React.Component {
               </div>
             </div>
             <p>
-              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-12-05" }} />
+              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: moment(lastUpdated.value).format("YYYY-MM-DD") }} />
             </p>
           </div>
         </div>

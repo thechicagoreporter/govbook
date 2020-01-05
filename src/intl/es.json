@@ -42,11 +42,10 @@
   "unitLabels": {
     "headerDescription": "Categoría:",
     "headerCounty": "Condado:",
-    "village": "Village of {UnitName}",
-    "city": "City of {UnitName}",
-    "township": "Township of {UnitName}",
-    "county": "Condado de {County}"
-
+    "village": "Village of {unitname}",
+    "city": "City of {unitname}",
+    "township": "Township of {unitname}",
+    "county": "Condado de {county}"
   },
 
   "contactLabels": {

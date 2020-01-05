@@ -155,3 +155,4 @@ ENV/
 .ropeproject
 src/images/logo.png
 static/*
+.vscode/

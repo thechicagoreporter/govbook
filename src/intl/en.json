@@ -42,10 +42,10 @@
   "unitLabels": {
     "headerDescription": "Category:",
     "headerCounty": "County:",
-    "village": "Village of {UnitName}",
-    "city": "City of {UnitName}",
-    "township": "Township of {UnitName}",
-    "county": "{County} County",
+    "village": "Village of {unitname}",
+    "city": "City of {unitname}",
+    "township": "Township of {unitname}",
+    "county": "{county} County",
     "seeAlso": "See also:"
   },
 

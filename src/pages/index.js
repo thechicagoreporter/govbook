@@ -7,40 +7,38 @@ import SEO from "../components/seo"
 
 
 const IndexPage = ({ data }) => {
-  const { nodes: contacts } = data.allContacts
+  const { contacts, lastUpdated } = data.sourceData
+
   return (
     <Layout>
       <SEO />
-      <Table contacts={contacts} />
+      <Table contacts={contacts} lastUpdated={lastUpdated} />
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allContacts {
-      nodes {
-        Code
-        UnitName
-        Description
-        County
-
-        CEOFName
-        CEOLName
-        CEOEmail
-        CEOPhone
-        CEOExt
-        CEOTitle
-
-        fields {
-          categorySlug
-          path
-        }
+    sourceData {
+      contacts {
+        code
+        unitname
+        description
+        county
+        ceofname
+        ceolname
+        ceoemail
+        ceophone
+        ceoext
+        ceotitle
+        unittypeslug
+        slug
+      }
+      lastUpdated:meta_by_pk(key: "last_updated") {
+        value
       }
     }
   }
 `
 
 export default IndexPage
-
-

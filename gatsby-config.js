@@ -8,97 +8,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
-      // Querying to a SQLite database
-      resolve: `gatsby-source-sql`,
+      // Querying to a GraphQL database
+      resolve: `gatsby-source-graphql`,
       options: {
         typeName: 'Contacts',
         // This is the field under which the data will be accessible in a future version
-        fieldName: 'dontunderstandthis',
-        dbEngine: {
-          client: 'sqlite3',
-          connection: {
-            filename: './data/processed/contacts.sqlite',
-          },
-          useNullAsDefault: true
-        },
-        queryChain: function(x) {
-          return x
-            .select(
-              "County",
-              "UnitName",
-              "Description",
-              "Code",
-              "Address",
-              "City",
-              "State",
-              "ZIP",
-              "FirstName",
-              "LastName",
-              "Title",
-              "Phone",
-              "Ext",
-              "Fax",
-              "Email_GOV",
-              "CEOFName",
-              "CEOLName",
-              "CEOTitle",
-              "CEOAddr",
-              "CEOCity",
-              "CEOState",
-              "CEOZIP",
-              "CEOPhone",
-              "CEOExt",
-              "CEOFax",
-              "CEOEmail",
-              "CFOFName",
-              "CFOLName",
-              "CFOTitle",
-              "CFOAddr",
-              "CFOCity",
-              "CFOState",
-              "CFOZIP",
-              "CFOPhone",
-              "CFOExt",
-              "CFOFax",
-              "CFOEmail",
-              "PAFName",
-              "PALName",
-              "PATitle",
-              "PAAddr",
-              "PACity",
-              "PAState",
-              "PAZIP",
-              "PAPhone",
-              "PAExt",
-              "PAFax",
-              "PAEmail",
-              "TIFFName",
-              "TIFLName",
-              "TIFTitle",
-              "TIFAddr",
-              "TIFCity",
-              "TIFState",
-              "TIFZIP",
-              "TIFPhone",
-              "TIFExt",
-              "TIFFax",
-              "TIFEmail",
-              "FOIAFName",
-              "FOIALName",
-              "FOIATitle",
-              "FOIAAddr",
-              "FOIACity",
-              "FOIAState",
-              "FOIAZIP",
-              "FOIAPhone",
-              "FOIAExt",
-              "FOIAFax",
-              "FOIAEmail",
-            )
-            .from("contacts")
-            // .limit(20)
-        }
-      }
+        fieldName: 'sourceData',
+        url: "http://govbook-api.herokuapp.com/v1/graphql"
+      },
     },
     {
       resolve: `gatsby-plugin-intl`,
@@ -112,44 +29,44 @@ module.exports = {
         redirect: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-lunr`,
-      options: {
-        languages: [
-          {
-            name: 'en',
-          },
-        ],
-        // Fields to index. If store === true value will be stored in index file.
-        // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
-        fields: [
-          { name: 'County', store: false, boost: 30 },
-          { name: 'UnitName', store: false, boost: 10, },
-          { name: 'ExecName', store: false, boost: 10 },
-          { name: 'Description', store: false },
-          { name: 'Code', store: true },
-        ],
-        // How to resolve each field's value for a supported node type
-        resolvers: {
-          Contacts: {
-            County: node => node.County,
-            Description: node => node.Description,
-            UnitName: node => node.UnitName,
-            Code: node => node.Code,
-            ExecName: node => (`${node.CEOFName} ${node.CEOLName}`),
-          },
-        },
+    // {
+    //   resolve: `gatsby-plugin-lunr`,
+    //   options: {
+    //     languages: [
+    //       {
+    //         name: 'en',
+    //       },
+    //     ],
+    //     // Fields to index. If store === true value will be stored in index file.
+    //     // Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
+    //     fields: [
+    //       { name: 'county', store: false, boost: 30 },
+    //       { name: 'unitname', store: false, boost: 10, },
+    //       { name: 'execname', store: false, boost: 10 },
+    //       { name: 'description', store: false },
+    //       { name: 'code', store: true },
+    //     ],
+    //     // How to resolve each field's value for a supported node type
+    //     resolvers: {
+    //       Contacts: {
+    //         county: node => node.county,
+    //         description: node => node.description,
+    //         unitname: node => node.unitname,
+    //         code: node => node.code,
+    //         execname: node => (`${node.ceofname} ${node.ceolname}`),
+    //       },
+    //     },
 
-        filterNodes: (node) => (node.fields.Address),
+    //     filterNodes: (node) => (node.fields.address),
 
-        //custom index file name, default is search_index.json
-        filename: 'search_index.json',
-        //custom options on fetch api call for search_ındex.json
-        fetchOptions: {
-          credentials: 'same-origin'
-        },
-      },
-    },
+    //     //custom index file name, default is search_index.json
+    //     filename: 'search_index.json',
+    //     //custom options on fetch api call for search_ındex.json
+    //     fetchOptions: {
+    //       credentials: 'same-origin'
+    //     },
+    //   },
+    // },
     // Markdown driven pages
     {
       resolve: `gatsby-source-filesystem`,
