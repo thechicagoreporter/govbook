@@ -180,7 +180,7 @@ class Table extends React.Component {
                 value={filter || ""}
               />
               {(filter) && (
-                <button className="reset-button" onClick={this.clearFilter}><FiX /></button>
+                <button className="reset-button" onClick={this.clearFilter} onKeyDown={this.clearFilter}><FiX /></button>
               )}
             </div>
           </div>
@@ -243,12 +243,12 @@ class Table extends React.Component {
                   <span><FormattedMessage id="scrollMessage.scroll" /> <FiArrowDown /></span>
                 </>)}
                 {(scrollOffset > LOGO_HEIGHT) && (
-                  <span className="button" onClick={this.scrollToTop}>
+                  <span className="button" role="button" tabIndex="0" onClick={this.scrollToTop} onKeyDown={this.scrollToTop}>
                     <FormattedMessage id="scrollMessage.backToTop" /> <FiArrowUp />
                   </span>
                 )}
                 {(scrollOffset < LOGO_HEIGHT && filter) && (
-                  <span className="button" onClick={this.clearFilter}>
+                  <span className="button" role="button" tabIndex="-1" onClick={this.clearFilter} onKeyDown={this.clearFilter}>
                     <FormattedMessage id="scrollMessage.clearFilter" /> <FiX />
                   </span>
                 )}

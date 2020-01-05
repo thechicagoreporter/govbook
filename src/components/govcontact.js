@@ -7,14 +7,14 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 
 const SLUG = "govbook"
 
-function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax, email, address, city, state, zip }) {
+function GovContact({ contact, type, firstname, lastname, title, phone, ext, fax, email, address, city, state, zip }) {
 
   const phoneClick = (event) => {
     const phone = event.target.href.slice(4, 0)
     window.gtag && window.gtag("event", "click", {
       event_category: SLUG,
       event_action: "phone-click",
-      event_label: `${phone} - ${firstName} ${lastName}`,
+      event_label: `${phone} - ${firstname} ${lastname}`,
     })
   }
 
@@ -22,19 +22,19 @@ function GovContact({ contact, type, firstName, lastName, title, phone, ext, fax
     window.gtag && window.gtag("event", "click", {
       event_category: SLUG,
       event_action: "email-click",
-      event_label: `${email} - ${firstName} ${lastName}`,
+      event_label: `${email} - ${firstname} ${lastname}`,
     })
   }
 
   return <>
-    {(firstName) && (
+    {(firstname) && (
       <h2>
         <span className="contact-type"><FormattedMessage id={`contactLabels.${type}`} /></span>
       </h2>
     )}
     <div className="meta">
       <h3 className="name">
-        {firstName} {lastName}
+        {firstname} {lastname}
       </h3>
       {(title) && (<h4>{title}</h4>)}
     </div>
