@@ -2,7 +2,7 @@
 data/
 
 # Build
-public/
+/public/
 
 # Logs
 logs
