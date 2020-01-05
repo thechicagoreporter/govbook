@@ -123,12 +123,11 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
   const result = await graphql(`
     query {
       sourceData {
-        contacts(limit: 10) {
+        contacts {
           code
           unitname
           description
           county
-
           firstname
           lastname
           email_gov
@@ -141,7 +140,6 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
           state
           phone
           zip
-
           ceofname
           ceolname
           ceoemail
@@ -153,7 +151,6 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
           ceocity
           ceostate
           ceozip
-
           cfofname
           cfolname
           cfoemail
@@ -165,7 +162,6 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
           cfocity
           cfostate
           cfozip
-
           foiafname
           foialname
           foiaemail
@@ -177,7 +173,6 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
           foiacity
           foiastate
           foiazip
-
           pafname
           palname
           paemail
@@ -189,7 +184,6 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
           pacity
           pastate
           pazip
-
           tiffname
           tiflname
           tifemail
@@ -197,7 +191,6 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
           tifext
           tiffax
           tiftitle
-
           unittypeslug
           slug
         }
