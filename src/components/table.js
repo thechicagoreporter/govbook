@@ -7,6 +7,7 @@ import { FixedSizeList as List } from "react-window"
 import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { navigate } from "@reach/router"
 import debounce from "lodash/debounce"
+import moment from "moment"
 
 import UnitName from "../components/unitname"
 import logo from "../images/logo.png"
@@ -164,7 +165,7 @@ class Table extends React.Component {
   }
 
   render() {
-    const { intl } = this.props
+    const { intl, lastUpdated } = this.props
     const { contacts, filter, scrollOffset } = this.state
     const footHeight = FOOT_HEIGHT - scrollOffset
     return (
@@ -271,7 +272,7 @@ class Table extends React.Component {
               </div>
             </div>
             <p>
-              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: "2019-12-05" }} />
+              <FormattedMessage id="welcomeMessage.sourceLine" values={{ lastUpdated: moment(lastUpdated.value).format("YYYY-MM-DD") }} />
             </p>
           </div>
         </div>
