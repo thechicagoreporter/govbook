@@ -24,7 +24,7 @@
     "gatsby-source-sql": "git+https://github.com/mrfunnyshoes/gatsby-source-sql.git",
     "gray-matter": "^4.0.2",
     "lodash.get": "^4.4.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "query-string": "^6.9.0",
     "react": "^16.12.0",
     "react-container-dimensions": "^1.4.1",
